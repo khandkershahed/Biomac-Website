@@ -32,7 +32,7 @@
                         <nav>
                             <ul class="list-unstyled">
                                 <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="team.html">Leadership Team</a></li>
+                                <li><a href="team.html">Contact us</a></li>
                                 <li><a href="blog.html">News & Media</a></li>
                                 <li><a href="services.html">Sustainability</a></li>
                                 <li><a href="careers.html">Careers</a></li>
@@ -42,15 +42,10 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-2">
                     <div class="footer-widget-nav">
-                        <h6 class="footer-widget-title">Tests & Services</h6>
+                        <h6 class="footer-widget-title">Services</h6>
                         <nav>
                             <ul class="list-unstyled">
                                 <li><a href="#">General Diagnostic Tests</a></li>
-                                <li><a href="#"> Specialized Genetic Tests</a></li>
-                                <li><a href="#"> Food Sensitivity Tests</a></li>
-                                <li><a href="#">Genova Diagnostics </a></li>
-                                <li><a href="#">Hormone Insights Tests</a></li>
-                                <li><a href="#">Naturopathic Tests</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -60,10 +55,6 @@
                         <h6 class="footer-widget-title">Links</h6>
                         <nav>
                             <ul class="list-unstyled">
-                                <li><a href="#">Knowledge base</a></li>
-                                <li><a href="#">Report a Vulnerability</a></li>
-                                <li><a href="#">Suppliers & Vendors</a></li>
-                                <li><a href="#">Genova Diagnostics </a></li>
                                 <li><a href="#">Terms & Conditions</a></li>
                                 <li><a href="#">Contact us</a></li>
                             </ul>
