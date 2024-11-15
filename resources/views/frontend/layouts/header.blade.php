@@ -5,8 +5,32 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-between">
                         <ul class="contact-list d-flex flex-wrap align-items-center list-unstyled mb-0">
-                            <li class="miniPopup-language-area">
-                                <button class="miniPopup-language-trigger" type="button">Change language</button>
+                            <li>
+                                <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002) 01061245741</a>
+                            </li>
+                            <li>
+                                <i class="icon-location"></i><a href="#">Location: Brooklyn, New York</a>
+                            </li>
+                            <li>
+                                <i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
+                            </li>
+                        </ul><!-- /.contact-list -->
+                        <div class="d-flex align-items-center">
+                            <ul class="topbar-nav list-unstyled d-flex mb-0 mr-30">
+                                <li><a href="#">Insurance</a></li>
+                                <li><a href="#">Provider Services</a></li>
+                                <li><a href="#">Help</a></li>
+                            </ul>
+                            <ul class="social-icons list-unstyled mb-0 mr-30">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            </ul><!-- /.social-icons -->
+                            <div class="miniPopup-language-area">
+                                <button class="miniPopup-language-trigger" type="button">
+                                    <img src="assets/images/flags/en.png" alt="en">
+                                    <span>English</span>
+                                </button>
                                 <ul class="miniPopup miniPopup-language list-unstyled">
                                     <li>
                                         <button>
@@ -20,34 +44,13 @@
                                             <span>Germany</span>
                                         </button>
                                     </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002)
-                                    01061245741</a>
-                            </li>
-                            <li>
-                                <i class="icon-location"></i><a href="#">Location: Brooklyn, New York</a>
-                            </li>
-                            <li>
-                                <i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
-                            </li>
-                        </ul>
-                        <div class="d-flex">
-                            <ul class="social-icons list-unstyled mb-0 mr-30">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            </ul>
-                            <form class="header-topbar-search">
-                                <input type="text" class="form-control" placeholder="Type Search Words">
-                                <button class="header-topbar-search-btn"><i class="fa fa-search"></i></button>
-                            </form>
+                                </ul><!-- /.miniPopup-language -->
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
     </div>
     <nav class="navbar navbar-expand-lg sticky-navbar">
         <div class="container-fluid">
