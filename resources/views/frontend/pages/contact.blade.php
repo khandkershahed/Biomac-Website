@@ -31,8 +31,7 @@
                                             {{ optional($setting)->support_email }}
                                         </a>
                                     </li>
-                                    <li>Address: {{ optional($setting)->address_line_one }} <br>
-                                        {{ optional($setting)->address_line_two }}
+                                    <li>Address: {{ optional($setting)->address_line_two }}
                                     </li>
                                 </ul>
                             </div>
