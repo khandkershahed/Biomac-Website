@@ -2802,7 +2802,7 @@ input[type=radio] {
   -webkit-clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
           clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
 }
-.miniPopup-language-trigger:after {
+/* .miniPopup-language-trigger:after {
   content: "\f078";
   font-family: "Font Awesome 6 Pro";
   font-weight: 900;
@@ -2811,7 +2811,7 @@ input[type=radio] {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-}
+} */
 .miniPopup-language-trigger.active:after {
   content: "\f077";
 }

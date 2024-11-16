@@ -8,43 +8,43 @@
                             <li>
                                 <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002) 01061245741</a>
                             </li>
+                            @if (optional($setting)->address_line_two)
+                                <li>
+                                    <i class="icon-location"></i><a href="#">Location:
+                                        {{ optional($setting)->address_line_two }}</a>
+                                </li>
+                            @endif
                             <li>
-                                <i class="icon-location"></i><a href="#">Location: Brooklyn, New York</a>
-                            </li>
-                            <li>
-                                <i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
+                                <i class="icon-clock"></i><a href="contact-us.html">Sat - Thurs: 9:00 am - 7:00 pm</a>
                             </li>
                         </ul><!-- /.contact-list -->
                         <div class="d-flex align-items-center">
-                            <ul class="topbar-nav list-unstyled d-flex mb-0 mr-30">
+                            {{-- <ul class="topbar-nav list-unstyled d-flex mb-0 mr-30">
                                 <li><a href="#">Insurance</a></li>
                                 <li><a href="#">Provider Services</a></li>
                                 <li><a href="#">Help</a></li>
-                            </ul>
+                            </ul> --}}
                             <ul class="social-icons list-unstyled mb-0 mr-30">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                @if (optional($setting)->facebook_url)
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                @endif
+                                @if (optional($setting)->instagram_url)
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                @endif
+                                @if (optional($setting)->twitter_url)
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                @endif
+                                @if (optional($setting)->linkedin_url)
+                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                @endif
                             </ul><!-- /.social-icons -->
                             <div class="miniPopup-language-area">
                                 <button class="miniPopup-language-trigger" type="button">
-                                    <img src="assets/images/flags/en.png" alt="en">
+                                    <img src="{{ asset('frontend/assets/images/flags/en.png') }}" style="width: 15px;"
+                                        alt="en">
                                     <span>English</span>
                                 </button>
-                                <ul class="miniPopup miniPopup-language list-unstyled">
-                                    <li>
-                                        <button>
-                                            <img src="assets/images/flags/en.png" alt="en">
-                                            <span>English</span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button>
-                                            <img src="assets/images/flags/gr.png" alt="en">
-                                            <span>Germany</span>
-                                        </button>
-                                    </li>
-                                </ul><!-- /.miniPopup-language -->
+
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                             Book a Lab Visit
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="action-btn action-btn-cart">
                             <i class="icon-cart"></i><span class="cart-counter">3</span>
                         </a>
@@ -142,7 +142,7 @@
                             </div>
                             <a href="shopping-cart.html" class="btn btn-secondary btn-block">View Cart</a>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
                 <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
             </div>

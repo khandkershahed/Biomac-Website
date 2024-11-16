@@ -1,10 +1,11 @@
 <x-admin-app-layout :title="'Page Banner List'">
-    <div class="card card-flash">
-        <div class="card-header mt-6">
-            <div class="card-title">
+    <div class="card">
+        <div class="card-header bg-dark align-items-center d-flex justify-content-between">
+            <div>
+                <h1 class="mb-0 text-center w-100 text-white">Manage Your Page Banner</h1>
             </div>
-            <div class="card-toolbar">
-                <a href="{{ route('admin.page-banner.create') }}" class="btn btn-light-primary rounded-2">
+            <div>
+                <a href="{{ route('admin.banner.create') }}" class="btn btn-white rounded-2">
                     <span class="svg-icon svg-icon-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
@@ -16,50 +17,61 @@
                                 fill="currentColor" />
                         </svg>
                     </span>
-                    Add Page Banner
+                    Add Banner
                 </a>
             </div>
         </div>
-        <div class="card-body pt-0">
-            <table class="bannersDT table align-middle table-row-dashed fs-6 gy-5 mb-0" id="kt_permissions_table">
-                <thead>
-                    <tr class="text-center text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+        <div class="card-body py-0">
+            <table class="table my-datatable table-striped table-row-bordered gy-5 gs-7">
+                <thead class="bg-light-danger">
+                    <tr class=" text-white fw-bolder fs-7 text-uppercase gs-0">
                         <th width="5%">Sl</th>
-                        <th width="40%">Image</th>
-                        <th width="25%">Page Name</th>
-                        <th width="18%">Status</th>
-                        <th width="12%">Action</th>
+                        <th width="15%" class="text-center">Thumbnail Image</th>
+                        <th width="15%" class="text-center">Background Image</th>
+                        <th width="20%">Page Name</th>
+                        <th width="15%">Creacted At</th>
+                        <th width="10%">Status</th>
+                        <th width="20%" class="text-end">Action</th>
                     </tr>
                 </thead>
-
-                <tbody class="fw-bold text-gray-600 text-center">
+                <tbody>
                     @if ($banners)
                         @foreach ($banners as $banner)
                             <tr class="odd">
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
-                                <td>
-                                    <img class="w-450px h-50px" src="{{ asset('storage/'.$banner->image) }}" alt="{{ $banner->page_name }}">
+                                <td class="text-center">
+                                    <img class="w-50px h-50px"
+                                        src="{{ !empty(optional($banner)->image) ? asset('storage/' . optional($banner)->image) : asset('images/no_image.jpg') }}"
+                                        alt="{{ $banner->page_name }}">
+                                </td>
+                                <td class="text-center">
+                                    <img class="w-50px h-50px"
+                                        src="{{ !empty(optional($banner)->bg_image) ? asset('storage/' . optional($banner)->bg_image) : asset('images/no_image.jpg') }}"
+                                        alt="{{ $banner->page_name }}">
+                                </td>
+                                <td class="text-info">
+                                    {{ ucwords(str_replace(['_', '-', ',', '.', ';'], ' ', $banner->page_name)) }}
                                 </td>
                                 <td>
-                                    {{ ucfirst($banner->page_name) }}
+                                    {{ $banner->created_at->format('d F Y') }}
                                 </td>
                                 <td>
                                     <span class="badge {{ $banner->status == 'active' ? 'bg-success' : 'bg-danger' }}">
                                         {{ $banner->status == 'active' ? 'Active' : 'InActive' }}</span>
                                 </td>
-                                <td class="d-flex justify-content-between align-items-center">
+                                <td class="text-end">
                                     <a href="#"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                         data-bs-toggle="modal" data-bs-target="#faqViewModal_{{ $banner->id }}">
                                         <i class="fa-solid fa-expand"></i>
                                     </a>
-                                    <a href="{{ route('admin.faq.edit', $banner->id) }}"
+                                    <a href="{{ route('admin.banner.edit', $banner->id) }}"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
-                                    <a href="{{ route('admin.faq.destroy', $banner->id) }}"
+                                    <a href="{{ route('admin.banner.destroy', $banner->id) }}"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 delete"
                                         data-kt-docs-table-filter="delete_row">
                                         <i class="fa-solid fa-trash-can-arrow-up"></i>
@@ -72,7 +84,6 @@
             </table>
         </div>
     </div>
-
     @push('scripts')
         <script>
             $(document).ready(function() {
@@ -80,7 +91,7 @@
 
                 $(document).on('change', '.status-toggle', function() {
                     const id = $(this).data('id');
-                    const route = "{{ route('admin.page-banner.toggle-status', ':id') }}".replace(':id', id);
+                    const route = "{{ route('admin.banner.toggle-status', ':id') }}".replace(':id', id);
                     toggleStatus(route, id);
                 });
             });

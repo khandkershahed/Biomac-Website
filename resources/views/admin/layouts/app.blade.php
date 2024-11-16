@@ -3,42 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
-    <meta name="keywords"
-        content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title"
-        content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="{{ asset('storage/' . optional($setting)->site_favicon) }}" rel="apple-touch-icon-precomposed">
+    <link href="{{ asset('storage/' . optional($setting)->site_favicon) }}" rel="shortcut icon" type="image/png">
+    <meta name="title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta name="description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
 
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap_icons.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('admin/assets/css/font_awesome_6.css') }}"> --}}
-    {{-- Net Problem --}}
-    {{-- <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css"/> --}}
-    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> --}}
-    {{-- Net Problem --}}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
+    <meta property="og:title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta property="og:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
+    <meta property="og:image"
+        content="{{ optional($setting)->site_logo && file_exists(public_path('storage/' . optional($setting)->site_logo)) ? asset('storage/' . optional($setting)->site_logo) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
 
-    <link href="{{ asset('admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
+    <meta property="twitter:title"
+        content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta property="twitter:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
+    <meta property="twitter:image"
+        content="{{ optional($setting)->site_logo && file_exists(public_path('storage/' . optional($setting)->site_logo)) ? asset('storage/' . optional($setting)->site_logo) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
+
+    <title>{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}</title>
+
+
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap_icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/font_awesome_6.css') }}">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+
+    <link href="{{ asset('backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ asset('admin/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+    <link href="{{ asset('backend/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
         type="text/css" />
 
-    {{-- Net Problem --}}
-    {{-- <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet"> --}}
-    {{-- Net Problem --}}
 
-    <link href="{{ asset('admin/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('admin/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
-    @props(['title'])
-    <title>{{ $title ?? config('app.name', 'E-Commerce') }}</title>
+    <link href="{{ asset('backend/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
 </head>
 
 <body id="kt_body"
@@ -64,7 +74,7 @@
 
                     <div class="post d-flex flex-column-fluid" id="kt_post">
 
-                        <div id="kt_content_container" class="container-xxl">
+                        <div id="kt_content_container" class="container-fluid">
                             @if (session('error'))
                                 @foreach ($messages as $item)
                                     <div class="alert alert-danger">
@@ -106,97 +116,247 @@
 
 
 
-    <script src="{{ asset('admin/assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/scripts.bundle.js') }}"></script>
+    <script src="{{ asset('backend/assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/scripts.bundle.js') }}"></script>
 
-
-    <script src="{{ asset('admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-    <script src="{{ asset('admin/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
+    <script src="{{ asset('backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+    <script src="{{ asset('backend/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     {{-- <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script> --}}
-    <script src="{{ asset('admin/assets/plugins/custom/formrepeater/formrepeater.bundle.js') }}"></script>
+    <script src="{{ asset('backend/assets/plugins/custom/formrepeater/formrepeater.bundle.js') }}"></script>
 
 
 
 
-    <script src="{{ asset('admin/assets/js/widgets.bundle.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/custom/widgets.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/custom/apps/chat/chat.js') }}"></script>
+
+    <script src="{{ asset('backend/assets/js/widgets.bundle.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/custom/widgets.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/custom/apps/chat/chat.js') }}"></script>
     {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script> --}}
-    <script src="{{ asset('admin/assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
-
-    <script src="{{ asset('admin/js/custom.js') }}"></script>
+    <script src="{{ asset('backend/assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="{{ asset('backend/js/custom.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @include('toastr')
     @stack('scripts')
-
     <script>
-        $(document).ready(function() {
-            $("#kt_datatable_example").DataTable({
-                "language": {
-                    "lengthMenu": "Show _MENU_",
-                },
-                "dom": "<'row'" +
-                    "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
-                    "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
-                    ">" +
-
-                    "<'table-responsive'tr>" +
-
-                    "<'row'" +
-                    "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
-                    "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
-                    ">"
-            });
+        document.querySelectorAll('.ckeditor').forEach(element => {
+            if (!element.classList.contains('ck-editor__editable_inline')) {
+                ClassicEditor
+                    .create(element)
+                    .then(editor => {
+                        console.log('CKEditor initialized:', editor);
+                    })
+                    .catch(error => {
+                        console.error('CKEditor initialization error:', error);
+                    });
+            }
         });
     </script>
-
     <script>
-        // Make the DIV element draggable:
-        var element = document.querySelector('.modal');
-        dragElement(element);
+        //  DropZone Image
+        $(document).ready(function() {
+            var selectedFiles = [];
 
-        function dragElement(elmnt) {
-            var pos1 = 0,
-                pos2 = 0,
-                pos3 = 0,
-                pos4 = 0;
-            if (elmnt.querySelector('.modal-content')) {
-                // if present, the header is where you move the DIV from:
-                elmnt.querySelector('.modal-content').onmousedown = dragMouseDown;
-            } else {
-                // otherwise, move the DIV from anywhere inside the DIV:
-                elmnt.onmousedown = dragMouseDown;
+            $(".dropzone-field").on("change", "#files", function(e) {
+                var files = e.target.files,
+                    filesLength = files.length;
+
+                $(".custom-file-upload").toggle(filesLength === 0 && selectedFiles.length === 0);
+
+                for (var i = 0; i < filesLength; i++) {
+                    var f = files[i];
+                    selectedFiles.push(f);
+                    var fileReader = new FileReader();
+                    fileReader.onload = (function(file) {
+                        return function(e) {
+                            $("<div class=\"img-thumb-wrapper card shadow\">" +
+                                "<img class=\"img-thumb\" src=\"" + e.target.result +
+                                "\" title=\"" + file.name + "\"/>" +
+                                "<br/><span class=\"remove\">Remove</span>" +
+                                "</div>").insertAfter("#files");
+                        };
+                    })(f);
+                    fileReader.readAsDataURL(f);
+                }
+                // console.log(selectedFiles);
+                $(".existing-images").show();
+            });
+
+            // Use event delegation for the click event
+            $(".dropzone-field").on("click", ".remove", function() {
+                var wrapper = $(this).parent(".img-thumb-wrapper");
+                wrapper.remove();
+                var removedFile = wrapper.find('img').prop('title');
+                selectedFiles = selectedFiles.filter(function(file) {
+                    return file.name !== removedFile;
+                });
+                updateInputFiles();
+                $(".custom-file-upload").toggle(selectedFiles.length === 0);
+                // alert(selectedFiles.length);
+            });
+
+            function updateInputFiles() {
+                // Create a new set of files excluding the removed one
+                var newInputFiles = new DataTransfer();
+                selectedFiles.forEach(function(file) {
+                    newInputFiles.items.add(file);
+                });
+
+                // Clear the input
+                $("#files").val("");
+
+                // Assign the new set of files to the input
+                $("#files")[0].files = newInputFiles.files;
+            }
+        });
+        // checkbox And Select
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const $selectAllCheckbox = $('.metronic_select_all');
+            const $categoryCheckboxes = $('.bulkDelete-checkbox');
+            const $deleteButton = $('#bulkDelete');
+
+            function updateDeleteButtonVisibility() {
+                // Check if any checkbox is checked
+                const anyChecked = $categoryCheckboxes.is(':checked');
+                $deleteButton.toggle(anyChecked);
             }
 
-            function dragMouseDown(e) {
-                e = e || window.event;
-                // get the mouse cursor position at startup:
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // call a function whenever the cursor moves:
-                document.onmousemove = elementDrag;
+            // Handle 'Select All' checkbox change
+            $selectAllCheckbox.on('change', function() {
+                $categoryCheckboxes.prop('checked', $(this).prop('checked'));
+                updateDeleteButtonVisibility();
+            });
+
+            // Handle individual checkbox changes
+            $categoryCheckboxes.on('change', function() {
+                updateDeleteButtonVisibility();
+            });
+
+            // Initial check to set the button visibility correctly
+            updateDeleteButtonVisibility();
+        });
+        // Data table
+        class DataTableInitializer {
+            constructor(selector) {
+                this.selector = selector;
+                this.init();
             }
 
-            function elementDrag(e) {
-                e = e || window.event;
-                // calculate the new cursor position:
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // set the element's new position:
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-            }
-
-            function closeDragElement() {
-                // stop moving when mouse button is released:
-                document.onmouseup = null;
-                document.onmousemove = null;
+            init() {
+                $(this.selector).DataTable({
+                    "fixedHeader": {
+                        "header": true,
+                        "headerOffset": 5
+                    },
+                    "language": {
+                        "lengthMenu": "Show _MENU_",
+                    },
+                    "dom": "<'row mb-2'" +
+                        "<'col-sm-6 d-flex align-items-center justify-content-start dt-toolbar'l>" +
+                        "<'col-sm-6 d-flex align-items-center justify-content-end dt-toolbar'f>" +
+                        ">" +
+                        "<'table-responsive'tr>" +
+                        "<'row'" +
+                        "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                        "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                        ">"
+                });
             }
         }
+
+        // Initialize DataTables for elements with class 'my-datatable'
+        $(document).ready(function() {
+            new DataTableInitializer('.my-datatable');
+        });
+        // Modal js
+        // Make the DIV element draggable:
+        // var element = document.querySelector('.modal');
+        // dragElement(element);
+
+        // function dragElement(elmnt) {
+        //     var pos1 = 0,
+        //         pos2 = 0,
+        //         pos3 = 0,
+        //         pos4 = 0;
+        //     if (elmnt.querySelector('.modal-content')) {
+        //         // if present, the header is where you move the DIV from:
+        //         elmnt.querySelector('.modal-content').onmousedown = dragMouseDown;
+        //     } else {
+        //         // otherwise, move the DIV from anywhere inside the DIV:
+        //         elmnt.onmousedown = dragMouseDown;
+        //     }
+
+        //     function dragMouseDown(e) {
+        //         e = e || window.event;
+        //         // get the mouse cursor position at startup:
+        //         pos3 = e.clientX;
+        //         pos4 = e.clientY;
+        //         document.onmouseup = closeDragElement;
+        //         // call a function whenever the cursor moves:
+        //         document.onmousemove = elementDrag;
+        //     }
+
+        //     function elementDrag(e) {
+        //         e = e || window.event;
+        //         // calculate the new cursor position:
+        //         pos1 = pos3 - e.clientX;
+        //         pos2 = pos4 - e.clientY;
+        //         pos3 = e.clientX;
+        //         pos4 = e.clientY;
+        //         // set the element's new position:
+        //         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        //         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        //     }
+
+        //     function closeDragElement() {
+        //         // stop moving when mouse button is released:
+        //         document.onmouseup = null;
+        //         document.onmousemove = null;
+        //     }
+        // }
+    </script>
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+
+                    toastr.options.timeOut = 10000;
+                    toastr.info("{{ Session::get('message') }}");
+                    var audio = new Audio('audio.mp3');
+                    audio.play();
+                    break;
+                case 'success':
+
+                    toastr.options.timeOut = 10000;
+                    toastr.success("{{ Session::get('message') }}");
+                    var audio = new Audio('audio.mp3');
+                    audio.play();
+
+                    break;
+                case 'warning':
+
+                    toastr.options.timeOut = 10000;
+                    toastr.warning("{{ Session::get('message') }}");
+                    var audio = new Audio('audio.mp3');
+                    audio.play();
+
+                    break;
+                case 'error':
+
+                    toastr.options.timeOut = 10000;
+                    toastr.error("{{ Session::get('message') }}");
+                    var audio = new Audio('audio.mp3');
+                    audio.play();
+
+                    break;
+            }
+        @endif
     </script>
 
 </body>

@@ -9,6 +9,13 @@
         <x-metronic.input id="website_name" type="text" name="website_name" :value="old('website_name', optional($setting)->website_name)"
             placeholder="Site Name"></x-metronic.input>
     </div>
+    <div class="col-lg-4 mb-7">
+        <x-metronic.label for="site_motto" class="col-form-label fw-bold fs-6 ">{{ __('Site Slogan') }}
+        </x-metronic.label>
+
+        <x-metronic.input id="site_motto" type="text" name="site_motto" :value="old('site_motto', optional($setting)->site_motto)"
+            placeholder="Site Name"></x-metronic.input>
+    </div>
 
     <div class="col-lg-4 mb-7">
         <x-metronic.label for="site_logo_white"
@@ -16,7 +23,7 @@
         </x-metronic.label>
 
         <x-metronic.file-input id="site_logo_white" name="site_logo_white" :source="asset('storage/' . optional($setting)->site_logo_white)"
-            :value="old('site_logo_white')"></x-metronic.file-input>
+            :value="old('site_logo_white', optional($setting)->site_logo_white)"></x-metronic.file-input>
     </div>
     <div class="col-lg-4 mb-7">
         <x-metronic.label for="site_logo_black"
@@ -24,7 +31,7 @@
         </x-metronic.label>
 
         <x-metronic.file-input id="site_logo_black" name="site_logo_black" :source="asset('storage/' . optional($setting)->site_logo_black)"
-            :value="old('site_logo_black')"></x-metronic.file-input>
+            :value="old('site_logo_black', optional($setting)->site_logo_black)"></x-metronic.file-input>
     </div>
     <div class="col-lg-4 mb-7">
         <x-metronic.label for="site_favicon" class="col-form-label fw-bold fs-6 ">{{ __('Site Favicon') }}
@@ -83,13 +90,13 @@
         </x-metronic.label>
 
         <textarea name="address_line_one" id="address_line_one" cols="1" rows="1" class="form-control"
-            placeholder="Enter Address Line One">{!! $setting ? $setting->address_line_one : '' !!}</textarea>
+            placeholder="Enter Address Line One">{!! old('address_line_one', optional($setting)->address_line_one) !!}</textarea>
     </div>
     <div class="col-lg-6 mb-7">
         <x-metronic.label for="address_line_two" class="col-form-label fw-bold fs-6">{{ __('Address Line Two') }}
         </x-metronic.label>
 
         <textarea name="address_line_two" id="address_line_two" cols="1" rows="1" class="form-control"
-            placeholder="Enter Address Line Two'">{!! $setting ? $setting->address_line_two : '' !!}</textarea>
+            placeholder="Enter Address Line Two'">{!! old('address_line_two', optional($setting)->address_line_two) !!}</textarea>
     </div>
 </div>
