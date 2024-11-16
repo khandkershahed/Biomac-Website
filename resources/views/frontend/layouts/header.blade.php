@@ -5,9 +5,11 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-between">
                         <ul class="contact-list d-flex flex-wrap align-items-center list-unstyled mb-0">
-                            <li>
-                                <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002) 01061245741</a>
-                            </li>
+                            @if (optional($setting)->primary_phone)
+                                <li>
+                                    <i class="icon-phone"></i><a href="https://wa.me/{{ optional($setting)->whatsapp_number }}">Emergency Line: {{ optional($setting)->primary_phone }}</a>
+                                </li>
+                            @endif
                             @if (optional($setting)->address_line_two)
                                 <li>
                                     <i class="icon-location"></i><a href="#">Location:
