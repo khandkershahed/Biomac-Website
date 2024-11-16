@@ -10,7 +10,7 @@
         <div class="map-container">
             <div class="contact-panel p-0">
                 <div class="panel-header">
-                    <h3 class="panel-title color-white mb-0">Offices and Main Labs</h3>
+                    <h3 class="panel-title color-white mb-0" style="text-transform:initial;">Offices and Main Labs</h3>
                 </div>
                 <div class="accordion" id="accordion">
                     <div class="accordion-item opened">
@@ -34,7 +34,6 @@
                                     <li>Address: {{ optional($setting)->address_line_one }} <br>
                                         {{ optional($setting)->address_line_two }}
                                     </li>
-                                    <li> Hours: Sat - Thurs: 9:00 am - 7:00 pm </li>
                                 </ul>
                             </div>
                         </div>
@@ -58,7 +57,6 @@
                                         </a>
                                     </li>
                                     <li>Address: Prince Edward Island, Canada</li>
-                                    <li>Hours: Mon-Fri: 8am – 7pm</li>
                                 </ul>
                             </div>
                         </div>
