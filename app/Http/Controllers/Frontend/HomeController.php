@@ -41,7 +41,10 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('frontend.pages.contact');
+        $data = [
+            'banner'  => PageBanner::active()->where('page_name', 'contact')->latest('id')->first(),
+        ];
+        return view('frontend.pages.contact',$data);
     }
     public function aboutUs()
     {

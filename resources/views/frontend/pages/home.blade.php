@@ -93,9 +93,9 @@
                         </div>
                     </div>
                     <div class="about-img d-flex justify-content-end">
-                        <img src="{{ !empty(optional($home_slider_bottom_first)->bg_image) && file_exists(public_path('storage/' . optional($home_slider_bottom_first)->bg_image)) ? asset('storage/' . optional($home_slider_bottom_first)->bg_image) : asset('frontend/images/no-logo(217-55).jpg') }}"
+                        <img src="{{ !empty(optional($home_slider_bottom_first)->bg_image) && file_exists(public_path('storage/' . optional($home_slider_bottom_first)->bg_image)) ? asset('storage/' . optional($home_slider_bottom_first)->bg_image) : asset('frontend/assets/images/about/2.png') }}"
                             alt="about">
-                        <img src="{{ asset('frontend/assets/images/about/2.png') }}" alt="about">
+                        {{-- <img src="{{ asset('frontend/assets/images/about/2.png') }}" alt="about"> --}}
                     </div>
                 </div><!-- /.col-12 -->
                 <div class="col-sm-12 col-md-10 col-lg-8 col-xl-4">

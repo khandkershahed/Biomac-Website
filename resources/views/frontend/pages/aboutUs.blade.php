@@ -34,7 +34,7 @@
                             <a href="index.html"><i class="icon-home"></i> <span>Home</span></a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="about-us.html">About Us</a>
+                            <a href="{{ route('about') }}">About Us</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">About Us</li>
                     </ol>
@@ -181,7 +181,7 @@
                 </div>
             </div>
             <div class="row">
-                
+
                 <div class="col-sm-6 col-d-4 col-lg-4">
                     <div class="fancybox-item">
                         <div class="fancybox-icon">
@@ -199,7 +199,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-6 col-d-4 col-lg-4">
                     <div class="fancybox-item">
                         <div class="fancybox-icon">
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-6 col-d-4 col-lg-4">
                     <div class="fancybox-item">
                         <div class="fancybox-icon">
@@ -236,7 +236,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-6 col-d-4 col-lg-4">
                     <div class="fancybox-item">
                         <div class="fancybox-icon">
@@ -255,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-6 col-d-4 col-lg-4">
                     <div class="fancybox-item">
                         <div class="fancybox-icon">
@@ -273,7 +273,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-6 col-d-4 col-lg-4">
                     <div class="fancybox-item">
                         <div class="fancybox-icon">
@@ -353,7 +353,7 @@
                             </div>
                         </div>
                         <div class="mx-80 mt-20">
-                            <a href="about-us.html" class="btn btn-white btn-xl">
+                            <a href="{{ route('about') }}" class="btn btn-white btn-xl">
                                 <span>Looking for More Info!</span> <i class="icon-arrow-right"></i>
                             </a>
                         </div>
@@ -377,7 +377,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
-                    
+
                     <div class="post-item featured-post">
                         <div class="post-img">
                             <span class="post-meta-date">
@@ -412,7 +412,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
-                    
+
                     <div class="post-item">
                         <div class="post-body">
                             <div class="post-meta d-flex align-items-center">
@@ -430,7 +430,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="post-item">
                         <div class="post-body">
                             <div class="post-meta d-flex align-items-center">
@@ -448,7 +448,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="post-item">
                         <div class="post-body">
                             <div class="post-meta d-flex align-items-center">
@@ -466,7 +466,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="post-item">
                         <div class="post-body">
                             <div class="post-meta d-flex align-items-center">

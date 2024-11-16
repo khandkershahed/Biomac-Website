@@ -5,23 +5,23 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-between">
                         <ul class="contact-list d-flex flex-wrap align-items-center list-unstyled mb-0">
-                            @if (optional($setting)->primary_phone)
+                            {{-- @if (optional($setting)->primary_phone)
                                 <li>
                                     <i class="icon-phone"></i><a
                                         href="https://wa.me/{{ optional($setting)->whatsapp_number }}">Emergency Line:
                                         {{ optional($setting)->primary_phone }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                             @if (optional($setting)->address_line_two)
                                 <li>
                                     <i class="icon-location"></i><a href="#">Location:
                                         {{ optional($setting)->address_line_two }}</a>
                                 </li>
                             @endif
-                            <li>
+                            {{-- <li>
                                 <i class="icon-clock"></i>
                                 <a href="{{ route('contact') }}">Sat - Thurs: 9:00 am - 7:00 pm</a>
-                            </li>
+                            </li> --}}
                         </ul><!-- /.contact-list -->
                         <div class="d-flex align-items-center">
                             {{-- <ul class="topbar-nav list-unstyled d-flex mb-0 mr-30">
@@ -155,7 +155,9 @@
             </div>
             <div class="d-none d-xl-flex align-items-center position-relative ml-30">
                 <div class="contact-phone d-flex align-items-center">
-                    <div class="contact-icon"><i class="icon-chemical9"></i></div>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div>
                         <span class="d-block">Email Us Now:</span>
                         <a class="phone-link d-block" href="mailto:{{ optional($setting)->info_email }}">{{ optional($setting)->info_email }}</a>
