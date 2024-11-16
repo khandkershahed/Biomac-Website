@@ -30,8 +30,8 @@ return new class extends Migration
             $table->text('address_line_one')->nullable();
             $table->text('address_line_two')->nullable();
 
-            $table->text('copyright_title')->nullable();
             $table->text('copyright_url')->nullable();
+            $table->text('copyright_title')->nullable();
 
             $table->string('site_title', 250)->nullable();
             $table->text('site_url')->nullable();
@@ -56,8 +56,8 @@ return new class extends Migration
             $table->text('tumblr_url')->nullable();
             $table->text('tiktok_url')->nullable();
 
-            $table->enum('api_verification', ['0', '1'])->default('0')->nullable();
-            $table->enum('user_verification', ['0', '1'])->default('0')->nullable();
+            $table->string('api_verification')->default('0')->nullable();
+            $table->string('user_verification')->default('0')->nullable();
             $table->integer('minimum_order_amount')->nullable();
             $table->json('allowed_ip')->nullable();
 

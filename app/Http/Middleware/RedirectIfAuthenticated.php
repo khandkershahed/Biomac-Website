@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                         return redirect(RouteServiceProvider::ADMIN_HOME);
                         break;
                     default:
-                        return redirect(RouteServiceProvider::HOME);
+                        return redirect(RouteServiceProvider::ADMIN_HOME);
                         break;
                 }
             }

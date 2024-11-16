@@ -22,7 +22,8 @@ class DataServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Set default values
-        
+        // if (Schema::hasTable('settings')) {
+        //     View::share('setting', Setting::first());
+        // }
     }
 }

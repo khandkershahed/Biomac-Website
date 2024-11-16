@@ -2,129 +2,77 @@
     <!-- ============================
         Slider
     ============================== -->
-    <section class="slider">
-        <div class="slick-carousel carousel-dots-light m-slides-0"
-            data-slick='{"slidesToShow": 1,"autoplay": true, "arrows": true, "dots": true, "speed": 700,"fade": true,"cssEase": "linear"}'>
-            <div class="slide-item bg-overlay align-v-h">
-                <div class="bg-img"><img src="assets/images/sliders/1.jpg" alt="slide img"></div>
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-                            <div class="slide-content">
-                                <span class="slide-subtitle">Excellence, Dedicated, and Experienced Laboratory
-                                    Technologists!</span>
-                                <h2 class="slide-title">Subtle Clinical & Laboratory Tests!</h2>
-                                <p class="slide-desc">We are continually harnessing our medical expertise to build best
-                                    test offering
-                                    while investing in technology to transform the delivery of health care.</p>
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <a href="tests-book-visit.html" class="btn btn-white btn-white-style2 mr-30">
-                                        <span>Book a Home Visit</span>
-                                        <i class="icon-arrow-right"></i>
-                                    </a>
-                                    <a href="tests-services.html" class="btn btn-white btn-outlined">
-                                        <span>Tests and Services</span>
-                                    </a>
-                                </div>
-                            </div><!-- /.slide-content -->
-                        </div><!-- /.col-xl-7 -->
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1">
-                            <div class="fancybox-layout5 p-0 m-0">
-                                <div class="fancybox-container">
-                                    <!-- fancybox item #1 -->
-                                    <div class="fancybox-item">
-                                        <div class="fancybox-body">
-                                            <div class="fancybox-icon">
-                                                <i class="icon-chemical5"></i>
-                                            </div><!-- /.fancybox-icon -->
-                                            <h4 class="fancybox-title">New Advanced Instruments</h4>
-                                        </div><!-- /.fancybox-body -->
-                                    </div><!-- /.fancybox-item -->
-                                    <!-- fancybox item #2 -->
-                                    <div class="fancybox-item">
-                                        <div class="fancybox-body">
-                                            <div class="fancybox-icon">
-                                                <i class="icon-chemical2"></i>
-                                            </div><!-- /.fancybox-icon -->
-                                            <h4 class="fancybox-title">Strict Quality Practices</h4>
-                                        </div><!-- /.fancybox-body -->
-                                    </div><!-- /.fancybox-item -->
-                                    <!-- fancybox item #3 -->
-                                    <div class="fancybox-item">
-                                        <div class="fancybox-body">
-                                            <div class="fancybox-icon">
-                                                <i class="icon-archive"></i>
-                                            </div><!-- /.fancybox-icon -->
-                                            <h4 class="fancybox-title">Customized Lab Solutions</h4>
-                                        </div><!-- /.fancybox-body -->
-                                    </div><!-- /.fancybox-item -->
-                                </div><!-- /.fancybox-container -->
-                            </div><!-- /.fancybox-layout5 -->
-                        </div><!-- /.col-xl-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.slide-item -->
-            <div class="slide-item bg-overlay align-v-h">
-                <div class="bg-img"><img src="assets/images/sliders/2.jpg" alt="slide img"></div>
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-                            <div class="slide-content">
-                                <span class="slide-subtitle">Excellence, Dedicated, and Experienced Laboratory
-                                    Technologists!</span>
-                                <h2 class="slide-title">Quality Laboratory Testing Services!</h2>
-                                <p class="slide-desc">We are continually harnessing our medical expertise to build best
-                                    test offering
-                                    while investing in technology to transform the delivery of health care.</p>
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <a href="tests-book-visit.html" class="btn btn-white btn-white-style2 mr-30">
-                                        <span>Book a Home Visit</span>
-                                        <i class="icon-arrow-right"></i>
-                                    </a>
-                                    <a href="tests-services.html" class="btn btn-white btn-outlined">
-                                        <span>Tests and Services</span>
-                                    </a>
-                                </div>
-                            </div><!-- /.slide-content -->
-                        </div><!-- /.col-xl-7 -->
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1">
-                            <div class="fancybox-layout5 p-0 m-0">
-                                <div class="fancybox-container">
-                                    <!-- fancybox item #1 -->
-                                    <div class="fancybox-item">
-                                        <div class="fancybox-body">
-                                            <div class="fancybox-icon">
-                                                <i class="icon-chemical5"></i>
-                                            </div><!-- /.fancybox-icon -->
-                                            <h4 class="fancybox-title">New Advanced Instruments</h4>
-                                        </div><!-- /.fancybox-body -->
-                                    </div><!-- /.fancybox-item -->
-                                    <!-- fancybox item #2 -->
-                                    <div class="fancybox-item">
-                                        <div class="fancybox-body">
-                                            <div class="fancybox-icon">
-                                                <i class="icon-chemical2"></i>
-                                            </div><!-- /.fancybox-icon -->
-                                            <h4 class="fancybox-title">Strict Quality Practices</h4>
-                                        </div><!-- /.fancybox-body -->
-                                    </div><!-- /.fancybox-item -->
-                                    <!-- fancybox item #3 -->
-                                    <div class="fancybox-item">
-                                        <div class="fancybox-body">
-                                            <div class="fancybox-icon">
-                                                <i class="icon-archive"></i>
-                                            </div><!-- /.fancybox-icon -->
-                                            <h4 class="fancybox-title">Customized Lab Solutions</h4>
-                                        </div><!-- /.fancybox-body -->
-                                    </div><!-- /.fancybox-item -->
-                                </div><!-- /.fancybox-container -->
-                            </div><!-- /.fancybox-layout5 -->
-                        </div><!-- /.col-xl-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.slide-item -->
-        </div><!-- /.carousel -->
-    </section><!-- /.slider -->
+    @if ($sliders)
+        <section class="slider">
+            <div class="slick-carousel carousel-dots-light m-slides-0"
+                data-slick='{"slidesToShow": 1,"autoplay": true, "arrows": true, "dots": true, "speed": 700,"fade": true,"cssEase": "linear"}'>
+                @foreach ($sliders as $slider)
+                    <div class="slide-item bg-overlay align-v-h">
+                        <div class="bg-img"><img src="{{ asset('storage/' . $slider->bg_image) }}" alt="slide img"></div>
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+                                    <div class="slide-content">
+                                        <span class="slide-subtitle">{{ $slider->badge }}</span>
+                                        <h2 class="slide-title">{{ $slider->title }}</h2>
+                                        <p class="slide-desc">
+                                            {{ $slider->subtitle }}
+                                        </p>
+                                        @if (!empty($slider->button_link) || !empty($slider->button_name))
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <a href="{{ $slider->button_link }}"
+                                                    class="btn btn-white btn-white-style2 mr-30">
+                                                    <span>{{ $slider->button_name }}</span>
+                                                    <i class="icon-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        @endif
+                                    </div><!-- /.slide-content -->
+                                </div><!-- /.col-xl-7 -->
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1">
+                                    <div class="fancybox-layout5 p-0 m-0">
+                                        <div class="fancybox-container">
+                                            <!-- fancybox item #1 -->
+                                            <div class="fancybox-item">
+                                                <div class="fancybox-body">
+                                                    <div class="fancybox-icon">
+                                                        <i class="fas fa-dna"></i>
+                                                    </div><!-- /.fancybox-icon -->
+                                                    <h4 class="fancybox-title">Enhancing genomics data accuracy &
+                                                        performance
+                                                    </h4>
+                                                </div><!-- /.fancybox-body -->
+                                            </div><!-- /.fancybox-item -->
+                                            <!-- fancybox item #2 -->
+                                            <div class="fancybox-item">
+                                                <div class="fancybox-body">
+                                                    <div class="fancybox-icon">
+                                                        <i class="fas fa-flask"></i>
+                                                    </div><!-- /.fancybox-icon -->
+                                                    <h4 class="fancybox-title">Ensuring reliable, reproducible protocols
+                                                    </h4>
+                                                </div><!-- /.fancybox-body -->
+                                            </div><!-- /.fancybox-item -->
+                                            <!-- fancybox item #3 -->
+                                            <div class="fancybox-item">
+                                                <div class="fancybox-body">
+                                                    <div class="fancybox-icon">
+                                                        <i class="fas fa-laptop-code"></i>
+                                                    </div><!-- /.fancybox-icon -->
+                                                    <h4 class="fancybox-title">Customizing computation for informatics
+                                                    </h4>
+                                                </div><!-- /.fancybox-body -->
+                                            </div><!-- /.fancybox-item -->
+                                        </div><!-- /.fancybox-container -->
+                                    </div><!-- /.fancybox-layout5 -->
+                                </div><!-- /.col-xl-3 -->
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    @endif
 
     <!-- ========================
         About Layout 2
@@ -139,25 +87,32 @@
                         </div>
                         <div class="about-text-banner">
                             <div class="heading-layout2">
-                                <h3 class="heading-title mb-0">A Trusted Healthcare Partner Providing You With High
-                                    Quality Test
-                                    Services to Manage All Health Effectively!</h3>
+                                <h3 class="heading-title mb-0">Unlocking life's code through genomics and machine
+                                    learning to drive innovation and transform health.</h3>
                             </div>
                         </div>
                     </div>
                     <div class="about-img d-flex justify-content-end">
-                        <img src="assets/images/about/2.png" alt="about">
+                        <img src="{{ !empty(optional($home_slider_bottom_first)->bg_image) && file_exists(public_path('storage/' . optional($home_slider_bottom_first)->bg_image)) ? asset('storage/' . optional($home_slider_bottom_first)->bg_image) : asset('frontend/images/no-logo(217-55).jpg') }}"
+                            alt="about">
+                        <img src="{{ asset('frontend/assets/images/about/2.png') }}" alt="about">
                     </div>
                 </div><!-- /.col-12 -->
                 <div class="col-sm-12 col-md-10 col-lg-8 col-xl-4">
                     <div class="about-Text">
-                        <p class="mb-30">With a belief that knowledge is power, we connect directly with patients to
-                            deliver their
-                            results so they have valuable health information when they need it most, we care about our
-                            people and
-                            are committed to excellence in the work.
+                        <p class="mb-30">
+                            As the founder of BioMac Lab, I am excited to share the transformative impact of genomic
+                            science and its synergy with machine learning. With Next Generation Sequencing (NGS), we are
+                            revolutionizing how we decode complex biological data, rapidly and precisely.
+
                         </p>
-                        <ul class="features-list-layout2 list-unstyled mb-40">
+                        <p class="mb-30">
+                            Machine
+                            learning enables us to uncover patterns, predict outcomes, and derive insights from vast
+                            datasets, opening doors to personalized medicine, disease prevention, microbial analysis,
+                            and evolutionary studies.
+                        </p>
+                        {{-- <ul class="features-list-layout2 list-unstyled mb-40">
                             <li class="feature-item">
                                 <i class="feature-icon"></i>
                                 <h4 class="feature-title mb-0">Health, Wellness and Insurance</h4>
@@ -170,19 +125,22 @@
                                 <i class="feature-icon"></i>
                                 <h4 class="feature-title mb-0">Family Scholarship Program</h4>
                             </li>
-                        </ul>
-                        <p class="mb-30">While we believe we are more than just numbers, the depth of our laboratories
-                            is pretty
-                            impressive.</p>
+                        </ul> --}}
+                        <p class="mb-30">
+                            At BioMac Lab, we strive to push these boundaries, merging
+                            bioinformatics, genomics, and intelligent algorithms to understand life's code, address
+                            global health challenges, and drive innovation in biological sciences.
+                        </p>
                         <div class="author-meta d-flex flex-wrap align-items-center mr-30">
                             <div class="author-img">
-                                <img src="assets/images/testimonials/thumbs/7.jpg" alt="thumb">
+                                <img src="{{ asset('frontend/assets/images/sk_injamamul_islam.png') }}"
+                                    alt="thumb">
                             </div>
                             <div>
-                                <h4 class="author-title">Jane Winston</h4>
+                                <h4 class="author-title">SK Injamamul Islam</h4>
                                 <span class="author-desc">Our Founder</span>
                             </div>
-                            <img src="assets/images/about/singnture2.png" class="author-singnture" alt="singnture">
+                            {{-- <img src="{{ asset('frontend/assets/images/about/singnture2.png') }}" class="author-singnture" alt="singnture"> --}}
                         </div>
                     </div>
                 </div><!-- /.col-lg-6 -->
@@ -200,26 +158,23 @@
                 <div class="col-12 col-xl-5 banner-content">
                     <div class="banner-text">
                         <div class="heading-layout2 heading-light">
-                            <h3 class="heading-title">We are Helping to Advance Health with Clinical Trials and
-                                Vaccines
-                                Development.</h3>
-                            <p class="heading-desc font-weight-bold mb-40">We believe in harnessing science for human
-                                good, so we
-                                work day and
-                                night, around the world, to deliver answers for health questions. That means everything
-                                from advancing
-                                diagnostic testing, to helping launch new drugs, to offering new perspectives through
-                                data, all
-                                drawing from a deep well of scientific expertise.
+                            <h3 class="heading-title">
+                                Pioneering Genomic Discovery through Machine Learning Integration
+                            </h3>
+                            <p class="heading-desc font-weight-bold mb-40">
+                                At BioMac Lab, we combine the power of genomics with advanced machine learning to drive
+                                transformative discoveries. From analyzing complex genomic datasets to accelerating
+                                precision drug development and enhancing immunoinformatics capabilities, our solutions
+                                unlock the full potential of genomic science
                             </p>
                         </div>
                         <div class="d-flex flex-wrap mb-90">
-                            <a href="about-us.html" class="btn btn-white btn-white-style2 mr-30">
+                            <a href="{{ route('contact') }}" class="btn btn-white btn-white-style2 mr-30">
                                 <span>Looking for More Info!</span> <i class="icon-arrow-right"></i>
                             </a>
-                            <a href="contact-us.html" class="btn btn-light btn-outlined">Contact Us</a>
+                            {{-- <a href="{{ route('contact') }}" class="btn btn-light btn-outlined">Contact Us</a> --}}
                         </div>
-                        <div class="fancybox-layout2 fancybox-light">
+                        {{-- <div class="fancybox-layout2 fancybox-light">
                             <div class="fancybox-item">
                                 <div class="fancybox-icon">
                                     <i class="icon-chemistry"></i>
@@ -242,13 +197,13 @@
                                         that are both reliable and rigorous.</p>
                                 </div><!-- /.fancybox-body -->
                             </div><!-- /.fancybox-item -->
-                        </div><!-- /.fancybox-layout2 -->
+                        </div> --}}
                     </div><!-- /.banner-text -->
                 </div><!-- /.col-xl-5 -->
                 <div class="col-12 col-xl-7 d-flex align-items-center pl-50 pr-0">
                     <div class="banner-img">
                         <div class="bg-img">
-                            <img src="assets/images/banners/8.jpg" alt="backgrounds">
+                            <img src="{{ asset('frontend/assets/images/banners/8.jpg') }}" alt="backgrounds">
                         </div>
                     </div>
                     <div class="banner-shape"></div>
@@ -674,85 +629,6 @@
         <!-- ======================
          Call to Action
         ========================= -->
-        <section class="cta-layout1 bg-secondary pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="cta-banner">
-                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                            <h4 class="cta-title">I'm a Healthcare Provider</h4>
-                            <p class="cta-desc">We pioneer advancements in clinical testing and partnerships with
-                                industry leaders
-                                to make sure your patients have the diagnostic information you need to make health
-                                decisions.</p>
-                            <ul
-                                class="features-list-layout3 list-horizontal bg-transparent list-unstyled mt-30 p-0 mb-0">
-                                <li class="feature-item">
-                                    <i class="feature-icon"></i>
-                                    <h4 class="feature-title mb-0">Provider Registration</h4>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="feature-icon"></i>
-                                    <h4 class="feature-title mb-0">Our Tests Directory</h4>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="feature-icon"></i>
-                                    <h4 class="feature-title mb-0">Resources & Supplies</h4>
-                                </li>
-                            </ul>
-                        </div><!-- /.cta-banner -->
-                    </div><!-- /.col-md-6 -->
-                    <div class="col-sm-12 col-md-6">
-                        <div class="cta-banner">
-                            <div class="cta-icon"><i class="icon-chemical9"></i></div>
-                            <h4 class="cta-title">I'm a Patient</h4>
-                            <p class="cta-desc">We pioneer advancements in clinical testing and partnerships with
-                                industry leaders
-                                to make sure your patients have the diagnostic information you need to make health
-                                decisions.</p>
-                            <ul
-                                class="features-list-layout3 list-secondary list-horizontal  list-unstyled mt-30 p-0 mb-0">
-                                <li class="feature-item">
-                                    <i class="feature-icon"></i>
-                                    <h4 class="feature-title mb-0">Tests & Services</h4>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="feature-icon"></i>
-                                    <h4 class="feature-title mb-0">Find a Location</h4>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="feature-icon"></i>
-                                    <h4 class="feature-title mb-0">Book an Appointment</h4>
-                                </li>
-                            </ul>
-                        </div><!-- /.cta-banner -->
-                    </div><!-- /.col-md-6 -->
-                </div><!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-8 col-xl-7">
-                        <div class="cta-block d-flex align-items-start">
-                            <img src="assets/images/icons/file-outlined.png" alt="file" class="mr-40">
-                            <div>
-                                <h4 class="cta-title color-white">Your Trusted Partner in Medicine Testing!</h4>
-                                <p class="cta-desc color-gray">Your focus is on providing patients the best possible
-                                    care and we’re
-                                    here
-                                    to help. To complement our comprehensive menu of tests, we provide resources to
-                                    registered
-                                    healthcare
-                                    professionals to support your testing needs.
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- /.col-xl-7 -->
-                    <div class="col-md-12 col-lg-4 col-xl-3 offset-xl-2">
-                        <a href="tests-accreditation.html" class="btn btn-primary btn-primary-style2">
-                            <span>Accreditation & Licensing</span> <i class="icon-arrow-right"></i>
-                        </a>
-                    </div><!-- /.col-xl-3 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.cta-layout1 -->
 
         <!-- ======================
          Banner Layout 7

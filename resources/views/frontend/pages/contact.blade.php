@@ -12,53 +12,49 @@
                 <div class="accordion" id="accordion">
                     <div class="accordion-item opened">
                         <div class="accordion-header" data-toggle="collapse" data-target="#collapse1">
-                            <a class="accordion-title" href="#">London Office</a>
+                            <a class="accordion-title" href="#">Dhaka Office</a>
                         </div>
                         <div id="collapse1" class="collapse show" data-parent="#accordion">
                             <div class="accordion-body">
                                 <ul class="contact-list list-unstyled mb-0">
-                                    <li>Phone: 010612457410</li>
-                                    <li>Email: <a href="https://7oroof.com/cdn-cgi/l/email-protection"
-                                            class="__cf_email__"
-                                            data-cfemail="7f2f0d10091a0b0b1e3f48100d101019511c1012">[email&#160;protected]</a>
+                                    @if (optional($setting)->primary_phone)
+                                        <li>Phone: {{ optional($setting)->primary_phone }}</li>
+                                    @endif
+                                    <li>Email: <a href="mailto:{{ optional($setting)->info_email }}"
+                                            class="__cf_email__">
+                                            {{ optional($setting)->info_email }}
+                                        </a> <br>
+                                        <a href="mailto:{{ optional($setting)->support_email }}" class="__cf_email__">
+                                            {{ optional($setting)->support_email }}
+                                        </a>
                                     </li>
-                                    <li>Address: 2307 Beverley Rd Brooklyn, NY</li>
-                                    <li>Hours: Mon-Fri: 8am – 7pm</li>
+                                    <li>Address: {{ optional($setting)->address_line_one }} <br>
+                                        {{ optional($setting)->address_line_two }}
+                                    </li>
+                                    <li> Hours: Sat - Thurs: 9:00 am - 7:00 pm </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header" data-toggle="collapse" data-target="#collapse2">
-                            <a class="accordion-title" href="#">Berlin Office</a>
+                            <a class="accordion-title" href="#">Canada Office</a>
                         </div>
                         <div id="collapse2" class="collapse" data-parent="#accordion">
                             <div class="accordion-body">
                                 <ul class="contact-list list-unstyled mb-0">
-                                    <li>Phone: 01001314999</li>
-                                    <li>Email: <a href="https://7oroof.com/cdn-cgi/l/email-protection"
-                                            class="__cf_email__"
-                                            data-cfemail="5b0b29342d3e2f2f3a1b6c342934343d75383436">[email&#160;protected]</a>
+                                    @if (optional($setting)->alternative_phone)
+                                        <li>Phone: {{ optional($setting)->alternative_phone }}</li>
+                                    @endif
+                                    <li>Email: <a href="mailto:{{ optional($setting)->info_email }}"
+                                            class="__cf_email__">
+                                            {{ optional($setting)->info_email }}
+                                        </a> <br>
+                                        <a href="mailto:{{ optional($setting)->support_email }}" class="__cf_email__">
+                                            {{ optional($setting)->support_email }}
+                                        </a>
                                     </li>
-                                    <li>Address: 2307 Beverley Rd Brooklyn, NY</li>
-                                    <li>Hours: Mon-Fri: 8am – 7pm</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header" data-toggle="collapse" data-target="#collapse3">
-                            <a class="accordion-title" href="#">Manchester Office</a>
-                        </div>
-                        <div id="collapse3" class="collapse" data-parent="#accordion">
-                            <div class="accordion-body">
-                                <ul class="contact-list list-unstyled mb-0">
-                                    <li>Phone: 010612457410</li>
-                                    <li>Email: <a href="https://7oroof.com/cdn-cgi/l/email-protection"
-                                            class="__cf_email__"
-                                            data-cfemail="267654495043525247661149544949400845494b">[email&#160;protected]</a>
-                                    </li>
-                                    <li>Address: 2307 Beverley Rd Brooklyn, NY</li>
+                                    <li>Address: Prince Edward Island, Canada</li>
                                     <li>Hours: Mon-Fri: 8am – 7pm</li>
                                 </ul>
                             </div>
@@ -77,9 +73,9 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-7">
                     <div class="heading-layout2 mb-50">
-                        <h2 class="heading-subtitle">Contact Us And We Will Respond Within The Next Two Working Days
+                        <h2 class="heading-subtitle">Contact Us And We Will Respond Soon
                         </h2>
-                        <h3 class="heading-title">Get In Touch With Your Nearest Local Health Business Sales Executive
+                        <h3 class="heading-title">Get In Touch With Us
                         </h3>
                     </div>
                 </div>
@@ -87,19 +83,19 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     <div class="text-block">
-                        <p class="text-block-desc">Depending on the nature of your enquiry, the customer care centre
-                            staff will
-                            then
-                            distribute your request for consultation to the appropriate Laboratory Medicine discipline.
+                        <p class="text-block-desc">
+                            If you're interested in personalized training in bioinformatics and machine learning within
+                            genomic science, we offer tailored one-on-one sessions based on your preferences.
                         </p>
-                        <p class="text-block-desc">A member of the Medical/Scientific Staff will get back to the
-                            requesting
-                            healthcare provider within one business day.
+                        <p class="text-block-desc">
+                            We also
+                            provide internships focused on specific genomic science projects. Contact us to learn more
+                            and start your research journey!
                         </p>
                     </div>
-                    <a href="about-us.html" class="btn btn-primary">
+                    {{-- <a href="about-us.html" class="btn btn-primary">
                         <span>Accreditation & Licensing</span> <i class="icon-arrow-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-8">
                     <form class="contact-panel-form" method="post" action="{{ route('contact.add') }}"
@@ -466,7 +462,7 @@
                                 } else {
                                     contactResult.html(
                                         '<div class="alert alert-danger" role="alert"><strong>There was an error submitting your request. Please try again later.</strong></div>'
-                                        );
+                                    );
                                 }
                             }
                         });

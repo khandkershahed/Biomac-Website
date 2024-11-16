@@ -18,6 +18,16 @@ class Brand extends Model
      * @var array
      */
     protected $guarded = [];
-
-    
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'brand_id');
+    }
+    public function deals()
+    {
+        return $this->hasMany(DealBanner::class, 'brand_id');
+    }
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
 }

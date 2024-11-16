@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id')->nullable()->constrained('categories')->onDelete('set null');
-            $table->string('name')->index();
-            $table->string('slug')->unique();
+            $table->string('name', 200)->unique();
+            $table->string('slug', 200)->unique();
             $table->string('logo', 220)->nullable();
             $table->string('image', 220)->nullable();
             $table->string('banner_image', 220)->nullable();
             $table->text('description')->nullable();
+            $table->string('url', 255)->nullable();
             $table->string('status')->default('active')->comment('inactive,active');
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('clients');
     }
 };

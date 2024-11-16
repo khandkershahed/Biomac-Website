@@ -37,9 +37,9 @@
                             data-placeholder="Select an option">
                             <option></option>
                             <option value="home_slider">Home Page Slider</option>
-                            <option value="home_slider_bottom_first">Home Page Slider Bottom First</option>
-                            <option value="home_slider_bottom_second">Home Page Slider Bottom Second</option>
-                            <option value="home_slider_bottom_third">Home Page Slider Bottom Third</option>
+                            <option value="home_slider_bottom_first">Home Page Slider Bottom</option>
+                            {{-- <option value="home_slider_bottom_second">Home Page Slider Bottom Second</option>
+                            <option value="home_slider_bottom_third">Home Page Slider Bottom Third</option> --}}
                             <option value="user">User Panel</option>
                             <option value="cart">Cart Page</option>
                             <option value="checkout">Checkout Page</option>
