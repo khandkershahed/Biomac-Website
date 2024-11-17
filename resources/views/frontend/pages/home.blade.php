@@ -203,7 +203,7 @@
                 <div class="col-12 col-xl-7 d-flex align-items-center pl-50 pr-0">
                     <div class="banner-img">
                         <div class="bg-img">
-                            <img src="{{ asset('frontend/assets/images/banners/8.jpg') }}" alt="backgrounds">
+                            <img src="{{ asset('frontend/assets/images/home/genomic_discovery.png') }}" alt="backgrounds">
                         </div>
                     </div>
                     <div class="banner-shape"></div>
