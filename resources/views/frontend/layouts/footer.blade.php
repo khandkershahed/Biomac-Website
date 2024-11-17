@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-widget-time">
-                        <h6 class="footer-widget-title">Working Hours</h6>
+                        {{-- <h6 class="footer-widget-title">Working Hours</h6>
                         <ul class="time-list list-unstyled">
                             <li>
                                 <span class="day">Sat - Thurs</span><span class="time">09.00 - 22:00</span>
@@ -72,7 +72,7 @@
                             <li>
                                 <span class="day">Friday</span><span class="time">Day off</span>
                             </li>
-                        </ul>
+                        </ul> --}}
                         <div class="d-flex align-items-center">
                             <a href="{{ route('contact') }}" class="btn btn-primary btn-block">
                                 <span>Contact With Us</span> <i class="icon-arrow-right"></i>
@@ -86,12 +86,14 @@
     <div class="footer-secondary">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 d-flex flex-wrap">
-                    <ul class="social-icons list-unstyled mb-0 mr-50">
-                        <li><a href="{{ optional($setting)->facebook_url }}"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="{{ optional($setting)->linkedin_url }}"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="{{ optional($setting)->twitter_url }}"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
+                <div class="col-12 d-flex flex-wrap justify-content-between">
+                    <div>
+                        <ul class="social-icons list-unstyled mb-0 mr-50">
+                            <li><a href="{{ optional($setting)->facebook_url }}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{ optional($setting)->linkedin_url }}"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="{{ optional($setting)->twitter_url }}"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
                     <div class="m-0 d-flex align-items-center">
                         <span>&copy; All Rights Reserved.</span>
                         <a class="color-secondary" href="{{ optional($setting)->copyright_url }}"> &nbsp; {{ optional($setting)->copyright_title }}</a>

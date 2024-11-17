@@ -9,4 +9,4 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about-us');
 Route::get('research-papers', [HomeController::class, 'researchPaper'])->name('research.papers');
-Route::post('contact/store', [ContactController::class, 'store'])->name('contact.add');
+Route::post('contact/add', [ContactController::class, 'store'])->name('contact.add');
