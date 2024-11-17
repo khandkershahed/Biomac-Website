@@ -3,7 +3,10 @@
        page title
     =========================== -->
     <section class="page-title-layout1 page-title-light pb-0 bg-overlay bg-parallax">
-        <div class="bg-img"><img src="assets/images/page-titles/1.jpg" alt="background"></div>
+        <div class="bg-img">
+            <img src="{{ asset('frontend/assets/images/page-titles/1.jpg') }}" alt="background">
+            {{-- <img src="{{ asset('frontend/assets/images/page-titles/1.jpg') }}" alt="background"> --}}
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
@@ -34,7 +37,7 @@
                             <a href="index.html"><i class="icon-home"></i> <span>Home</span></a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('about') }}">About Us</a>
+                            <a href="{{ route('about-us') }}">About Us</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">About Us</li>
                     </ol>
@@ -353,7 +356,7 @@
                             </div>
                         </div>
                         <div class="mx-80 mt-20">
-                            <a href="{{ route('about') }}" class="btn btn-white btn-xl">
+                            <a href="{{ route('about-us') }}" class="btn btn-white btn-xl">
                                 <span>Looking for More Info!</span> <i class="icon-arrow-right"></i>
                             </a>
                         </div>

@@ -44,6 +44,7 @@
                             <option value="cart">Cart Page</option>
                             <option value="checkout">Checkout Page</option>
                             <option value="contact">Contact Us</option>
+                            <option value="about">About Us</option>
                             <option value="faq">FAQ</option>
                             <option value="terms">Terms & Condition</option>
                             <option value="privacy">Privacy Policy</option>

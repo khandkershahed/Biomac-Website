@@ -49,9 +49,17 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $data = [
-            'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->get(),
+            'about'    => BlogPost::latest('id')->where('status', 'publish')->get(),
+            'banner'   => PageBanner::active()->where('page_name', 'about')->latest('id')->first(),
         ];
         return view('frontend.pages.aboutUs', $data);
+    }
+    public function researchPaper()
+    {
+        $data = [
+            'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->get(),
+        ];
+        return view('frontend.pages.researchPaper',$data);
     }
     public function returnPolicy()
     {
