@@ -333,9 +333,9 @@
             <div class="row">
                 <div class="col-sm-12 col-md-10 col-lg-8 col-xl-8">
                     <div class="about-text mb-30">
-                        <div class="about-badge">
+                        {{-- <div class="about-badge">
                             <div class="about-icon"><i class="icon-beaker"></i></div>
-                        </div>
+                        </div> --}}
                         <div class="about-text-banner">
                             <div class="heading-layout2">
                                 <h3 class="heading-title mb-0">Unlocking life's code through genomics and machine
