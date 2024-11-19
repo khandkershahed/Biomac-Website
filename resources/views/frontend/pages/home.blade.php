@@ -254,7 +254,7 @@
             <div class="slick-carousel carousel-dots-light m-slides-0"
                 data-slick='{"slidesToShow": 1,"autoplay": true, "arrows": true, "dots": true, "speed": 700,"fade": true,"cssEase": "linear"}'>
                 @foreach ($sliders as $slider)
-                    <div class="slide-item bg-overlay align-v-h" style="background-size: initial !impotant;background-repeat:no-repeat; background-position: center center;
+                    <div class="slide-item" style="background-size: initial !impotant;background-repeat:no-repeat; background-position: center center;
     width: 100%;position: relative;">
                         <div class="bg-img" style="background-size: initial !important;">
                             <img src="{{ asset('storage/' . $slider->bg_image) }}" alt="slide img" height="100%">
