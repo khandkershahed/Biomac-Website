@@ -101,11 +101,11 @@
                         </ul>
                     </li> --}}
                     <li class="nav-item">
-                        <a href="{{ route('contact') }}" class="nav-item-link">Research Papers</a>
+                        <a href="{{ route('research.papers') }}" class="nav-item-link">Research Papers</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('contact') }}" class="nav-item-link">Services</a>
-                    </li>
+                    </li> --}}
 
                     {{-- <li class="nav-item">
                         <a href="{{ route('contact') }}" class="nav-item-link">Contact Us</a>
