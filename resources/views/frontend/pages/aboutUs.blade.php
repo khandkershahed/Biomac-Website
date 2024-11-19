@@ -4,7 +4,9 @@
     =========================== -->
     <section class="page-title-layout1 page-title-light pb-0 bg-overlay bg-parallax">
         <div class="bg-img">
-            <img src="{{ asset('frontend/assets/images/page-titles/1.jpg') }}" alt="background">
+            @if (optional($banner)->bg_image)
+                <img class="img-fluid" src="{{ asset('storage/' . optional($banner)->bg_image) }}" alt="">
+            @endif
             {{-- <img src="{{ asset('frontend/assets/images/page-titles/1.jpg') }}" alt="background"> --}}
         </div>
         <div class="container">
