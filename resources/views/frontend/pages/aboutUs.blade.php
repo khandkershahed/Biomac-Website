@@ -2,7 +2,7 @@
     <!-- ========================
        page title
     =========================== -->
-    <section class="page-title-layout1 page-title-light pb-0 bg-overlay bg-parallax">
+    <section class="page-title-layout1 page-title-light pb-0 bg-parallax">
         <div class="bg-img">
             @if (optional($banner)->bg_image)
                 <img class="img-fluid" src="{{ asset('storage/' . optional($banner)->bg_image) }}" alt="">
@@ -54,7 +54,7 @@
     <!-- ========================
         About Section 1
       =========================== -->
-    <section class="fancybox-layout5 bg-overlay bg-overlay-primary-gradient pt-120 pb-110 bg-img"
+    <section class="fancybox-layout5 pt-120 pb-110 bg-img"
         style="background-image: url({{ asset('backend/assets/images/backgrounds/1.jpg') }}); background-size: cover; background-position: center center;">
 
         <div class="container">
