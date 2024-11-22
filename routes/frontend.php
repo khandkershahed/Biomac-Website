@@ -8,4 +8,5 @@ use App\Http\Controllers\Frontend\HomeController;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about-us');
-Route::post('contact/store', [ContactController::class, 'store'])->name('contact.add');
+Route::get('research-papers', [HomeController::class, 'researchPaper'])->name('research.papers');
+Route::post('contact/add', [ContactController::class, 'store'])->name('contact.add');

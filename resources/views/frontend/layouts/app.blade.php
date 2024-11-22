@@ -2,12 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="BioMac Lab">
-    <link href="{{ asset('frontend/assets/images/favicon/favicon.png') }}" rel="icon">
-    <title>BioMac Lab</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta name="description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
+    <meta property="og:title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta property="og:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
+    <meta property="og:image"
+        content="{{ optional($setting)->site_logo_black && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
+    <meta property="twitter:title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta property="twitter:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
+    <meta property="twitter:image"
+        content="{{ optional($setting)->site_logo_black && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
+
+    <link href="{{ asset('storage/' . optional($setting)->site_favicon) }}" rel="apple-touch-icon-precomposed">
+    <link href="{{ asset('storage/' . optional($setting)->site_favicon) }}" rel="shortcut icon" type="image/png">
+
+    <title>
+        {{ optional($setting)->site_title ? optional($setting)->site_title : config('app.name', 'BioMac Lab') }}
+    </title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap"
@@ -104,7 +127,7 @@
 
     </div><!-- /.wrapper -->
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> --}}
     <script src="{{ asset('frontend/assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/main.js') }}"></script>

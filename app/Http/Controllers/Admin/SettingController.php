@@ -26,6 +26,8 @@ class SettingController extends Controller
     public function updateOrcreateSetting(Request $request)
     {
 
+        // dd($request->all());
+
         try {
             $webSetting = Setting::firstOrNew([]);
 
@@ -59,9 +61,9 @@ class SettingController extends Controller
             $setting = Setting::updateOrCreate([], [
                 'website_name'         => $request->website_name,
                 'site_motto'           => $request->site_motto,
-                'site_favicon'         => $uploadedFiles['site_favicon']['status']    == 1 ? $uploadedFiles['site_favicon']['file_path']   : $webSetting->logo,
-                'site_logo_white'      => $uploadedFiles['site_logo_white']['status'] == 1 ? $uploadedFiles['site_logo_white']['file_path']: $webSetting->image,
-                'site_logo_black'      => $uploadedFiles['site_logo_black']['status'] == 1 ? $uploadedFiles['site_logo_black']['file_path']: $webSetting->banner_image,
+                'site_favicon'         => $uploadedFiles['site_favicon']['status']    == 1 ? $uploadedFiles['site_favicon']['file_path']   : $webSetting->site_favicon,
+                'site_logo_white'      => $uploadedFiles['site_logo_white']['status'] == 1 ? $uploadedFiles['site_logo_white']['file_path']: $webSetting->site_logo_white,
+                'site_logo_black'      => $uploadedFiles['site_logo_black']['status'] == 1 ? $uploadedFiles['site_logo_black']['file_path']: $webSetting->site_logo_black,
                 'contact_email'        => $request->contact_email,
                 'support_email'        => $request->support_email,
                 'info_email'           => $request->info_email,
@@ -94,7 +96,10 @@ class SettingController extends Controller
                 'reddit_url'           => $request->reddit_url,
                 'tumblr_url'           => $request->tumblr_url,
                 'tiktok_url'           => $request->tiktok_url,
-
+                'api_verification'     => isset($request->api_verification) ? $request->api_verification : "0",
+                'user_verification'    => isset($request->user_verification) ? $request->user_verification : "0",
+                'minimum_order_amount' => !empty($request->minimum_order_amount) ? $request->minimum_order_amount : "0" ,
+                'allowed_ip'           => $request->input('allowed_ip'),
                 'start_time_monday'    => $request->start_time_monday,
                 'monday'               => $request->monday,
                 'end_time_monday'      => $request->end_time_monday,
@@ -128,7 +133,7 @@ class SettingController extends Controller
             return redirect()->back()->with('success', $toastrMessage);
         } catch (\Exception $e) {
             Session::flash('error', [$messages = $e->getMessage()]);
-            return redirect()->back()->with('error', [$messages = $e->getMessage()]);
+            return redirect()->back()->withInput()->with('error', [$messages = $e->getMessage()]);
         }
     }
 }

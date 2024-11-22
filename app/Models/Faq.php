@@ -23,4 +23,9 @@ class Faq extends Model
     {
         return $this->belongsTo(FaqCategory::class, 'category_id');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
 }

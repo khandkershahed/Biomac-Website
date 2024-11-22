@@ -5,46 +5,60 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-between">
                         <ul class="contact-list d-flex flex-wrap align-items-center list-unstyled mb-0">
-                            <li>
-                                <i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: (002) 01061245741</a>
-                            </li>
-                            <li>
-                                <i class="icon-location"></i><a href="#">Location: Brooklyn, New York</a>
-                            </li>
-                            <li>
-                                <i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
-                            </li>
+                            {{-- @if (optional($setting)->primary_phone)
+                                <li>
+                                    <i class="icon-phone"></i><a
+                                        href="https://wa.me/{{ optional($setting)->whatsapp_number }}">Emergency Line:
+                                        {{ optional($setting)->primary_phone }}</a>
+                                </li>
+                            @endif --}}
+                            @if (optional($setting)->address_line_two)
+                                <li>
+                                    <i class="icon-location"></i><a href="#">Location:
+                                        {{ optional($setting)->address_line_two }}</a>
+                                </li>
+                            @endif
+                            {{-- <li>
+                                <i class="icon-clock"></i>
+                                <a href="{{ route('contact') }}">Sat - Thurs: 9:00 am - 7:00 pm</a>
+                            </li> --}}
                         </ul><!-- /.contact-list -->
                         <div class="d-flex align-items-center">
-                            <ul class="topbar-nav list-unstyled d-flex mb-0 mr-30">
+                            {{-- <ul class="topbar-nav list-unstyled d-flex mb-0 mr-30">
                                 <li><a href="#">Insurance</a></li>
                                 <li><a href="#">Provider Services</a></li>
                                 <li><a href="#">Help</a></li>
-                            </ul>
+                            </ul> --}}
                             <ul class="social-icons list-unstyled mb-0 mr-30">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                @if (optional($setting)->whatsapp_url)
+                                    <li><a href="{{ optional($setting)->whatsapp_url }}"><i
+                                                class="fab fa-whatsapp"></i></a></li>
+                                @endif
+                                @if (optional($setting)->facebook_url)
+                                    <li><a href="{{ optional($setting)->facebook_url }}"><i
+                                                class="fab fa-facebook-f"></i></a></li>
+                                @endif
+                                @if (optional($setting)->instagram_url)
+                                    <li><a href="{{ optional($setting)->instagram_url }}"><i
+                                                class="fab fa-instagram"></i></a></li>
+                                @endif
+                                @if (optional($setting)->twitter_url)
+                                    <li><a href="{{ optional($setting)->twitter_url }}"><i
+                                                class="fab fa-twitter"></i></a></li>
+                                @endif
+                                @if (optional($setting)->linkedin_url)
+                                    <li><a href="{{ optional($setting)->linkedin_url }}"><i
+                                                class="fab fa-linkedin"></i></a></li>
+                                @endif
+
                             </ul><!-- /.social-icons -->
                             <div class="miniPopup-language-area">
                                 <button class="miniPopup-language-trigger" type="button">
-                                    <img src="assets/images/flags/en.png" alt="en">
+                                    <img src="{{ asset('frontend/assets/images/flags/en.png') }}" style="width: 19px;"
+                                        alt="en">
                                     <span>English</span>
                                 </button>
-                                <ul class="miniPopup miniPopup-language list-unstyled">
-                                    <li>
-                                        <button>
-                                            <img src="assets/images/flags/en.png" alt="en">
-                                            <span>English</span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button>
-                                            <img src="assets/images/flags/gr.png" alt="en">
-                                            <span>Germany</span>
-                                        </button>
-                                    </li>
-                                </ul><!-- /.miniPopup-language -->
+
                             </div>
                         </div>
                     </div>
@@ -55,8 +69,8 @@
     <nav class="navbar navbar-expand-lg sticky-navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="{{ !empty(optional($setting)->site_logo) && file_exists(public_path('storage/' . optional($setting)->site_logo)) ? asset('storage/' . optional($setting)->site_logo) : asset('frontend/images/no-logo(217-55).jpg') }}"
-                    class="logo-dark" alt="BioMac Lab">
+                <img src="{{ !empty(optional($setting)->site_logo_black) && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/no-logo(217-55).jpg') }}"
+                    class="logo-dark" alt="BioMac Lab" style="height: 70px;">
             </a>
             <button class="navbar-toggler" type="button">
                 <span class="menu-lines"><span></span></span>
@@ -66,10 +80,10 @@
                     <li class="nav-item">
                         <a href="{{ route('home') }}" class="nav-item-link">Home</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a href="contact-us.html" class="nav-item-link">Contacts</a>
-                    </li> --}}
-                    <li class="nav-item has-dropdown">
+                    <li class="nav-item">
+                        <a href="{{ route('about-us') }}" class="nav-item-link">About Us</a>
+                    </li>
+                    {{-- <li class="nav-item has-dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-item-link">About Us</a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
@@ -85,33 +99,26 @@
                                 <a href="careers.html" class="nav-item-link">Careers</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
-                        <a href="{{ route('contact') }}" class="nav-item-link">Research Papers</a>
+                        <a href="{{ route('research.papers') }}" class="nav-item-link">Research Papers</a>
                     </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-item-link">Blog</a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="blog.html" class="nav-item-link">Blog Grid</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="blog-single-post.html" class="nav-item-link">Single Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
+                        <a href="{{ route('contact') }}" class="nav-item-link">Services</a>
+                    </li> --}}
+
+                    {{-- <li class="nav-item">
                         <a href="{{ route('contact') }}" class="nav-item-link">Contact Us</a>
-                    </li>
+                    </li> --}}
 
                 </ul>
                 <ul class="header-actions d-flex align-items-center position-relative list-unstyled mb-0">
                     <li class="d-none d-xl-flex align-items-center">
-                        <a href="tests-book-visit.html" class="btn btn-primary btn-outlined btn-contact">
-                            Book a Lab Visit
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-outlined btn-contact">
+                            Contact Us
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="action-btn action-btn-cart">
                             <i class="icon-cart"></i><span class="cart-counter">3</span>
                         </a>
@@ -142,16 +149,18 @@
                             </div>
                             <a href="shopping-cart.html" class="btn btn-secondary btn-block">View Cart</a>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
                 <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
             </div>
             <div class="d-none d-xl-flex align-items-center position-relative ml-30">
                 <div class="contact-phone d-flex align-items-center">
-                    <div class="contact-icon"><i class="icon-chemical9"></i></div>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div>
-                        <span class="d-block">Call Us Now:</span>
-                        <a class="phone-link d-block" href="tel:00201061245741">02 01061245741</a>
+                        <span class="d-block">Email Us Now:</span>
+                        <a class="phone-link d-block" href="mailto:{{ optional($setting)->info_email }}">{{ optional($setting)->info_email }}</a>
                     </div>
                 </div>
             </div>
