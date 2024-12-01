@@ -1,7 +1,5 @@
 <x-frontend-app-layout :title="'About Us'">
-    <!-- ========================
-       page title
-    =========================== -->
+   
     <section class="page-title-layout1 page-title-light pb-0 bg-parallax">
         <div class="bg-img">
             @if (optional($banner)->bg_image)
