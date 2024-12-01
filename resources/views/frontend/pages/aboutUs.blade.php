@@ -85,7 +85,7 @@
                     </div><!-- /.fancybox-item -->
                     <!-- fancybox item #2 -->
                     <div class="fancybox-item bg-img"
-                        style="background-image: url(&quot;assets/images/features/2.jpg&quot;); background-size: cover; background-position: center center;">
+                        style="background-image: url({{ asset('backend/assets/images/features/1.jpg') }}); background-size: cover; background-position: center center;">
 
                         <div class="fancybox-body">
                             <div class="fancybox-icon">
@@ -99,7 +99,7 @@
                     </div><!-- /.fancybox-item -->
                     <!-- fancybox item #3 -->
                     <div class="fancybox-item bg-img"
-                        style="background-image: url(&quot;assets/images/features/3.jpg&quot;); background-size: cover; background-position: center center;">
+                        style="background-image: url({{ asset('backend/assets/images/features/1.jpg') }}); background-size: cover; background-position: center center;">
 
                         <div class="fancybox-body">
                             <div class="fancybox-icon">
@@ -113,7 +113,7 @@
                     </div><!-- /.fancybox-item -->
                     <!-- fancybox item #4 -->
                     <div class="fancybox-item bg-img"
-                        style="background-image: url(&quot;assets/images/features/4.jpg&quot;); background-size: cover; background-position: center center;">
+                        style="background-image: url({{ asset('backend/assets/images/features/1.jpg') }}); background-size: cover; background-position: center center;">
 
                         <div class="fancybox-body">
                             <div class="fancybox-icon">
@@ -127,7 +127,7 @@
                     </div><!-- /.fancybox-item -->
                     <!-- fancybox item #5 -->
                     <div class="fancybox-item bg-img"
-                        style="background-image: url(&quot;assets/images/features/5.jpg&quot;); background-size: cover; background-position: center center;">
+                        style="background-image: url({{ asset('backend/assets/images/features/1.jpg') }}); background-size: cover; background-position: center center;">
 
                         <div class="fancybox-body">
                             <div class="fancybox-icon">
@@ -141,7 +141,7 @@
                     </div><!-- /.fancybox-item -->
                     <!-- fancybox item #6 -->
                     <div class="fancybox-item bg-img"
-                        style="background-image: url(&quot;assets/images/features/6.jpg&quot;); background-size: cover; background-position: center center;">
+                        style="background-image: url({{ asset('backend/assets/images/features/1.jpg') }}); background-size: cover; background-position: center center;">
 
                         <div class="fancybox-body">
                             <div class="fancybox-icon">
@@ -155,7 +155,7 @@
                     </div><!-- /.fancybox-item -->
                     <!-- fancybox item #7 -->
                     <div class="fancybox-item bg-img"
-                        style="background-image: url(&quot;assets/images/features/7.jpg&quot;); background-size: cover; background-position: center center;">
+                        style="background-image: url({{ asset('backend/assets/images/features/1.jpg') }}); background-size: cover; background-position: center center;">
 
                         <div class="fancybox-body">
                             <div class="fancybox-icon">
