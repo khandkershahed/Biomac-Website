@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    {{-- <div class="accordion-item">
                         <div class="accordion-header" data-toggle="collapse" data-target="#collapse2">
                             <a class="accordion-title" href="#">Canada Office</a>
                         </div>
@@ -59,7 +59,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
