@@ -2,29 +2,34 @@
     <!-- ========================
        page title
     =========================== -->
-    <section class="page-title-layout1 page-title-light pb-0 bg-overlay bg-parallax">
+    <section class="page-title-layout1 page-title-light pb-0 bg-parallax">
         <div class="bg-img">
-            <img src="{{ asset('frontend/assets/images/page-titles/1.jpg') }}" alt="background">
+            @if (optional($banner)->bg_image)
+                <img class="img-fluid" src="{{ asset('storage/' . optional($banner)->bg_image) }}" alt="">
+            @endif
             {{-- <img src="{{ asset('frontend/assets/images/page-titles/1.jpg') }}" alt="background"> --}}
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
                     <h1 class="pagetitle-heading">About Us</h1>
-                    <p class="pagetitle-desc">Your focus is on providing patients the best possible care and we’re here
-                        to
-                        help. To complement our comprehensive menu of tests, we provide resources to registered
-                        healthcare
-                        professionals to support your testing needs.
+                    <p class="pagetitle-desc">
+                        Our Lab focuses on integrating bioinformatics, genomics, and machine learning to drive
+                        innovative solutions. We specialize in complex genomic analysis, pangenomics, antimicrobial
+                        resistance studies, and machine learning applications in drug design and microbial genomics,
+                        pushing the boundaries of genomic science and precision medicine.
                     </p>
                     <div class="d-flex flex-wrap align-items-center">
-                        <a href="tests-services.html" class="btn btn-secondary mr-30">
+                        {{-- <a href="tests-services.html" class="btn btn-secondary mr-30">
                             <span>Tests and Services</span>
                             <i class="icon-arrow-right"></i>
+                        </a> --}}
+                        <a href="{{ route('contact') }}" class="btn btn-white  btn-white-style2">
+                            <span>Contact Us</span>
                         </a>
-                        <a href="team.html" class="btn btn-white  btn-white-style2">
+                        {{-- <a href="team.html" class="btn btn-white  btn-white-style2">
                             <span>Meet our Leaders</span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
@@ -49,7 +54,7 @@
     <!-- ========================
         About Section 1
       =========================== -->
-    <section class="fancybox-layout5 bg-overlay bg-overlay-primary-gradient pt-120 pb-110 bg-img"
+    <section class="fancybox-layout5 pt-120 pb-110 bg-img"
         style="background-image: url({{ asset('backend/assets/images/backgrounds/1.jpg') }}); background-size: cover; background-position: center center;">
 
         <div class="container">
