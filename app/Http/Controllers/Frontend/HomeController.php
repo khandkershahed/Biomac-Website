@@ -74,7 +74,7 @@ class HomeController extends Controller
         ];
         return view('frontend.pages.privacyPolicy', $data);
     }
-    public function termsCondition()
+    public function termsConditions()
     {
         $data = [
             'banner'  => PageBanner::active()->where('page_name', 'terms')->latest('id')->first(),

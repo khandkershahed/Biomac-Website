@@ -3,320 +3,37 @@
         Slider
     ============================== -->
     @if ($sliders)
-        {{-- <section class="slider">
-            <div class="slick-carousel carousel-dots-light m-slides-0 slick-initialized slick-slider slick-dotted"
-                data-slick="{&quot;slidesToShow&quot;: 1, &quot;arrows&quot;: true, &quot;dots&quot;: true, &quot;speed&quot;: 700,&quot;fade&quot;: true,&quot;cssEase&quot;: &quot;linear&quot;}"
-                role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous"
-                    role="button" style="">Previous</button>
-                <div aria-live="polite" class="slick-list draggable">
-                    <div class="slick-track" style="opacity: 1; width: 3832px;" role="listbox">
-                        <div class="slide-item bg-overlay align-v-h bg-img slick-slide slick-current slick-active"
-                            data-slick-index="0"
-                            style="background-image: url(&quot;assets/images/sliders/5.jpg&quot;); background-size: cover; background-position: center center; width: 1916px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
-                            aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00">
-
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-                                        <div class="slide-content">
-                                            <span class="slide-subtitle">Excellence, Dedicated, and Experienced
-                                                Laboratory Technologists!</span>
-                                            <h2 class="slide-title">Trusted Partner in Medicine Testing</h2>
-                                            <p class="slide-desc">We are continually harnessing our medical expertise to
-                                                build best test offering
-                                                while investing in technology to transform the delivery of health care.
-                                            </p>
-                                            <div class="d-flex flex-wrap align-items-center">
-                                                <a href="tests-book-visit.html" class="btn btn-secondary mr-30"
-                                                    tabindex="0">
-                                                    <span>Book a Home Visit</span>
-                                                    <i class="icon-arrow-right"></i>
-                                                </a>
-                                                <a href="tests-services.html" class="btn btn-white btn-white-style2"
-                                                    tabindex="0">
-                                                    <span>Tests and Services</span>
-                                                </a>
-                                            </div>
-                                        </div><!-- /.slide-content -->
-                                    </div><!-- /.col-xl-7 -->
-                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1">
-                                        <div class="slider-banner d-none d-block-xl">
-                                            <div class="slick-carousel m-slides-0 slick-initialized slick-slider"
-                                                data-slick="{&quot;slidesToShow&quot;: 1, &quot;arrows&quot;: true, &quot;dots&quot;: false, &quot;speed&quot;: 700}">
-                                                <button type="button" data-role="none" class="slick-prev slick-arrow"
-                                                    aria-label="Previous" role="button"
-                                                    style="">Previous</button>
-                                                <div aria-live="polite" class="slick-list draggable">
-                                                    <div class="slick-track"
-                                                        style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);"
-                                                        role="listbox">
-                                                        <div class="cta-banner slick-slide slick-cloned"
-                                                            data-slick-index="-1" id="" aria-hidden="true"
-                                                            tabindex="-1" style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm A Patient</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                            </p>
-                                                            <a href="tests-book-visit.html"
-                                                                class="btn btn-secondary btn-link" tabindex="-1">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Book an Appointment</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="cta-banner slick-slide slick-current slick-active"
-                                                            data-slick-index="0" aria-hidden="false" tabindex="-1"
-                                                            role="option" aria-describedby="slick-slide10"
-                                                            style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm a Healthcare Provider</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                                to make sure your patients</p>
-                                                            <a href="tests-provider-registration.html"
-                                                                class="btn btn-secondary btn-link" tabindex="0">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Provider Registration</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="cta-banner slick-slide" data-slick-index="1"
-                                                            aria-hidden="true" tabindex="-1" role="option"
-                                                            aria-describedby="slick-slide11" style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm A Patient</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                            </p>
-                                                            <a href="tests-book-visit.html"
-                                                                class="btn btn-secondary btn-link" tabindex="-1">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Book an Appointment</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="cta-banner slick-slide slick-cloned"
-                                                            data-slick-index="2" id="" aria-hidden="true"
-                                                            tabindex="-1" style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm a Healthcare Provider</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                                to make sure your patients</p>
-                                                            <a href="tests-provider-registration.html"
-                                                                class="btn btn-secondary btn-link" tabindex="-1">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Provider Registration</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- /.cta-banner -->
-                                                <!-- /.cta-banner -->
-                                                <button type="button" data-role="none"
-                                                    class="slick-next slick-arrow" aria-label="Next" role="button"
-                                                    style="">Next</button>
-                                            </div><!-- /.slick-carousel -->
-                                        </div><!-- /.slider-banner -->
-                                    </div><!-- /.col-xl-4 -->
-                                </div><!-- /.row -->
-                            </div><!-- /.container -->
-                        </div>
-                        <div class="slide-item bg-overlay align-v-h bg-img slick-slide" data-slick-index="1"
-                            style="background-image: url(&quot;assets/images/sliders/6.jpg&quot;); background-size: cover; background-position: center center; width: 1916px; position: relative; left: -1916px; top: 0px; z-index: 998; opacity: 0;"
-                            aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01">
-
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-                                        <div class="slide-content">
-                                            <span class="slide-subtitle">Excellence, Dedicated, and Experienced
-                                                Laboratory Technologists!</span>
-                                            <h2 class="slide-title">Quality Laboratory Testing Services!</h2>
-                                            <p class="slide-desc">We are continually harnessing our medical expertise
-                                                to build best test offering
-                                                while investing in technology to transform the delivery of health care.
-                                            </p>
-                                            <div class="d-flex flex-wrap align-items-center">
-                                                <a href="tests-book-visit.html" class="btn btn-secondary mr-30"
-                                                    tabindex="-1">
-                                                    <span>Book a Home Visit</span>
-                                                    <i class="icon-arrow-right"></i>
-                                                </a>
-                                                <a href="tests-services.html" class="btn btn-white btn-white-style2"
-                                                    tabindex="-1">
-                                                    <span>Tests and Services</span>
-                                                </a>
-                                            </div>
-                                        </div><!-- /.slide-content -->
-                                    </div><!-- /.col-xl-7 -->
-                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1">
-                                        <div class="slider-banner d-none d-block-xl">
-                                            <div class="slick-carousel m-slides-0 slick-initialized slick-slider"
-                                                data-slick="{&quot;slidesToShow&quot;: 1, &quot;arrows&quot;: true, &quot;dots&quot;: false, &quot;speed&quot;: 700}">
-                                                <button type="button" data-role="none"
-                                                    class="slick-prev slick-arrow" aria-label="Previous"
-                                                    role="button" style="">Previous</button>
-                                                <div aria-live="polite" class="slick-list draggable">
-                                                    <div class="slick-track"
-                                                        style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);"
-                                                        role="listbox">
-                                                        <div class="cta-banner slick-slide slick-cloned"
-                                                            data-slick-index="-1" id="" aria-hidden="true"
-                                                            tabindex="-1" style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm a Healthcare Provider</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                                to make sure your patients</p>
-                                                            <a href="tests-provider-registration.html"
-                                                                class="btn btn-secondary btn-link" tabindex="-1">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Provider Registration</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="cta-banner slick-slide slick-current slick-active"
-                                                            data-slick-index="0" aria-hidden="false" tabindex="-1"
-                                                            role="option" aria-describedby="slick-slide20"
-                                                            style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm A Patient</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                            </p>
-                                                            <a href="tests-book-visit.html"
-                                                                class="btn btn-secondary btn-link" tabindex="0">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Book an Appointment</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="cta-banner slick-slide" data-slick-index="1"
-                                                            aria-hidden="true" tabindex="-1" role="option"
-                                                            aria-describedby="slick-slide21" style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm a Healthcare Provider</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                                to make sure your patients</p>
-                                                            <a href="tests-provider-registration.html"
-                                                                class="btn btn-secondary btn-link" tabindex="-1">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Provider Registration</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="cta-banner slick-slide slick-cloned"
-                                                            data-slick-index="2" id="" aria-hidden="true"
-                                                            tabindex="-1" style="width: 0px;">
-                                                            <div class="cta-icon"><i class="icon-chemical"></i></div>
-                                                            <h4 class="cta-title">I'm A Patient</h4>
-                                                            <p class="cta-desc">We pioneer advancements in clinical
-                                                                testing and partnerships with industry
-                                                                leaders
-                                                            </p>
-                                                            <a href="tests-book-visit.html"
-                                                                class="btn btn-secondary btn-link" tabindex="-1">
-                                                                <i class="icon-arrow-right icon-filled"></i>
-                                                                <span>Book an Appointment</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- /.cta-banner -->
-                                                <!-- /.cta-banner -->
-                                                <button type="button" data-role="none"
-                                                    class="slick-next slick-arrow" aria-label="Next" role="button"
-                                                    style="">Next</button>
-                                            </div><!-- /.slick-carousel -->
-                                        </div><!-- /.slider-banner -->
-                                    </div><!-- /.col-xl-4 -->
-                                </div><!-- /.row -->
-                            </div><!-- /.container -->
-                        </div>
-                    </div>
-                </div><!-- /.slide-item -->
-                <!-- /.slide-item -->
-                <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next"
-                    role="button" style="">Next</button>
-                <ul class="slick-dots" style="" role="tablist">
-                    <li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true"
-                        aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none"
-                            role="button" tabindex="0">1</button></li>
-                    <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01"
-                        id="slick-slide01"><button type="button" data-role="none" role="button"
-                            tabindex="0">2</button></li>
-                </ul>
-            </div><!-- /.carousel -->
-        </section> --}}
-        <section class="slider">
-            <div class="slick-carousel carousel-dots-light m-slides-0"
-                data-slick='{"slidesToShow": 1,"autoplay": true, "arrows": true, "dots": true, "speed": 700,"fade": true,"cssEase": "linear"}'>
+        <section class="banner-section banner-style-one">
+            <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
                 @foreach ($sliders as $slider)
-                    <div class="slide-item" style="background-size: initial !impotant;background-repeat:no-repeat; background-position: center center;
-    width: 100%;position: relative;">
-                        <div class="bg-img" style="background-size: initial !important;">
-                            <img src="{{ asset('storage/' . $slider->bg_image) }}" alt="slide img" height="100%">
-                        </div>
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-                                    <div class="slide-content">
-                                        <span class="slide-subtitle">{{ $slider->badge }}</span>
-                                        <h2 class="slide-title">{{ $slider->title }}</h2>
-                                        <p class="slide-desc">
-                                            {{ $slider->subtitle }}
-                                        </p>
-                                        @if (!empty($slider->button_link) || !empty($slider->button_name))
-                                            <div class="d-flex flex-wrap align-items-center">
-                                                <a href="{{ $slider->button_link }}"
-                                                    class="btn btn-white btn-white-style2 mr-30">
-                                                    <span>{{ $slider->button_name }}</span>
-                                                    <i class="icon-arrow-right"></i>
-                                                </a>
+                    <div class="slide-item">
+                        <div class="image-layer" style="background-image: url({{ asset('storage/' . $slider->bg_image) }})"></div>
+                        <div class="auto-container">
+                            <div class="content-box">
+                                <div class="content-inner">
+                                    <span class="count-text">01.</span>
+                                    <h5>The best at the test</h5>
+                                    <h2>Committed to Quality Laboratory Products</h2>
+                                    <ul class="list clearfix">
+                                        <li>
+                                            <div class="icon-box">
+                                                <i class="flaticon-laboratory-1"></i>
                                             </div>
-                                        @endif
-                                    </div><!-- /.slide-content -->
-                                </div><!-- /.col-xl-7 -->
-                                {{-- <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1">
-                                    <div class="fancybox-layout5 p-0 m-0">
-                                        <div class="fancybox-container">
-                                            <!-- fancybox item #1 -->
-                                            <div class="fancybox-item">
-                                                <div class="fancybox-body">
-                                                    <div class="fancybox-icon">
-                                                        <i class="fas fa-dna"></i>
-                                                    </div><!-- /.fancybox-icon -->
-                                                    <h4 class="fancybox-title">Enhancing genomics data accuracy &
-                                                        performance
-                                                    </h4>
-                                                </div><!-- /.fancybox-body -->
-                                            </div><!-- /.fancybox-item -->
-                                            <!-- fancybox item #2 -->
-                                            <div class="fancybox-item">
-                                                <div class="fancybox-body">
-                                                    <div class="fancybox-icon">
-                                                        <i class="fas fa-flask"></i>
-                                                    </div><!-- /.fancybox-icon -->
-                                                    <h4 class="fancybox-title">Ensuring reliable, reproducible
-                                                        protocols
-                                                    </h4>
-                                                </div><!-- /.fancybox-body -->
-                                            </div><!-- /.fancybox-item -->
-                                            <!-- fancybox item #3 -->
-                                            <div class="fancybox-item">
-                                                <div class="fancybox-body">
-                                                    <div class="fancybox-icon">
-                                                        <i class="fas fa-laptop-code"></i>
-                                                    </div><!-- /.fancybox-icon -->
-                                                    <h4 class="fancybox-title">Customizing computation for informatics
-                                                    </h4>
-                                                </div><!-- /.fancybox-body -->
-                                            </div><!-- /.fancybox-item -->
-                                        </div><!-- /.fancybox-container -->
-                                    </div><!-- /.fancybox-layout5 -->
-                                </div><!-- /.col-xl-3 --> --}}
+                                            <h3>80+</h3>
+                                            <h4>Pathology Labs</h4>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box">
+                                                <i class="flaticon-laboratory"></i>
+                                            </div>
+                                            <h3>150+</h3>
+                                            <h4>Collection Centers</h4>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="index.html" class="theme-btn light">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -384,8 +101,7 @@
                         </p>
                         <div class="author-meta d-flex flex-wrap align-items-center mr-30">
                             <div class="author-img">
-                                <img src="{{ asset('frontend/assets/images/sk_injamamul_islam.png') }}"
-                                    alt="thumb">
+                                <img src="{{ asset('frontend/assets/images/sk_injamamul_islam.png') }}" alt="thumb">
                             </div>
                             <div>
                                 <h4 class="author-title">SK Injamamul Islam</h4>
