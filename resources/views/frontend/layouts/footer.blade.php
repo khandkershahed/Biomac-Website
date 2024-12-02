@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-widget-time">
-                        
+
                         <div class="d-flex align-items-center">
                             <a href="{{ route('contact') }}" class="btn btn-primary btn-block">
                                 <span>Contact With Us</span> <i class="icon-arrow-right"></i>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="{{ route('about-us') }}">About Us</a></li>
+                                <li><a href="{{ route('about') }}">About Us</a></li>
                                 <li><a href="{{ route('contact') }}">Contact us</a></li>
                                 {{-- <li><a href="{{ route('contact') }}">Careers</a></li> --}}
                             </ul>

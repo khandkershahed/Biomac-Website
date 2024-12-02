@@ -18,6 +18,7 @@ use App\Models\PrivacyPolicy;
 use App\Models\ShippingMethod;
 use App\Models\TermsAndCondition;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
@@ -74,7 +75,7 @@ class HomeController extends Controller
         ];
         return view('frontend.pages.privacyPolicy', $data);
     }
-    public function termsConditions()
+    public function termsCondition()
     {
         $data = [
             'banner'  => PageBanner::active()->where('page_name', 'terms')->latest('id')->first(),
@@ -89,6 +90,14 @@ class HomeController extends Controller
             'faqs'    => Faq::orderBy('order', 'asc')->where('status', 'active')->get(),
         ];
         return view('frontend.pages.faq', $data);
+    }
+    public function services()
+    {
+        $data = [
+            'banner'         => PageBanner::active()->where('page_name', 'service')->latest('id')->first(),
+            // 'services'       => Service::latest('id')->where('status', 'active')->get(),
+        ];
+        return view('frontend.pages.service.allservices', $data);
     }
     public function allBlog()
     {

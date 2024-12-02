@@ -439,7 +439,8 @@ img {
 }
 
 .sec-pad{
-  padding: 120px 0px;
+  /* padding: 120px 0px; */
+  padding: 100px 0px;
 }
 
 .mr-0{
@@ -2972,10 +2973,12 @@ div#mCSB_1_container{
 }
 
 .funfact-section .inner-content{
-  position: relative;
-  display: block;
-  background: #fff;
-  border: 1px solid #e6ebed;
+    position: relative;
+    display: block;
+    background: #ffffff94;
+    border: 1px solid #e6ebed;
+    border-bottom-left-radius: 70px;
+    border-top-right-radius: 70px;
 }
 
 .funfact-block-one .inner-box{
@@ -4999,7 +5002,9 @@ div#mCSB_1_container{
 
 .service-style-two{
   position: relative;
-  padding-top: 190px;
+  padding-top: 120px;
+  /* padding-top: 190px; */
+  z-index: 1;
 }
 
 .service-block-two .inner-box{

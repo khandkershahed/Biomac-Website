@@ -1,6 +1,3 @@
-
-
-
 <!--Search Popup-->
 <div id="search-popup" class="search-popup">
     <div class="popup-inner">
@@ -134,10 +131,10 @@
 
                                 </li>
                                 <li class="">
-                                    <a href="{{ route('home') }}">About</a>
+                                    <a href="{{ route('about') }}">About</a>
                                 </li>
                                 <li class="">
-                                    <a href="{{ route('home') }}">Services</a>
+                                    <a href="{{ route('services') }}">Services</a>
                                     {{-- <ul>
                                         <li><a href="services.html">All Services</a></li>
                                     </ul> --}}
