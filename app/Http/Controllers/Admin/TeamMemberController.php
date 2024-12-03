@@ -274,7 +274,7 @@ class TeamMemberController extends Controller
     public function destroy(TeamMember $team)
     {
         $files = [
-            'logo' => $team->logo,
+            'image' => $team->image,
         ];
         foreach ($files as $key => $file) {
             if (!empty($file)) {

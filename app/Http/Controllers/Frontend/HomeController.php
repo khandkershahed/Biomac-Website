@@ -19,6 +19,7 @@ use App\Models\ShippingMethod;
 use App\Models\TermsAndCondition;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Models\TeamMember;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
@@ -51,9 +52,18 @@ class HomeController extends Controller
     {
         $data = [
             'about'    => BlogPost::latest('id')->where('status', 'publish')->get(),
+            'teams'    => TeamMember::orderBy('order','ASC')->where('status', 'active')->get(),
             'banner'   => PageBanner::active()->where('page_name', 'about')->latest('id')->first(),
         ];
         return view('frontend.pages.aboutUs', $data);
+    }
+    public function team()
+    {
+        $data = [
+            'banner'   => PageBanner::active()->where('page_name', 'team')->latest('id')->first(),
+            'teams'    => TeamMember::orderBy('order','ASC')->where('status', 'active')->get(),
+        ];
+        return view('frontend.pages.team', $data);
     }
     public function researchPaper()
     {

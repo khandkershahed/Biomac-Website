@@ -194,11 +194,12 @@
 }
 
 .funfact-block-one .inner-box .icon-box:before{
-	background: #10b1b4;
+	background: #051225;
 }
 
 .funfact-block-one .inner-box .count-outer{
-	color: #10b1b4;
+	color: #a10000;
+	/* color: #10b1b4; */
 }
 
 .project-block-one .inner-box:hover .lower-content .category{
@@ -980,6 +981,12 @@
 .certification-section .shape-box .shape-1{
 	background: #10b1b4;
 }
+.shape-box .shape-2{
+	background: #10b1b4;
+}
+.shape-box .shape-1{
+	background: #000f2e;
+}
 
 .statements-block-one .inner-box .image-box .icon-box:before{
 	background: #10b1b4;
@@ -994,7 +1001,7 @@
 }
 
 .team-block-one .inner-box .image-box .share-option .share-icon:before{
-	background: #10b1b4;
+	background: #16436f;
 }
 
 .team-block-one .inner-box .image-box .share-option .social-links li a:hover{

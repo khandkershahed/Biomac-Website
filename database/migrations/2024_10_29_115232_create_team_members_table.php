@@ -19,14 +19,14 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('designation')->nullable();
             $table->string('image')->nullable();
-            $table->string('linked_in')->nullable();
-            $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
-            $table->string('youtube')->nullable();
-            $table->string('tiktok')->nullable();
+            $table->string('linked_in')->nullable();
             $table->string('github')->nullable();
             $table->string('website')->nullable();
+            $table->string('youtube')->nullable();
             $table->string('discord')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('portfolio')->nullable();
             $table->text('biography')->nullable(); // Biography field
             $table->string('location')->nullable(); // Location field

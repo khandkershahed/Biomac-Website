@@ -1,7 +1,13 @@
 <x-frontend-app-layout :title="'FAQs'">
 <!-- page-title -->
 <section class="page-title">
-    <div class="bg-layer" style="background-image: url(assets/images/background/page-title.jpg);"></div>
+    @if (optional($banner)->bg_image)
+            <div class="bg-layer" style="background-image: url({{ asset('storage/' . optional($banner)->bg_image) }});">
+            </div>
+        @else
+            <div class="bg-layer"
+                style="background-image: url({{ asset('frontend/assets/images/background/page-title.jpg') }});"></div>
+        @endif
     <div class="auto-container">
         <div class="content-box">
             <h1>Faq’s</h1>

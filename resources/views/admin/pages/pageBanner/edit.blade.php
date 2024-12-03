@@ -42,6 +42,8 @@
                             <option value="faq" @selected($banner->page_name == 'faq')>FAQ</option>
                             <option value="about" @selected($banner->page_name == 'about')>About Us</option>
                             <option value="paper" @selected($banner->page_name == 'paper')>Research Paper</option>
+                            <option value="service" @selected($banner->page_name == 'service')>All Services</option>
+                            <option value="team" @selected($banner->page_name == 'team')>Team Members</option>
                             <option value="contact" @selected($banner->page_name == 'contact')>Contact Us</option>
                             <option value="terms" @selected($banner->page_name == 'terms')>Terms & Condition</option>
                             <option value="privacy" @selected($banner->page_name == 'privacy')>Privacy Policy</option>

@@ -13,5 +13,6 @@ Route::get('terms-conditions', [HomeController::class, 'termsConditions'])->name
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('blog', [HomeController::class, 'allBlog'])->name('blog');
 Route::get('services', [HomeController::class, 'services'])->name('services');
+Route::get('team', [HomeController::class, 'team'])->name('team');
 Route::get('service/details/{slug}', [HomeController::class, 'serviceDetails'])->name('service.details');
 Route::post('contact/add', [ContactController::class, 'store'])->name('contact.add');

@@ -93,7 +93,6 @@
                 {{-- Site Content  --}}
                 @php
                     $menuItems = [
-
                         [
                             'title' => 'Blogs',
                             'icon' => 'fa-brands fa-blogger-b text-success fs-3',
@@ -221,12 +220,24 @@
                                 'admin.privacy-policy.index',
                                 'admin.privacy-policy.create',
                                 'admin.privacy-policy.edit',
+                                'admin.team-member.index',
+                                'admin.team-member.create',
+                                'admin.team-member.edit',
                             ],
                             'subMenu' => [
                                 [
                                     'title' => 'Banners',
                                     'routes' => ['admin.banner.index', 'admin.banner.create', 'admin.banner.edit'],
                                     'route' => 'admin.banner.index',
+                                ],
+                                [
+                                    'title' => 'Team Members',
+                                    'routes' => [
+                                        'admin.team-member.index',
+                                        'admin.team-member.create',
+                                        'admin.team-member.edit',
+                                    ],
+                                    'route' => 'admin.team-member.index',
                                 ],
                                 [
                                     'title' => 'Terms & Condition',

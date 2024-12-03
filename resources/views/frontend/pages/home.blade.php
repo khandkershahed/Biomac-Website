@@ -12,10 +12,14 @@
                         <div class="auto-container">
                             <div class="content-box">
                                 <div class="content-inner">
-                                    <span class="count-text">01.</span>
-                                    <h5>The best at the test</h5>
-                                    <h2>Committed to Quality Laboratory Products</h2>
-                                    <ul class="list clearfix">
+                                    @if ($slider->badge)
+                                        <span class="count-text">0{{ $loop->iteration }}.</span>
+                                        <h5>{{ $slider->badge }}</h5>
+                                    @endif
+                                    @if ($slider->title)
+                                        <h2>{{ $slider->title }}</h2>
+                                    @endif
+                                    {{-- <ul class="list clearfix">
                                         <li>
                                             <div class="icon-box">
                                                 <i class="flaticon-laboratory-1"></i>
@@ -30,10 +34,12 @@
                                             <h3>150+</h3>
                                             <h4>Collection Centers</h4>
                                         </li>
-                                    </ul>
-                                    <div class="btn-box">
-                                        <a href="index.html" class="theme-btn light">Read More</a>
-                                    </div>
+                                    </ul> --}}
+                                    @if ($slider->button_name && $slider->button_link)
+                                        <div class="btn-box">
+                                            <a href="{{ $slider->button_link }}" class="theme-btn light">{{ $slider->button_name }}</a>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -303,11 +309,10 @@
     </section> --}}
     <!-- processing-section end -->
     <!-- funfact-section -->
-    <section class="funfact-section centred sec-pad">
+    {{-- <section class="funfact-section centred sec-pad">
         <div class="bg-layer" style="background-image: url({{ asset('images/home_middle_bg.png') }})"></div>
         <div class="auto-container">
             <div class="sec-title light">
-                {{-- <span class="sub-title">Interesting Numbers</span> --}}
                 <h2>Pioneering Genomic Discovery through Machine Learning Integration</h2>
             </div>
             <div class="inner-content">
@@ -334,7 +339,60 @@
                 </div>
             </div>
         </div>
+    </section> --}}
+    <!-- funfact-section -->
+    <section class="funfact-section about-page alternat-2 centred">
+        <div class="auto-container">
+            <div class="inner-content bg-light">
+
+                <div class="row clearfix">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 funfact-block">
+                        <div class="funfact-block-one">
+                            <div class="inner-box">
+                                <div class="shape-box">
+                                    <div class="shape shape-1 hexagon_shape"></div>
+                                    <div class="shape shape-2 hexagon_shape"></div>
+                                    <div class="shape shape-3 hexagon_shape"></div>
+                                    <div class="shape shape-4 hexagon_shape"></div>
+                                </div>
+                                <div class="icon-box"><i class="flaticon-atom"></i></div>
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="1500"
+                                        data-stop="{{ date('Y') }}">0</span><span>/2040</span>
+                                </div>
+                                <h3>At BioMac Lab, we combine the power of genomics with advanced machine learning to
+                                    drive
+                                    transformative discoveries. From analyzing complex genomic datasets to accelerating
+                                    precision drug development and enhancing immunoinformatics capabilities, our
+                                    solutions
+                                    unlock the full potential of genomic science</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    <!-- funfact-section end -->
+
+
+    <!-- certification-section -->
+    <section class="certification-section sec-pad">
+        <div class="bg-layer" style="background-image: url({{ asset('images/home_middle_bg.png') }})"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                    <div class="content-inner">
+                        <div class="sec-title light">
+                            <h2>Pioneering Genomic Discovery through Machine Learning Integration</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- certification-section end -->
     <!-- funfact-section end -->
 
 </x-frontend-app-layout>

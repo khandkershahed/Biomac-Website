@@ -45,6 +45,8 @@
                             <option value="checkout">Checkout Page</option>
                             <option value="contact">Contact Us</option>
                             <option value="paper">Research Paper</option>
+                            <option value="team">Team Members</option>
+                            <option value="service">All Services</option>
                             <option value="about">About Us</option>
                             <option value="faq">FAQ</option>
                             <option value="terms">Terms & Condition</option>
