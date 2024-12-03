@@ -140,7 +140,7 @@
                                     </ul> --}}
                                 </li>
                                 <li class="">
-                                    <a href="{{ route('home') }}">Research</a>
+                                    <a href="{{ route('research.papers') }}">Research</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{ route('blog') }}">Blog</a>

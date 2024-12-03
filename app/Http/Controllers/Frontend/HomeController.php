@@ -69,7 +69,7 @@ class HomeController extends Controller
     {
         $data = [
             'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->get(),
-            'banner'   => PageBanner::active()->where('page_name', 'paper')->latest('id')->first(),
+            'banner'         => PageBanner::active()->where('page_name', 'paper')->latest('id')->first(),
         ];
         return view('frontend.pages.researchPaper',$data);
     }
