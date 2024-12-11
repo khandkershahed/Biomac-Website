@@ -24,7 +24,8 @@
     <!-- research-page-section -->
     <section class="research-page-section sec-pad">
         <div class="auto-container">
-            <div class="sortable-masonry">
+            <h1 class="text-warning">The Page is Under Maintenance</h1>
+            {{-- <div class="sortable-masonry">
                 <div class="filters centred">
                     <ul class="filter-tabs filter-btns clearfix">
                         <li class="active filter" data-role="button" data-filter=".all">All / 22</li>
@@ -264,7 +265,7 @@
             </div>
             <div class="more-btn centred">
                 <a href="research.html" class="theme-btn">Load More</a>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- research-page-section end -->
