@@ -48,6 +48,7 @@
                             <option value="team">Team Members</option>
                             <option value="service">All Services</option>
                             <option value="about">About Us</option>
+                            <option value="blog">All Blogs</option>
                             <option value="faq">FAQ</option>
                             <option value="terms">Terms & Condition</option>
                             <option value="privacy">Privacy Policy</option>

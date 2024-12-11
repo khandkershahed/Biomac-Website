@@ -112,6 +112,7 @@ class HomeController extends Controller
     public function allBlog()
     {
         $data = [
+            'banner'         => PageBanner::active()->where('page_name', 'blog')->latest('id')->first(),
             'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->get(),
             'blog_categorys' => BlogCategory::latest('id')->where('status', 'active')->get(),
             'blog_tags'      => BlogTag::latest('id')->where('status', 'active')->get(),

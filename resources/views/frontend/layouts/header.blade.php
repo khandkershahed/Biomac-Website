@@ -142,7 +142,8 @@
                                 <li class="">
                                     <a href="{{ route('research.papers') }}">Research</a>
                                 </li>
-                                <li class="dropdown">
+                                <li class="">
+                                {{-- <li class="dropdown"> --}}
                                     <a href="{{ route('blog') }}">Blog</a>
 
                                 </li>
