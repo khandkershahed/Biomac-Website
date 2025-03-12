@@ -505,6 +505,10 @@
     margin-bottom: 0px;
   }
 
+    .banner-section {
+        margin-top: 15.5rem;
+    }
+
   .banner-carousel .owl-dots{
     display: none;
   }
