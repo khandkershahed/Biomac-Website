@@ -1,4 +1,4 @@
-<!--Search Popup-->
+{{-- <!--Search Popup-->
 <div id="search-popup" class="search-popup">
     <div class="popup-inner">
         <div class="upper-box clearfix">
@@ -38,9 +38,9 @@
             </a>
         </figure>
     </div>
-    {{-- <div class="btn-box">
+    <div class="btn-box">
         <a href="{{ route('home') }}" class="header-btn"><i class="flaticon-calendar"></i>Appointment</a>
-    </div> --}}
+    </div>
     <!-- header-top -->
     <div class="header-top">
         <div class="auto-container">
@@ -99,15 +99,7 @@
                         @endif
 
                     </ul>
-                    {{-- <div class="language">
-                        <span>Fr</span>
-                        <ul class="language-list clearfix">
-                            <li><a href="{{ route('home') }}">English</a></li>
-                            <li><a href="{{ route('home') }}">Spanish</a></li>
-                            <li><a href="{{ route('home') }}">Turky</a></li>
-                            <li><a href="{{ route('home') }}">Chiness</a></li>
-                        </ul>
-                    </div> --}}
+
                 </div>
             </div>
         </div>
@@ -135,15 +127,18 @@
                                 </li>
                                 <li class="">
                                     <a href="{{ route('services') }}">Services</a>
-                                    {{-- <ul>
+                                    <ul>
                                         <li><a href="services.html">All Services</a></li>
-                                    </ul> --}}
+                                    </ul>
                                 </li>
                                 <li class="">
                                     <a href="{{ route('research.papers') }}">Research</a>
                                 </li>
                                 <li class="">
-                                {{-- <li class="dropdown"> --}}
+                                    <a href="{{ route('training') }}">Recent Trainings</a>
+                                </li>
+                                <li class="">
+                                    <li class="dropdown">
                                     <a href="{{ route('blog') }}">Blog</a>
 
                                 </li>
@@ -275,4 +270,167 @@
         </div>
     </nav>
 </div>
-<!-- End Mobile Menu -->
+<!-- End Mobile Menu --> --}}
+
+
+<!--Search Popup-->
+<div id="search-popup" class="search-popup">
+    <div class="popup-inner">
+        <div class="upper-box clearfix">
+            <figure class="logo-box pull-left"><a href="index.html"><img src="assets/images/logo-3.png" alt=""></a>
+            </figure>
+            <div class="close-search pull-right"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="overlay-layer"></div>
+        <div class="auto-container">
+            <div class="search-form">
+                <form method="post" action="https://st.ourhtmldemo.com/new/Biogenix/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value=""
+                                placeholder="Type your keyword and hit" required>
+                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- main header -->
+<header class="main-header header-style-two">
+    <!-- header-top -->
+    <div class="header-top-two">
+        <div class="top-inner">
+            <div class="top-left">
+                <div class="link"><span>Training</span><a href="index-2.html">Upcoming<i
+                            class="flaticon-right-arrow"></i></a></div>
+                <ul class="info-list clearfix">
+                    <li><i class="fa-solid fa-graduation-cap text-white"></i><a class="ms-3" href="tel:180045678901">1800.45.6789.01</a>
+                    </li>
+                    {{-- <li><i class="flaticon-map"></i>Corporate: 24 Global Str, SF 94112</li> --}}
+                </ul>
+            </div>
+            {{-- <ul class="right-info clearfix">
+                <li><a href="index-2.html">Career</a></li>
+                <li><a href="index-2.html">Corporate Office</a></li>
+                <li><a href="index-2.html">Download Report</a></li>
+                <li><a href="index-2.html">Feedback</a></li>
+            </ul> --}}
+        </div>
+    </div>
+    <!-- header-lower -->
+    <div class="header-lower">
+        <div class="support-box">
+            <div class="light-icon"><i class="flaticon-calendar-1"></i></div>
+            <div class="inner">
+                <div class="icon-box"><i class="flaticon-blood-test"></i></div>
+                <a href="index-2.html">Book For 24/7</a>
+                <h6>Sample Collection</h6>
+                <div class="link"><a href="index-2.html"><i class="flaticon-right-arrow"></i></a></div>
+            </div>
+        </div>
+        <div class="outer-container">
+            <div class="outer-box">
+                <div class="logo-box">
+                    <figure class="logo">
+                        <a href="{{ route('home') }}">
+                            <img class="header-logo" src="{{ !empty(optional($setting)->site_logo_black) && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/logo_black.png') }}"
+                                alt="">
+                        </a>
+                    </figure>
+                </div>
+                <div class="menu-area clearfix">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler">
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </div>
+                    <nav class="main-menu navbar-expand-md navbar-light">
+                        <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li class="current"><a href="{{ route('home') }}">Home</a></li>
+                                <li class="current"><a href="{{ route('about') }}">About</a></li>
+                                <li class="current"><a href="{{ route('services') }}">Services</a></li>
+                                <li class="current"><a href="{{ route('research.papers') }}">Research</a></li>
+                                <li class="current"><a href="{{ route('training') }}">Recent Trainings</a></li>
+                                <li class="current"><a href="{{ route('blog') }}">Blog</a></li>
+                                <li class="current"><a href="{{ route('contact') }}">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    {{-- <ul class="menu-right-content">
+
+                        <li class="user-box">
+                            <a href="index.html"><i class="flaticon-add-user"></i></a>
+                        </li>
+                        <li class="search-box-outer search-toggler">
+                            <i class="flaticon-magnifying-glass"></i>
+                        </li>
+                    </ul> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--sticky Header-->
+    <div class="sticky-header">
+        <div class="auto-container">
+            <div class="outer-box">
+                <div class="logo-box">
+                    <figure class="logo"><a href="index-2.html"><img src="assets/images/logo-3.png"
+                                alt=""></a></figure>
+                </div>
+                <div class="menu-area clearfix">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                    <ul class="menu-right-content">
+                        <li class="cart-box">
+                            <a href="shop.html"><i class="flaticon-add-to-cart"></i><span>0</span></a>
+                        </li>
+                        <li class="user-box">
+                            <a href="index.html"><i class="flaticon-add-user"></i></a>
+                        </li>
+                        <li class="search-box-outer search-toggler">
+                            <i class="flaticon-magnifying-glass"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- main-header end -->
+
+<!-- Mobile Menu  -->
+<div class="mobile-menu">
+    <div class="menu-backdrop"></div>
+    <div class="close-btn"><i class="fas fa-times"></i></div>
+
+    <nav class="menu-box">
+        <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-4.png" alt=""
+                    title=""></a></div>
+        <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+        <div class="contact-info">
+            <h4>Contact Info</h4>
+            <ul>
+                <li>Chicago 12, Melborne City, USA</li>
+                <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                <li><a href="mailto:info@example.com">info@example.com</a></li>
+            </ul>
+        </div>
+        <div class="social-links">
+            <ul class="clearfix">
+                <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+</div><!-- End Mobile Menu -->

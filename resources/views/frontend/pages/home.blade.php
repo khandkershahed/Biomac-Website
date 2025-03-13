@@ -2,7 +2,7 @@
     <!-- ============================
         Slider
     ============================== -->
-    @if ($sliders)
+    {{-- @if ($sliders)
         <section class="banner-section banner-style-one">
             <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
                 @foreach ($sliders as $slider)
@@ -19,22 +19,7 @@
                                     @if ($slider->title)
                                         <h2>{{ $slider->title }}</h2>
                                     @endif
-                                    {{-- <ul class="list clearfix">
-                                        <li>
-                                            <div class="icon-box">
-                                                <i class="flaticon-laboratory-1"></i>
-                                            </div>
-                                            <h3>80+</h3>
-                                            <h4>Pathology Labs</h4>
-                                        </li>
-                                        <li>
-                                            <div class="icon-box">
-                                                <i class="flaticon-laboratory"></i>
-                                            </div>
-                                            <h3>150+</h3>
-                                            <h4>Collection Centers</h4>
-                                        </li>
-                                    </ul> --}}
+
                                     @if ($slider->button_name && $slider->button_link)
                                         <div class="btn-box">
                                             <a href="{{ $slider->button_link }}" class="theme-btn light">{{ $slider->button_name }}</a>
@@ -45,6 +30,34 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+        </section>
+    @endif --}}
+
+    @if ($sliders)
+        <section class="banner-style-two">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url({{ asset('frontend/assets/images/shape/shape-12.png') }});"></div>
+                <div class="pattern-2" style="background-image: url({{ asset('frontend/assets/images/shape/shape-12.png') }});"></div>
+            </div>
+            <div class="image-layer">
+                <figure class="image-1"><img src="{{ asset('frontend/assets/images/banner/banner-img-1.png') }}" alt=""></figure>
+                <figure class="image-2"><img src="{{ asset('frontend/assets/images/banner/banner-img-1.jpg') }}" alt=""></figure>
+                <figure class="image-3"><img src="{{ asset('frontend/assets/images/banner/banner-img-2.jpg') }}" alt=""></figure>
+                <figure class="image-4"><img src="{{ asset('frontend/assets/images/banner/banner-img-3.jpg') }}" alt=""></figure>
+            </div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-8 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <h5>Committed to Quality</h5>
+                            <h2>Certified genetics laboratory</h2>
+                            <p>The system and expound the actual teachings of the great explorer truth, the master-builder
+                                of human happiness.</p>
+                            <a href="index-2.html" class="theme-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     @endif
@@ -165,7 +178,7 @@
                         <div class="text">
                             <div class="inner">
                                 {{-- <h2>12<span>+</span></h2> --}}
-                                <h6>Experienced <br/>Researchers</h6>
+                                <h6>Experienced <br />Researchers</h6>
                             </div>
                         </div>
 
