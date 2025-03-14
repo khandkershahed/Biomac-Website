@@ -71,7 +71,7 @@ class HomeController extends Controller
     public function researchPaper()
     {
         $data = [
-            'papers'     => ResearchPaper::latest('id')->where('status', 'active')->get(),
+            'papers'     => ResearchPaper::latest('date')->where('status', 'active')->get(),
             'banner'     => PageBanner::active()->where('page_name', 'paper')->latest('id')->first(),
         ];
         return view('frontend.pages.researchPaper',$data);
