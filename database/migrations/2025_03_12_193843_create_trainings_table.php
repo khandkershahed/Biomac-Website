@@ -30,6 +30,7 @@ return new class extends Migration
             $table->double('job_holder_fee')->nullable();
             $table->text('whatsapp_link')->nullable();//
             $table->text('facebook_link')->nullable();//
+            $table->text('linkedin_link')->nullable();//
             $table->text('registration_link')->nullable();//k
             $table->string('training_mode')->nullable();//
 
