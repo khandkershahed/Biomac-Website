@@ -35,7 +35,7 @@ class HomeController extends Controller
         $data = [
 
             'sliders'                   => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->get(),
-            'slider'                   => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->first(),
+            'slider'                    => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->first(),
             'home_slider_bottom_first'  => PageBanner::active()->where('page_name', 'home_slider_bottom_first')->latest('id')->first(),
             'blog_posts'                => BlogPost::active()->inRandomOrder()->get(),
             'blog'                      => BlogPost::inRandomOrder()->active()->first(),
