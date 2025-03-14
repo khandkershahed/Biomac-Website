@@ -41,20 +41,24 @@
                 <div class="pattern-2" style="background-image: url({{ asset('frontend/assets/images/shape/shape-12.png') }});"></div>
             </div>
             <div class="image-layer">
-                <figure class="image-1"><img src="{{ asset('frontend/assets/images/banner/banner-img-1.png') }}" alt=""></figure>
-                <figure class="image-2"><img src="{{ asset('frontend/assets/images/banner/banner-img-1.jpg') }}" alt=""></figure>
-                <figure class="image-3"><img src="{{ asset('frontend/assets/images/banner/banner-img-2.jpg') }}" alt=""></figure>
-                <figure class="image-4"><img src="{{ asset('frontend/assets/images/banner/banner-img-3.jpg') }}" alt=""></figure>
+                {{-- <figure class="image-1"><img src="{{ asset('images/') }}" alt=""></figure> --}}
+                <figure class="image-2"><img src="{{ asset('images/about_image_1.png') }}" alt=""></figure>
+                {{-- <figure class="image-2"><img src="{{ asset('images/image_why_choose.png') }}" alt=""></figure> --}}
+                <figure class="image-3"><img src="{{ asset('images/about_thumb_6.png') }}" alt=""></figure>
+                {{-- <figure class="image-4"><img src="{{ asset('') }}" alt=""></figure> --}}
             </div>
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-xl-8 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
-                            <h5>Committed to Quality</h5>
-                            <h2>Certified genetics laboratory</h2>
-                            <p>The system and expound the actual teachings of the great explorer truth, the master-builder
-                                of human happiness.</p>
-                            <a href="index-2.html" class="theme-btn">Read More</a>
+                            <h5>{{ $slider->badge }}</h5>
+                            <h2>{{ $slider->title }}</h2>
+                            {{-- <p>The system and expound the actual teachings of the great explorer truth, the master-builder
+                                of human happiness.</p> --}}
+                                @if ($slider->button_name && $slider->button_link)
+                                            <a href="{{ $slider->button_link }}" class="theme-btn light">{{ $slider->button_name }}</a>
+                                    @endif
+                            {{-- <a href="index-2.html" class="theme-btn">Read More</a> --}}
                         </div>
                     </div>
                 </div>
