@@ -49,11 +49,11 @@
     <link href="{{ asset('frontend/assets/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/timePicker.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/jquery-ui.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/color.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/color.css?v=' . time()) }}" rel="stylesheet">
     {{-- <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css?v=' . time()) }}">
 
-    <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/responsive.css?v=' . time()) }}" rel="stylesheet">
 
 </head>
 

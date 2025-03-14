@@ -36,12 +36,14 @@ use App\Http\Controllers\Admin\OrderManagementController;
 use App\Http\Controllers\Admin\PageBannerController;
 use App\Http\Controllers\Admin\PrivacyPolicyController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ResearchPaperController;
 use App\Http\Controllers\Admin\ShippingManagementController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\StockManagementController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\TermsAndConditionController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\DealBannerController;
 
@@ -106,7 +108,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
             'blog-category'       => BlogCategoryController::class, //done
             'blog-tags'           => BlogTagController::class, //done
             'testimonial'         => TestimonialController::class, //done
-
+            'research-paper'      => ResearchPaperController::class,
         ],
         ['except' => ['show', 'create', 'edit']]
     );
@@ -136,6 +138,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
             'contacts'              => ContactController::class,
             'product'               => ProductController::class,
             'banner'                => PageBannerController::class,
+            'training'              => TrainingController::class,
         ],
     );
 

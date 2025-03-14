@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
-            $table->text('event_name')->nullable();//
+            $table->text('name')->nullable();//
             $table->text('slug')->nullable();//
             $table->date('start_date')->nullable();//
             $table->time('start_time')->nullable();//
@@ -23,32 +23,32 @@ return new class extends Migration
             $table->text('event_short_descp')->nullable();//
             $table->integer('current_attendees')->nullable();//
             $table->string('banner_image')->nullable();//
-            $table->string('banner_badge')->nullable();//
-            $table->string('banner_sub_title')->nullable();//
-            $table->string('banner_title')->nullable();//
+            $table->string('thumbnail_image')->nullable();//
+            $table->text('instructor')->nullable();
+            $table->text('registration_fee')->nullable();
+            $table->double('student_fee')->nullable();
+            $table->double('job_holder_fee')->nullable();
+            $table->text('whatsapp_link')->nullable();//
+            $table->text('facebook_link')->nullable();//
+            $table->text('registration_link')->nullable();//k
+            $table->string('training_mode')->nullable();//
+
             $table->string('organizer_text')->nullable();//
             $table->text('map_link')->nullable();//
             $table->text('website_link')->nullable();//
-            $table->text('whatsapp_link')->nullable();//
-            $table->text('facebook_link')->nullable();//
-            $table->text('other_link')->nullable();//
             $table->string('row_one_title')->nullable();//
-            $table->string('row_one_image')->nullable();//
             $table->longText('row_one_description')->nullable()->comment('text-editor');//
-
             $table->string('row_one_button_name')->nullable();
-            $table->string('row_one_button_link')->nullable();
+            $table->text('row_one_button_link')->nullable();
 
             $table->string('row_two_title')->nullable();//
             $table->longText('row_two_description')->nullable()->comment('text-editor');//
 
-            $table->string('row_three_title')->nullable();//
             $table->string('row_three_badge')->nullable();//
+            $table->string('row_three_title')->nullable();//
             $table->longText('row_three_description')->nullable()->comment('text-editor');//
-
-            $table->string('row_three_image')->nullable();
             $table->string('row_three_button_name')->nullable();
-            $table->string('row_three_button_link')->nullable();
+            $table->text('row_three_button_link')->nullable();
 
             $table->string('row_four_badge')->nullable();
             $table->string('row_four_title')->nullable();
@@ -56,11 +56,14 @@ return new class extends Migration
             $table->string('row_four_button_name')->nullable();
             $table->string('row_four_button_link')->nullable();
 
+            $table->text('other_link')->nullable();//
+
             $table->string('row_five_title')->nullable();
-            $table->string('row_five_image')->nullable();
             $table->longText('row_five_description')->nullable()->comment('text-editor');
             $table->string('row_five_button_name')->nullable();
             $table->string('row_five_button_link')->nullable();
+
+
 
             $table->string('status')->nullable()->comment('canceled', 'ongoing', 'upcoming', 'completed', 'registration_open', 'registration_close');//
             $table->string('event_type')->nullable()->comment('workshop', 'seminar', 'concert', 'conference', 'webinar');//
@@ -76,6 +79,7 @@ return new class extends Migration
 
             $table->foreignId('added_by')->nullable()->constrained('admins')->onDelete('set null');
             $table->foreignId('updated_by')->nullable()->constrained('admins')->onDelete('set null');
+
 
             $table->timestamps();
         });

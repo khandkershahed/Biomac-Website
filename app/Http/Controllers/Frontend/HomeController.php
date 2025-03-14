@@ -18,8 +18,10 @@ use App\Models\PrivacyPolicy;
 use App\Models\ShippingMethod;
 use App\Models\TermsAndCondition;
 use App\Http\Controllers\Controller;
+use App\Models\ResearchPaper;
 use App\Models\Service;
 use App\Models\TeamMember;
+use App\Models\Training;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
@@ -68,8 +70,8 @@ class HomeController extends Controller
     public function researchPaper()
     {
         $data = [
-            'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->get(),
-            'banner'         => PageBanner::active()->where('page_name', 'paper')->latest('id')->first(),
+            'papers'     => ResearchPaper::latest('id')->where('status', 'active')->get(),
+            'banner'     => PageBanner::active()->where('page_name', 'paper')->latest('id')->first(),
         ];
         return view('frontend.pages.researchPaper',$data);
     }
@@ -109,13 +111,15 @@ class HomeController extends Controller
         ];
         return view('frontend.pages.training', $data);
     }
-    public function trainingDetails()
+    public function trainingDetails($slug)
     {
-        $data = [
-            'banner'  => PageBanner::active()->where('page_name', 'faq')->latest('id')->first(),
-            'faqs'    => Faq::orderBy('order', 'asc')->where('status', 'active')->get(),
-        ];
-        return view('frontend.pages.trainingDetails', $data);
+        // $data = [
+        //     'training'    => Training::where('slug', $slug)->first(),
+        //     'banner'      => PageBanner::active()->where('page_name', 'faq')->latest('id')->first(),
+        //     'faqs'        => Faq::orderBy('order', 'asc')->where('status', 'active')->get(),
+        // ];
+        return view('frontend.pages.trainingDetails');
+        // return view('frontend.pages.trainingDetails', $data);
     }
     public function services()
     {

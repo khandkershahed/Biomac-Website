@@ -23,7 +23,7 @@
         <!--end::Aside mobile toggle-->
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-            <a href="../../demo1/dist/index.html" class="d-lg-none">
+            <a href="{{ route('home') }}" class="d-lg-none">
                 <img alt="Logo" src="{{ asset('backend/assets/media/logos/logo-2.svg') }}" class="h-30px" />
             </a>
         </div>
@@ -547,7 +547,7 @@
                                     for="kt_user_menu_dark_mode_toggle">
                                     <input class="form-check-input w-30px h-20px" type="checkbox" value="1"
                                         name="mode" id="kt_user_menu_dark_mode_toggle"
-                                        data-kt-url="../../demo1/dist/index.html" />
+                                        data-kt-url="{{ route('home') }}" />
                                     <span class="pulse-ring ms-n1"></span>
                                     <span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
                                 </label>

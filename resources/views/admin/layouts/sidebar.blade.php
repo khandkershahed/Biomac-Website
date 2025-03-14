@@ -94,6 +94,54 @@
                 @php
                     $menuItems = [
                         [
+                            'title' => 'Training & Workshop',
+                            'icon' => 'fa-solid fa-graduation-cap text-success fs-3',
+                            'routes' => [
+                                'admin.training.index',
+                                'admin.training.create',
+                                'admin.training.edit',
+                                // 'admin.categories.index',
+                                // 'admin.categories.create',
+                                // 'admin.categories.edit',
+                            ],
+                            'subMenu' => [
+
+                                [
+                                    'title' => 'Training',
+                                    'routes' => [
+                                        'admin.training.index',
+                                        'admin.training.create',
+                                        'admin.training.edit',
+                                    ],
+                                    'route' => 'admin.training.index',
+                                ],
+                            ],
+                        ],
+                        [
+                            'title' => 'Research',
+                            'icon' => 'fa-solid fa-microscope text-success fs-3',
+                            'routes' => [
+                                'admin.research-paper.index',
+                                'admin.research-paper.create',
+                                'admin.research-paper.edit',
+                                // 'admin.categories.index',
+                                // 'admin.categories.create',
+                                // 'admin.categories.edit',
+                            ],
+                            'subMenu' => [
+
+                                [
+                                    'title' => 'Paper',
+                                    'routes' => [
+                                        'admin.research-paper.index',
+                                        'admin.research-paper.create',
+                                        'admin.research-paper.edit',
+                                    ],
+                                    'route' => 'admin.research-paper.index',
+                                ],
+                            ],
+                        ],
+                        [
                             'title' => 'Blogs',
                             'icon' => 'fa-brands fa-blogger-b text-success fs-3',
                             'routes' => [

@@ -22,251 +22,166 @@
 
 
     <!-- research-page-section -->
-    <section class="research-page-section sec-pad">
+    <section class="sidebar-page-container blog-small-image sec-pad">
         <div class="auto-container">
-            <h1 class="text-warning">The Page is Under Maintenance</h1>
-            {{-- <div class="sortable-masonry">
-                <div class="filters centred">
-                    <ul class="filter-tabs filter-btns clearfix">
-                        <li class="active filter" data-role="button" data-filter=".all">All / 22</li>
-                        <li class="filter" data-role="button" data-filter=".hematology">Hematology / 06</li>
-                        <li class="filter" data-role="button" data-filter=".biochemistry">Biochemistry / 05</li>
-                        <li class="filter" data-role="button" data-filter=".serology">Serology / 03</li>
-                        <li class="filter" data-role="button" data-filter=".pathology">Pathology / 02</li>
-                    </ul>
-                </div>
-                <div class="items-container row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all pathology biochemistry serology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-1.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Microbiology</span>
-                                        <h3><a href="index.html">Laboratory Medicine and Patient Care</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-4.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Microbiology</span>
-                                        <h3><a href="index.html">Laboratory Medicine and Patient Care</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all hematology serology pathology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-2.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Serology</span>
-                                        <h3><a href="index.html">Clinical Trial Design Best Practices</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-5.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Serology</span>
-                                        <h3><a href="index.html">Clinical Trial Design Best Practices</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="blog-classic-content">
+                        @foreach ($papers as $paper)
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    {{-- <div class="image-inner">
+                                        <div class="category"><a href="blog-details.html">Laboratory</a></div>
+                                        <figure class="image-box">
+                                            <a href="blog-details.html"><img src="assets/images/news/news-27.jpg" alt=""></a>
+                                        </figure>
+                                    </div> --}}
+                                    <div class="content-box">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="me-3">
+                                                <ul class="post-info clearfix">
+                                                    <li>{{ Carbon\Carbon::parse($paper->date)->format('d M, Y') }}                                                    </li>
+                                                    <li><a href="javascript:void(0)">By {{ $paper->author }}</a></li>
+                                                    <li>Impact Factor: {{ $paper->impact_factor }}</li>
+                                                </ul>
+                                                <h3><a href="{{ $paper->link }}">{{ $paper->name }}</a></h3>
+                                                <h6 class="mb-2">DOI : {{ $paper->doi }}</h6>
+                                                <p>{{ $paper->journal_name }}</p>
+                                            </div>
+                                            <div class="text-center">
+                                                <ul class="post-info clearfix">
+                                                    <li>Cited By</li>
+                                                </ul>
+                                                <h3><a href="{{ $paper->link }}">{{ $paper->citation }}</a></h3>
+                                            </div>
+                                        </div>
+                                        <div class="lower-box">
+                                            <div class="link"><a href="{{ $paper->link }}">Read More</a></div>
+                                            {{-- <div class="right-info">
+                                                <ul class="social-links clearfix">
+                                                    <li><a href="index.html"><i class="fa-brands fa-facebook"></i></a></li>
+                                                    <li><a href="index.html"><i class="fa-brands fa-square-twitter"></i></a></li>
+                                                    <li><a href="index.html"><i class="fa-solid fa-basketball"></i></a></li>
+                                                </ul>
+                                                <div class="comments-box clearfix">
+                                                    <a href="{{ $paper->link }}"><i class="fa-regular fa-comment-dots"></i>3</a>
+                                                </div>
+                                            </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all product biochemistry pathology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-3.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Biochemistry</span>
-                                        <h3><a href="index.html">How to Navigate Challenges to Success</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-6.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Biochemistry</span>
-                                        <h3><a href="index.html">How to Navigate Challenges to Success</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all hematology serology pathology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-18.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Biochemistry</span>
-                                        <h3><a href="index.html">How to Navigate Challenges to Success</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-24.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-18.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Biochemistry</span>
-                                        <h3><a href="index.html">How to Navigate Challenges to Success</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all business biochemistry">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-19.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Microbiology</span>
-                                        <h3><a href="index.html">Laboratory Medicine and Patient Care</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-25.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-19.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Microbiology</span>
-                                        <h3><a href="index.html">Laboratory Medicine and Patient Care</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all hematology serology pathology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-20.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Serology</span>
-                                        <h3><a href="index.html">Clinical Trial Design Best Practices</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-26.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-20.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Serology</span>
-                                        <h3><a href="index.html">Clinical Trial Design Best Practices</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all conference serology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-21.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Serology</span>
-                                        <h3><a href="index.html">Clinical Trial Design Best Practices</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-27.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-21.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Serology</span>
-                                        <h3><a href="index.html">Clinical Trial Design Best Practices</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all business biochemistry">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-22.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Biochemistry</span>
-                                        <h3><a href="index.html">How to Navigate Challenges to Success</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-28.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-22.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Biochemistry</span>
-                                        <h3><a href="index.html">How to Navigate Challenges to Success</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all hematology serology pathology">
-                        <div class="project-block-one">
-                            <div class="inner-box">
-                                <div class="static-content">
-                                    <figure class="image-box"><img src="assets/images/project/project-23.jpg" alt=""></figure>
-                                    <div class="lower-content">
-                                        <span class="category">Microbiology</span>
-                                        <h3><a href="index.html">Laboratory Medicine and Patient Care</a></h3>
-                                    </div>
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="assets/images/project/project-29.jpg" alt=""></figure>
-                                        <div class="view-btn"><a href="assets/images/project/project-23.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-zoom-in"></i></a></div>
-                                        <div class="link-btn"><a href="index.html"><i class="flaticon-right-arrow"></i></a></div>
-                                    </div>
-                                    <div class="lower-content">
-                                        <span class="category">Microbiology</span>
-                                        <h3><a href="index.html">Laboratory Medicine and Patient Care</a></h3>
-                                        <p>Able to claims of duty or the obligations pleasures have to repudiated...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        {{-- <div class="pagination-wrapper">
+                            <ul class="pagination clearfix">
+                                <li><a href="blog-4.html"><i class="flaticon-left-arrow"></i></a></li>
+                                <li><a href="blog-4.html" class="current">01</a></li>
+                                <li><a href="blog-4.html">02</a></li>
+                                <li><a href="blog-4.html"><i class="flaticon-right-arrow"></i></a></li>
+                            </ul>
+                        </div> --}}
                     </div>
                 </div>
+                {{-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    <div class="blog-sidebar">
+                        <div class="sidebar-widget search-widget">
+                            <div class="widget-title">
+                                <h3>Search</h3>
+                            </div>
+                            <div class="search-inner">
+                                <form action="https://st.ourhtmldemo.com/new/Biogenix/blog-4.html" method="post">
+                                    <div class="form-group">
+                                        <input type="search" name="search-field" placeholder="Enter Keyword..." required="">
+                                        <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget category-widget">
+                            <div class="widget-title">
+                                <h3>Categories</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="category-list clearfix">
+                                    <li><a href="blog-details.html">Chemicals<i class="flaticon-right-arrow"></i><span>05</span></a></li>
+                                    <li><a href="blog-details.html">Equipments<i class="flaticon-right-arrow"></i><span>02</span></a></li>
+                                    <li><a href="blog-details.html">Laboratory<i class="flaticon-right-arrow"></i><span>14</span></a></li>
+                                    <li><a href="blog-details.html">Laboratory<i class="flaticon-right-arrow"></i><span>03</span></a></li>
+                                    <li><a href="blog-details.html">Technology<i class="flaticon-right-arrow"></i><span>09</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget post-widget">
+                            <div class="widget-title">
+                                <h3>Popular Post</h3>
+                            </div>
+                            <div class="post-inner">
+                                <div class="post">
+                                    <figure class="post-thumb"><a href="blog-details.html"><img src="assets/images/news/post-1.jpg" alt=""></a></figure>
+                                    <span class="post-date">16 July, 2022</span>
+                                    <h5><a href="blog-details.html">All you Need to <br />Know about this Liver Disease</a></h5>
+                                </div>
+                                <div class="post">
+                                    <figure class="post-thumb"><a href="blog-details.html"><img src="assets/images/news/post-2.jpg" alt=""></a></figure>
+                                    <span class="post-date">11 August, 2022</span>
+                                    <h5><a href="blog-details.html">Ensure Your Product Quality with a Biogenix Lab</a></h5>
+                                </div>
+                                <div class="post">
+                                    <figure class="post-thumb"><a href="blog-details.html"><img src="assets/images/news/post-3.jpg" alt=""></a></figure>
+                                    <span class="post-date">21 July, 2022</span>
+                                    <h5><a href="blog-details.html">In the Pursuit of <br />Quality a Laboratory Perspective</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget tags-widget">
+                            <div class="widget-title">
+                                <h3>Popular Tags</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="tags-list clearfix">
+                                    <li><a href="blog-details.html">Agriculture</a></li>
+                                    <li><a href="blog-details.html">Burners</a></li>
+                                    <li><a href="blog-details.html">Clamp</a></li>
+                                    <li><a href="blog-details.html">Digital</a></li>
+                                    <li><a href="blog-details.html">Equipment</a></li>
+                                    <li><a href="blog-details.html">Food</a></li>
+                                    <li><a href="blog-details.html">Health</a></li>
+                                    <li><a href="blog-details.html">Hormone</a></li>
+                                    <li><a href="blog-details.html">Research</a></li>
+                                    <li><a href="blog-details.html">Residue</a></li>
+                                    <li><a href="blog-details.html">Pathology</a></li>
+                                    <li><a href="blog-details.html">Pharmaceutical</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subscribe-widget centred">
+                            <div class="inner-box" style="background-image: url(assets/images/resource/sidebar-2.jpg);">
+                                <div class="icon-box"><i class="flaticon-newsletter"></i></div>
+                                <h3>Subscribe Us</h3>
+                                <p>Subscribe us to get latest news & articles in your inbox.</p>
+                                <div class="form-inner">
+                                    <form action="https://st.ourhtmldemo.com/new/Biogenix/contact.html" method="post">
+                                        <div class="form-group">
+                                            <i class="fa-sharp fa-solid fa-envelope-open"></i>
+                                            <input type="email" name="email" placeholder="Email Address..." required="">
+                                            <button type="submit">Subscribe Us</button>
+                                        </div>
+                                    </form>
+                                    <div class="custom-controls-stacked">
+                                        <label class="custom-control material-checkbox">
+                                            <input type="checkbox" class="material-control-input">
+                                            <span class="material-control-indicator"></span>
+                                            <span class="description">Terms & Conditions.</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
-            <div class="more-btn centred">
-                <a href="research.html" class="theme-btn">Load More</a>
-            </div> --}}
         </div>
     </section>
+    <!-- sidebar-page-container end -->
     <!-- research-page-section end -->
 </x-frontend-app-layout>
