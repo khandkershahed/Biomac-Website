@@ -4653,10 +4653,12 @@ div#mCSB_1_container {
 
 .header-top-two .top-left .info-list li a {
     display: inline-block;
-    color: #d2d5de;
+    /* color: #d2d5de; */
+    color: #ffffe0;
+    font-weight: 600;
 }
 
-.header-top-two .top-left .info-list li a:hover {}
+/* .header-top-two .top-left .info-list li a:hover {} */
 
 .header-top-two .top-left .info-list li i {
     position: absolute;
@@ -4686,7 +4688,7 @@ div#mCSB_1_container {
     letter-spacing: 0.6px;
 }
 
-.header-top-two .right-info li a:hover {}
+/* .header-top-two .right-info li a:hover {} */
 
 .header-style-two .header-lower {
     position: relative;
@@ -4705,9 +4707,12 @@ div#mCSB_1_container {
 }
 
 .header-style-two .logo-box {
-    padding: 20px 0px;
+    padding: 5px 0px;
+    /* padding: 20px 0px; */
 }
-
+.header-logo{
+    height: 4.6rem;
+}
 .header-style-two .main-menu .navigation>li>a {
     color: #1c2a4d;
     font-size: 14px;
@@ -4717,8 +4722,8 @@ div#mCSB_1_container {
     padding-bottom: 29px;
 }
 
-.header-style-two .main-menu .navigation>li.current>a,
-.header-style-two .main-menu .navigation>li:hover>a {}
+/* .header-style-two .main-menu .navigation>li.current>a,
+.header-style-two .main-menu .navigation>li:hover>a {} */
 
 .header-style-two .main-menu .navigation>li.dropdown>a:before {
     top: 29px;
@@ -4752,7 +4757,7 @@ div#mCSB_1_container {
     padding-left: 11px;
 }
 
-.header-style-two .menu-right-content li.cart-box a:hover {}
+/* .header-style-two .menu-right-content li.cart-box a:hover {} */
 
 .header-style-two .menu-right-content li.cart-box a span {
     position: absolute;
@@ -4833,7 +4838,7 @@ div#mCSB_1_container {
     letter-spacing: 0.6px;
 }
 
-.header-style-two .header-lower .support-box .inner a:hover {}
+/* .header-style-two .header-lower .support-box .inner a:hover {} */
 
 .header-style-two .header-lower .support-box .inner h6:before {
     position: absolute;
@@ -4901,7 +4906,8 @@ div#mCSB_1_container {
 .banner-style-two {
     position: relative;
     padding: 270px 0px 225px 0px;
-    background: #f1f4f9;
+    background: #051225;
+    /* background: #f1f4f9; */
     overflow: hidden;
 }
 
@@ -4922,6 +4928,7 @@ div#mCSB_1_container {
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 24px;
+    color: aqua;
 }
 
 .banner-style-two .content-box h2 {
@@ -4932,6 +4939,7 @@ div#mCSB_1_container {
     padding-bottom: 25px;
     margin-bottom: 32px;
     border-bottom: 1px solid #dadce0;
+    color: antiquewhite;
 }
 
 .home_2 h1,

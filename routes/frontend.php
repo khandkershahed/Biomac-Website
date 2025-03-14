@@ -10,6 +10,7 @@ Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about');
 Route::get('research-papers', [HomeController::class, 'researchPaper'])->name('research.papers');
 Route::get('terms-conditions', [HomeController::class, 'termsConditions'])->name('terms');
+Route::get('training', [HomeController::class, 'training'])->name('training');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('blog', [HomeController::class, 'allBlog'])->name('blog');
 Route::get('services', [HomeController::class, 'services'])->name('services');

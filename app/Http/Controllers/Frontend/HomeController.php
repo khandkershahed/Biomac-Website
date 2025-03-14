@@ -101,6 +101,22 @@ class HomeController extends Controller
         ];
         return view('frontend.pages.faq', $data);
     }
+    public function training()
+    {
+        $data = [
+            'banner'  => PageBanner::active()->where('page_name', 'faq')->latest('id')->first(),
+            'faqs'    => Faq::orderBy('order', 'asc')->where('status', 'active')->get(),
+        ];
+        return view('frontend.pages.training', $data);
+    }
+    public function trainingDetails()
+    {
+        $data = [
+            'banner'  => PageBanner::active()->where('page_name', 'faq')->latest('id')->first(),
+            'faqs'    => Faq::orderBy('order', 'asc')->where('status', 'active')->get(),
+        ];
+        return view('frontend.pages.trainingDetails', $data);
+    }
     public function services()
     {
         $data = [

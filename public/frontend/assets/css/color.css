@@ -362,7 +362,7 @@
 }
 
 .header-top-two .top-left .info-list li a:hover{
-  color: #0f5ff1;
+  color: #19c4fc;
 }
 
 .header-top-two .top-left .info-list li i{
@@ -379,7 +379,8 @@
 
 .header-style-two .main-menu .navigation > li.current > a,
 .header-style-two .main-menu .navigation > li:hover > a{
-  color: #0f5ff1;
+  color: #19c4fc;
+  /* color: #0f5ff1; */
 }
 
 .header-style-two .main-menu .navigation > li.dropdown.current > a:before,

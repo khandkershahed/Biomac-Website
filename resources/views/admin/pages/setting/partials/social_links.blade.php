@@ -56,7 +56,7 @@
     <div class="fv-row col-lg-4 mb-7">
         <x-metronic.label class="fw-semibold fs-6 mb-2"><i
                 class="fs-3 fa-brands fa-tiktok pe-2"></i>{{ __('Tiktok URL') }}</x-metronic.label>
-        <x-metronic.input type="url" name="youtube_url" value="{{ optional($setting)->youtube_url }}"
+        <x-metronic.input type="url" name="tiktok_url" value="{{ optional($setting)->tiktok_url }}"
             class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Youtube URL" />
     </div>
 </div>
