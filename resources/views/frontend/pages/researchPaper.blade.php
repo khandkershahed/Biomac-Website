@@ -48,12 +48,14 @@
                                                 <h6 class="mb-2">DOI : {{ $paper->doi }}</h6>
                                                 <p>{{ $paper->journal_name }}</p>
                                             </div>
-                                            <div class="text-center">
-                                                <ul class="post-info clearfix">
-                                                    <li>Cited By</li>
-                                                </ul>
-                                                <h3><a href="{{ $paper->link }}">{{ $paper->citation }}</a></h3>
-                                            </div>
+                                            @if (!empty($paper->citation))
+                                                <div class="text-center">
+                                                    <ul class="post-info clearfix">
+                                                        <li>Cited By</li>
+                                                    </ul>
+                                                    <h3><a href="{{ $paper->link }}">{{ $paper->citation }}</a></h3>
+                                                </div>
+                                            @endif
                                         </div>
                                         <div class="lower-box">
                                             <div class="link"><a href="{{ $paper->link }}">Read More</a></div>
