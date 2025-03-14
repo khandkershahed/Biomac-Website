@@ -10,7 +10,7 @@
         @endif
         <div class="auto-container">
             <div class="content-box">
-                <h1>Research</h1>
+                <h1>Our Research Papers</h1>
                 <ul class="bread-crumb clearfix">
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li>Research Papers</li>
