@@ -54,7 +54,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css?v=' . time()) }}">
 
     <link href="{{ asset('frontend/assets/css/responsive.css?v=' . time()) }}" rel="stylesheet">
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4628201672342521"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
