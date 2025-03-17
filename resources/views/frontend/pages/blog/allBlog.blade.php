@@ -9,10 +9,10 @@
         @endif
         <div class="auto-container">
             <div class="content-box">
-                <h1>Research</h1>
+                <h1>Blogs</h1>
                 <ul class="bread-crumb clearfix">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Research Papers</li>
+                    <li>Blogs</li>
                 </ul>
             </div>
         </div>
