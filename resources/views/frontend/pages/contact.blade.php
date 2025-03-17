@@ -71,7 +71,7 @@
                             <div class="single-item">
                                 <div class="icon-box"><i class="flaticon-pin"></i></div>
                                 <h3>Location</h3>
-                                <p>{{ optional($setting)->address_line_two }}</p>
+                                <p>{{ optional($setting)->address_line_one }}</p>
                                 <h6>
                                     <a href="{{ route('contact') }}">
                                         Check Location<i class="flaticon-right-arrow"></i>
