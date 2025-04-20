@@ -44,7 +44,7 @@
             </div>
             <div class="image-layer">
                 {{-- <figure class="image-1"><img src="{{ asset('images/') }}" alt=""></figure> --}}
-                <figure class="image-2"><img src="{{ asset('images/about_image_1.png') }}" alt=""></figure>
+                <figure class="image-2"><img src="{{ asset('storage/' . $slider->bg_image) }}" alt=""></figure>
                 {{-- <figure class="image-2"><img src="{{ asset('images/image_why_choose.png') }}" alt=""></figure> --}}
                 <figure class="image-3"><img src="{{ asset('images/about_thumb_6.png') }}" alt=""></figure>
                 {{-- <figure class="image-4"><img src="{{ asset('') }}" alt=""></figure> --}}
@@ -54,7 +54,8 @@
                     <div class="col-xl-8 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
                             <h5>{{ $slider->badge }}</h5>
-                            <h2>{{ $slider->title }}</h2>
+                            <h2><a href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->title }}</a></h2>
+                            <h6><a href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->subtitle }}</a></h6>
                             {{-- <p>The system and expound the actual teachings of the great explorer truth, the master-builder
                                 of human happiness.</p> --}}
                             @if ($slider->button_name && $slider->button_link)
