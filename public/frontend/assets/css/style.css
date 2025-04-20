@@ -4945,6 +4945,19 @@ div#mCSB_1_container {
     color: antiquewhite;
 }
 
+.slider_title {
+    color: antiquewhite;
+}
+.slider_subtitle {
+    color: rgb(2, 216, 212);
+    font-size: 30px;
+}
+.slider_title:hover {
+    color: rgb(2, 216, 212);
+}
+.slider_subtitle:hover {
+    color: antiquewhite;
+}
 .home_2 h1,
 .home_2 h2,
 .home_2 h3,

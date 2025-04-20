@@ -54,8 +54,8 @@
                     <div class="col-xl-8 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
                             <h5>{{ $slider->badge }}</h5>
-                            <h2><a href="{{ $slider->banner_link ?? 'javascript:void(0)' }}" style="color:antiquewhite">{{ $slider->title }}</a></h2>
-                            <h5 class="mb-3"><a href="{{ $slider->banner_link ?? 'javascript:void(0)' }}" style="color:rgb(2, 216, 212)">{{ $slider->subtitle }}</a></h5>
+                            <h2 class="mb-0"><a class="slider_title" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->title }}</a></h2>
+                            <h5 class="mb-5"><a class="slider_subtitle" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->subtitle }}</a></h5>
                             {{-- <p>The system and expound the actual teachings of the great explorer truth, the master-builder
                                 of human happiness.</p> --}}
                             @if ($slider->button_name && $slider->button_link)
