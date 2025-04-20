@@ -4951,6 +4951,8 @@ div#mCSB_1_container {
 .slider_subtitle {
     color: rgb(2, 216, 212);
     font-size: 30px;
+    line-height: 1.5;
+    font-weight: 400;
 }
 .slider_title:hover {
     color: rgb(213 177 171);
