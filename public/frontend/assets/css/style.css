@@ -4905,7 +4905,8 @@ div#mCSB_1_container {
 
 .banner-style-two {
     position: relative;
-    padding: 270px 0px 225px 0px;
+    padding: 150px 0px 225px 0px;
+    /* padding: 270px 0px 225px 0px; */
     background: #051225;
     /* background: #f1f4f9; */
     overflow: hidden;
