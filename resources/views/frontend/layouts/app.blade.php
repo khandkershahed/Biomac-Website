@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta name="title" content="{{ optional($setting)->site_title ?: config('app.name', 'BioMac Lab') }}" />
     <meta name="description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
-    <meta property="og:title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta property="og:title" content="{{ optional($setting)->site_title ?: config('app.name', 'BioMac Lab') }}" />
     <meta property="og:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
     <meta property="og:image"
         content="{{ optional($setting)->site_logo_black && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
@@ -20,7 +20,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
-    <meta property="twitter:title" content="{{ optional($setting)->site_title ?: config('app.name', 'E-Commerce') }}" />
+    <meta property="twitter:title" content="{{ optional($setting)->site_title ?: config('app.name', 'BioMac Lab') }}" />
     <meta property="twitter:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
     <meta property="twitter:image"
         content="{{ optional($setting)->site_logo_black && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
@@ -33,13 +33,16 @@
     </title>
 
     <!-- Google Fonts -->
-    <link
+    {{-- <link
         href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
 
+    <link href="{{ asset('frontend/assets/css/dm_sans_font.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/saira_font.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/font-awesome-all.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/font-awesome-all.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/flaticon.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/owl.css') }}" rel="stylesheet">

@@ -278,7 +278,7 @@
     <div class="popup-inner">
         <div class="upper-box clearfix">
             <figure class="logo-box pull-left">
-                <a href="{{ route('home') }}"><img src="assets/images/logo-3.png" alt=""></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('backend/assets/images/logo-3.png') }}" alt=""></a>
             </figure>
             <div class="close-search pull-right"><i class="fa-solid fa-xmark"></i></div>
         </div>

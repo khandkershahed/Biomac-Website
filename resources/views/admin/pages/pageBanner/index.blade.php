@@ -23,8 +23,8 @@
         </div>
         <div class="card-body py-0">
             <table class="table my-datatable table-striped table-row-bordered gy-5 gs-7">
-                <thead class="bg-light-danger">
-                    <tr class=" text-white fw-bolder fs-7 text-uppercase gs-0">
+                <thead class="bg-info">
+                    <tr class="text-white fw-bolder fs-7 text-uppercase gs-0">
                         <th width="5%">Sl</th>
                         <th width="15%" class="text-center">Thumbnail Image</th>
                         <th width="15%" class="text-center">Background Image</th>

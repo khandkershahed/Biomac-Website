@@ -15,7 +15,7 @@ class ResearchPaperController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.researchPaper.index', ['papers' => ResearchPaper::get()]);
+        return view('admin.pages.researchPaper.index', ['papers' => ResearchPaper::latest()->get()]);
     }
 
     /**

@@ -1,4 +1,4 @@
-<x-frontend-app-layout :title="'Home'">
+<x-frontend-app-layout :title="'HomePage | BioMac Lab'">
     <!-- ============================
         Slider
     ============================== -->
@@ -44,7 +44,7 @@
             </div>
             <div class="image-layer">
                 {{-- <figure class="image-1"><img src="{{ asset('images/') }}" alt=""></figure> --}}
-                <figure class="image-2"><img src="{{ asset('storage/' . $slider->bg_image) }}" alt=""></figure>
+                <figure class="image-2"><img src="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}" alt=""></figure>
                 {{-- <figure class="image-2"><img src="{{ asset('images/image_why_choose.png') }}" alt=""></figure> --}}
                 <figure class="image-3"><img src="{{ asset('images/about_thumb_6.png') }}" alt=""></figure>
                 {{-- <figure class="image-4"><img src="{{ asset('') }}" alt=""></figure> --}}
@@ -53,12 +53,18 @@
                 <div class="row clearfix">
                     <div class="col-xl-8 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
-                            <h5>{{ $slider->badge }}</h5>
-                            <h2 class="mb-0"><a class="slider_title" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->title }}</a></h2>
-                            <h5 class="mb-5"><a class="slider_subtitle" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->subtitle }}</a></h5>
+                            @if (!empty($slider->badge))
+                                <h5>{{ $slider->badge }}</h5>
+                            @endif
+                            @if (!empty($slider->title))
+                                <h2 class="mb-0"><a class="slider_title" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->title }}</a></h2>
+                            @endif
+                            @if (!empty($slider->subtitle))
+                                <h5 class="mb-5"><a class="slider_subtitle" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->subtitle }}</a></h5>
+                            @endif
                             {{-- <p>The system and expound the actual teachings of the great explorer truth, the master-builder
                                 of human happiness.</p> --}}
-                            @if ($slider->button_name && $slider->button_link)
+                            @if (!empty($slider->button_name) && !empty($slider->button_link))
                                 <a href="{{ $slider->button_link }}"
                                     class="theme-btn light">{{ $slider->button_name }}</a>
                             @endif
