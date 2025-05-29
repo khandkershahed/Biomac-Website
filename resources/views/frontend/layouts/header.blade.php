@@ -306,10 +306,10 @@
     <div class="header-top-two">
         <div class="top-inner">
             <div class="top-left">
-                <div class="link"><span>Training</span><a href="https://www.facebook.com/share/p/12HbcYv8n6Q/">Upcoming<i
+                <div class="link"><span>Training</span><a href="https://www.facebook.com/share/1AUjj8zGdc/">Upcoming<i
                             class="flaticon-right-arrow"></i></a></div>
                 <ul class="info-list clearfix">
-                    <li><i class="fa-solid fa-graduation-cap text-white"></i><a class="ms-3" href="https://www.facebook.com/share/p/12HbcYv8n6Q/">Online Training on Metagenomics Data Analysis: From Raw Data to Biological Insights</a>
+                    <li><i class="fa-solid fa-graduation-cap text-white"></i><a class="ms-3" href="https://www.facebook.com/share/1AUjj8zGdc/">Bacterial Genome Assembly and Comparative Genomics Using Long and Short Reads</a>
                     </li>
                     {{-- <li><i class="flaticon-map"></i>Corporate: 24 Global Str, SF 94112</li> --}}
                 </ul>
