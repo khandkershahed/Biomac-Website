@@ -17,14 +17,15 @@
                                                 value="1" />
                                         </div>
                                     </th> --}}
-                                    <th width="5%" class="text-center">Sl</th>
+                                    <th width="2%" class="text-center">Sl</th>
                                     <th width="15%" class="text-center">Name</th>
-                                    <th width="20%" class="text-center">Email</th>
-                                    <th width="5%" class="text-center">Message</th>
+                                    <th width="15%" class="text-center">Email</th>
+                                    <th width="48%" class="text-center">Message</th>
+                                    <th width="10%" class="text-center">Date</th>
                                     <th width="10%" class="text-center">Action</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-center fw-bold text-gray-600">
+                            <tbody class="text-start fw-bold text-gray-600">
                                 @forelse ($contacts as $contact)
                                     <tr>
                                         {{-- <td>
@@ -43,6 +44,9 @@
                                         </td>
                                         <td>
                                             <span class="fw-bolder"> {{ $contact->message }}</span>
+                                        </td>
+                                        <td>
+                                            <span class="fw-bolder">{{ \Carbon\Carbon::parse($contact->created_at)->format('d M, Y') }}</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="{{ route('admin.contacts.destroy', $contact->id) }}"
