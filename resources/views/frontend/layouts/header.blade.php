@@ -356,7 +356,7 @@
                                 <li class="{{ Route::is('home') ? 'current' : '' }}"><a href="{{ route('home') }}">Home</a></li>
                                 <li class="{{ Route::is('about') ? 'current' : '' }}"><a href="{{ route('about') }}">About</a></li>
                                 <li class="{{ Route::is('services') ? 'current' : '' }}"><a href="{{ route('services') }}">Services</a></li>
-                                <li class="{{ Route::is('research') ? 'current' : '' }}"><a href="{{ route('research.papers') }}">Research</a></li>
+                                <li class="{{ Route::is('research.papers') ? 'current' : '' }}"><a href="{{ route('research.papers') }}">Research</a></li>
                                 <li class="{{ Route::is('training') ? 'current' : '' }}"><a href="{{ route('training') }}">Recent Trainings</a></li>
                                 <li class="{{ Route::is('blog') ? 'current' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>
                                 <li class="{{ Route::is('contact') ? 'current' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
