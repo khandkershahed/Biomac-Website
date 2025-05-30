@@ -320,7 +320,7 @@
                             </div>
                             <div class="lower-content">
                                 <h3><a href="javascript:void(0)">Moslema Jahan Mou</a></h3>
-                                <span class="designation">Research Student</span>
+                                <span class="designation">Senior Researcher</span>
                             </div>
                         </div>
                     </div>
