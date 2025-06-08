@@ -7,7 +7,7 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Get In Touch</h1>
+                    <h1></h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li>Contact</li>
