@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\OrderManagementController;
 use App\Http\Controllers\Admin\PageBannerController;
 use App\Http\Controllers\Admin\PrivacyPolicyController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ResearcherController;
 use App\Http\Controllers\Admin\ResearchPaperController;
 use App\Http\Controllers\Admin\ShippingManagementController;
 use App\Http\Controllers\Admin\StaffController;
@@ -123,6 +124,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
             'deal-banner'       => DealBannerController::class,
             'blog-post'         => BlogPostController::class,
             'team-member'       => TeamMemberController::class, //done
+            'researcher'        => ResearcherController::class, //done
         ],
         ['except' => ['show']]
     );

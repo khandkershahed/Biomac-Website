@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\TeamMember;
+use App\Models\Researcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class TeamMemberController extends Controller
+class ResearcherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class TeamMemberController extends Controller
     public function index()
     {
         $data = [
-            'teams' => TeamMember::latest('id')->get(),
+            'researchers' => Researcher::latest('id')->get(),
         ];
-        return view('admin.pages.team.index', $data);
+        return view('admin.pages.researcher.index', $data);
     }
 
     /**
@@ -28,7 +28,7 @@ class TeamMemberController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.team.create');
+        return view('admin.pages.researcher.create');
     }
 
     /**
@@ -42,8 +42,8 @@ class TeamMemberController extends Controller
             // Validation
             $validator = Validator::make($request->all(), [
                 'name'              => 'required|string|max:255',
-                'email'             => 'required|email|max:255|unique:team_members,email',
-                'order'             => 'nullable|integer|min:0|unique:team_members,order',
+                'email'             => 'required|email|max:255|unique:researchers,email',
+                'order'             => 'nullable|integer|min:0|unique:researchers,order',
                 'phone'             => 'nullable|string|max:20',
                 'designation'       => 'nullable|string|max:200',
                 'image'             => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
@@ -89,7 +89,7 @@ class TeamMemberController extends Controller
             $uploadedFiles = [];
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
-                    $filePath = 'team/' . $key;
+                    $filePath = 'researcher/' . $key;
                     $uploadedFiles[$key] = customUpload($file, $filePath);
                     if ($uploadedFiles[$key]['status'] === 0) {
                         return redirect()->back()->with('error', $uploadedFiles[$key]['error_message']);
@@ -99,8 +99,8 @@ class TeamMemberController extends Controller
                 }
             }
 
-            // Create the TeamMember model instance
-            $teamMember = TeamMember::create([
+            // Create the Researcher model instance
+            $researcher = Researcher::create([
                 'name'            => $request->name,
                 'email'           => $request->email,
                 'phone'           => $request->phone,
@@ -129,11 +129,11 @@ class TeamMemberController extends Controller
             // Commit the database transaction
             DB::commit();
 
-            return redirect()->route('admin.team-member.index')->with('success', 'Team member created successfully');
+            return redirect()->route('admin.researcher.index')->with('success', 'Researcher created successfully');
         } catch (\Exception $e) {
             // Rollback the database transaction in case of an error
             DB::rollback();
-            Session::flash('error', 'An error occurred while creating the team member: ' . $e->getMessage());
+            Session::flash('error', 'An error occurred while creating the researcher: ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
@@ -152,9 +152,9 @@ class TeamMemberController extends Controller
     public function edit(string $id)
     {
         $data = [
-            'teamMember' => TeamMember::findOrFail($id),
+            'researcher' => Researcher::findOrFail($id),
         ];
-        return view('admin.pages.team.edit', $data);
+        return view('admin.pages.researcher.edit', $data);
     }
 
     /**
@@ -165,12 +165,12 @@ class TeamMemberController extends Controller
         DB::beginTransaction();
 
         try {
-            $team = TeamMember::findOrFail($id);
+            $researcher = Researcher::findOrFail($id);
             // Validation
             $validator = Validator::make($request->all(), [
                 'name'              => 'required|string|max:255',
-                'email'             => 'required|email|max:255|unique:team_members,email,' . $team->id,
-                'order'             => 'nullable|integer|min:0|unique:team_members,order,' . $team->id . ',id', // Updated uniqueness rule
+                'email'             => 'required|email|max:255|unique:researchers,email,' . $researcher->id,
+                'order'             => 'nullable|integer|min:0|unique:researchers,order,' . $researcher->id . ',id', // Updated uniqueness rule
                 'phone'             => 'nullable|string|max:20',
                 'designation'       => 'nullable|string|max:200',
                 'image'             => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
@@ -215,8 +215,8 @@ class TeamMemberController extends Controller
             $uploadedFiles = [];
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
-                    $filePath = 'team/' . $key;
-                    $oldFile = $team->$key ?? null;
+                    $filePath = 'researcher/' . $key;
+                    $oldFile = $researcher->$key ?? null;
                     if ($oldFile) {
                         Storage::delete("public/" . $oldFile);
                     }
@@ -229,13 +229,13 @@ class TeamMemberController extends Controller
                 }
             }
 
-            // Update the TeamMember model instance
-            $team->update([
+            // Update the Researcher model instance
+            $researcher->update([
                 'name'            => $request->name,
                 'email'           => $request->email,
                 'phone'           => $request->phone,
                 'designation'     => $request->designation,
-                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $team->image,
+                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $researcher->image,
                 'linked_in'       => $request->linked_in,
                 'instagram'       => $request->instagram,
                 'facebook'        => $request->facebook,
@@ -259,11 +259,11 @@ class TeamMemberController extends Controller
             // Commit the database transaction
             DB::commit();
 
-            return redirect()->route('admin.team-member.index')->with('success', 'Team member updated successfully');
+            return redirect()->route('admin.researcher.index')->with('success', 'Researcher updated successfully');
         } catch (\Exception $e) {
             // Rollback the database transaction in case of an error
             DB::rollback();
-            Session::flash('error', 'An error occurred while updating the team member: ' . $e->getMessage());
+            Session::flash('error', 'An error occurred while updating the researcher: ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
@@ -272,19 +272,19 @@ class TeamMemberController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TeamMember $team)
+    public function destroy(Researcher $researcher)
     {
         $files = [
-            'image' => $team->image,
+            'image' => $researcher->image,
         ];
         foreach ($files as $key => $file) {
             if (!empty($file)) {
-                $oldFile = $team->$key ?? null;
+                $oldFile = $researcher->$key ?? null;
                 if ($oldFile) {
                     Storage::delete("public/" . $oldFile);
                 }
             }
         }
-        $team->delete();
+        $researcher->delete();
     }
 }

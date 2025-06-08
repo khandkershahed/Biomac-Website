@@ -7705,6 +7705,9 @@ div#mCSB_1_container {
 .about-style-three .content-box .text {
     margin-bottom: 36px;
 }
+.about-style-three .content-box .text p{
+    margin-bottom: 10px;
+}
 
 .about-style-three .content-box .single-item {
     position: relative;

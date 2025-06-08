@@ -168,14 +168,39 @@
                             ],
                         ],
                         [
-                            'title' => 'Users',
+                            'title' => 'Team Member & Users',
                             'icon' => 'fa-solid fa-users text-primary fs-3',
+                            'routes' => [
+                                'admin.team-member.index',
+                                'admin.team-member.create',
+                                'admin.team-member.edit',
+                                'admin.user.index',
+                            ],
                             'subMenu' => [
+                                [
+                                    'title' => 'Team Members',
+                                    'routes' => [
+                                        'admin.team-member.index',
+                                        'admin.team-member.create',
+                                        'admin.team-member.edit',
+                                    ],
+                                    'route' => 'admin.team-member.index',
+                                ],
+                                [
+                                    'title' => 'Researchers',
+                                    'routes' => [
+                                        'admin.researcher.index',
+                                        'admin.researcher.create',
+                                        'admin.researcher.edit',
+                                    ],
+                                    'route' => 'admin.researcher.index',
+                                ],
                                 [
                                     'title' => 'User List',
                                     'routes' => ['admin.user.index'],
                                     'route' => 'admin.user.index',
                                 ],
+
                             ],
                         ],
                         // [
@@ -228,7 +253,7 @@
                         //     ],
                         // ],
                         [
-                            'title' => 'Customer Support',
+                            'title' => 'User Support',
                             'icon' => 'fa-solid fa-headset text-info fs-3',
                             'routes' => [
                                 'admin.contacts.index',
@@ -268,9 +293,6 @@
                                 'admin.privacy-policy.index',
                                 'admin.privacy-policy.create',
                                 'admin.privacy-policy.edit',
-                                'admin.team-member.index',
-                                'admin.team-member.create',
-                                'admin.team-member.edit',
                             ],
                             'subMenu' => [
                                 [
@@ -278,15 +300,7 @@
                                     'routes' => ['admin.banner.index', 'admin.banner.create', 'admin.banner.edit'],
                                     'route' => 'admin.banner.index',
                                 ],
-                                [
-                                    'title' => 'Team Members',
-                                    'routes' => [
-                                        'admin.team-member.index',
-                                        'admin.team-member.create',
-                                        'admin.team-member.edit',
-                                    ],
-                                    'route' => 'admin.team-member.index',
-                                ],
+
                                 [
                                     'title' => 'Terms & Condition',
                                     'routes' => [
