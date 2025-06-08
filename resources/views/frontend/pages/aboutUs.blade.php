@@ -220,6 +220,13 @@
                                                 <li><a href="{{ $team->github }}" target="_blank"><i
                                                             class="fa-brands fa-github"></i></a></li>
                                             @endif
+                                            @if ($team->discord)
+                                                <li>
+                                                    <a href="{{ $team->discord }}" target="_blank">
+                                                        <i class="fa-brands fa-researchgate"></i>
+                                                    </a>
+                                                </li>
+                                            @endif
 
                                             @if ($team->website)
                                                 <li><a href="{{ $team->website }}" target="_blank"><i
@@ -272,8 +279,8 @@
 
                                         <li><a href="mailto:moslema.mou@monash.edu" target="_blank"><i
                                                     class="fas fa-envelope"></i></a></li>
-                                        <li><a href="https://scholar.google.com/citations?user=WeRdYDAAAAAJ&hl=en" target="_blank"><i
-                                                    class="fas fa-globe"></i></a></li>
+                                        <li><a href="https://scholar.google.com/citations?user=WeRdYDAAAAAJ&hl=en"
+                                                target="_blank"><i class="fas fa-globe"></i></a></li>
 
                                         {{-- @if ($team->facebook)
                                             <li><a href="{{ $team->facebook }}" target="_blank"><i

@@ -189,7 +189,7 @@
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Email <span class="text-danger">*</span></label>
                                             <i class="fa-solid fa-envelope"></i>
-                                            <input type="email" name="email" required="example@example.com">
+                                            <input type="email" name="email" placeholder="Email" required>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <label>Phone</label>
@@ -204,7 +204,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                             <label>Message <span class="text-danger">*</span></label>
                                             <i class="fa-sharp fa-solid fa-text-width"></i>
-                                            <textarea name="message" required></textarea>
+                                            <textarea name="message" required placeholder="Your Message"></textarea>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                                             <button type="submit" class="theme-btn" name="submit-form">Send

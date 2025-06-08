@@ -44,10 +44,10 @@
                                 </li>
                             </ul>
                             <ul class="social-links clearfix">
-                                <li><a href="index.html"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="index.html"><i class="fa-brands fa-square-twitter"></i></a></li>
-                                <li><a href="index.html"><i class="fa-solid fa-basketball"></i></a></li>
-                                <li><a href="index.html"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href="{{ route('home') }}"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="{{ route('home') }}"><i class="fa-brands fa-square-twitter"></i></a></li>
+                                <li><a href="{{ route('home') }}"><i class="fa-solid fa-basketball"></i></a></li>
+                                <li><a href="{{ route('home') }}"><i class="fa-brands fa-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="btn-box">

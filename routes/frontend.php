@@ -9,7 +9,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about');
 Route::get('research-papers', [HomeController::class, 'researchPaper'])->name('research.papers');
-Route::get('terms-conditions', [HomeController::class, 'termsConditions'])->name('terms');
+Route::get('terms-conditions', [HomeController::class, 'termsCondition'])->name('terms');
 Route::get('training', [HomeController::class, 'training'])->name('training');
 Route::get('training/details/{slug}', [HomeController::class, 'trainingDetails'])->name('trainingDetails');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');

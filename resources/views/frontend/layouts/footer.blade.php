@@ -141,7 +141,7 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                {{-- <li><a href="index.html">Book a Test</a></li> --}}
+                                {{-- <li><a href="{{ route('home') }}">Book a Test</a></li> --}}
                             </ul>
                         </div>
                     </div>

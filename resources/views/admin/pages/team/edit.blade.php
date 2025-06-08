@@ -96,9 +96,9 @@
 
                     <div class="col-lg-4 mb-7">
                         <x-metronic.label for="discord"
-                            class="fw-bold fs-6 mb-2">{{ __('Discord') }}</x-metronic.label>
+                            class="fw-bold fs-6 mb-2">{{ __('Research Gate') }}</x-metronic.label>
                         <x-metronic.input id="discord" type="text" class="form-control-solid mb-3 mb-lg-0"
-                            name="discord" :value="old('discord', $teamMember->discord)" placeholder="Enter Discord Username"></x-metronic.input>
+                            name="discord" :value="old('discord', $teamMember->discord)" placeholder="Enter Research Gate"></x-metronic.input>
                     </div>
 
                     <div class="col-lg-4 mb-7">

@@ -67,37 +67,6 @@
         </div>
     </div>
     @push('scripts')
-        <script>
-            $(document).ready(function() {
-
-
-                $(document).on('change', '.status-toggle', function() {
-                    const id = $(this).data('id');
-                    const route = "{{ route('admin.brands.toggle-status', ':id') }}".replace(':id', id);
-                    toggleStatus(route, id);
-                });
-
-                function toggleStatus(route, id) {
-                    $.ajax({
-                        url: route,
-                        type: 'POST',
-                        data: {
-                            _token: '{{ csrf_token() }}'
-                        },
-                        success: function(response) {
-                            if (response.success) {
-                                alert('Status updated successfully!');
-                                table.ajax.reload(null, false); // Reload the DataTable
-                            } else {
-                                alert('Failed to update status.');
-                            }
-                        },
-                        error: function() {
-                            alert('An error occurred while updating the status.');
-                        }
-                    });
-                }
-            });
-        </script>
+        
     @endpush
 </x-admin-app-layout>

@@ -12,8 +12,7 @@
         <div class="content-box">
             <h1>Faq’s</h1>
             <ul class="bread-crumb clearfix">
-                <li><a href="index.html">Home</a></li>
-                <li>About</li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <li>Faq’s</li>
             </ul>
         </div>
@@ -26,7 +25,7 @@
 <section class="faq-section sec-pad">
     <div class="auto-container">
         <div class="row clearfix">
-            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+            {{-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                 <div class="faq-sidebar">
                     <div class="text">
                         <h3>Ask Our Experts</h3>
@@ -52,112 +51,31 @@
                         <p><span>*</span> We never share your email.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+            </div> --}}
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-12 content-side">
                 <div class="faq-content">
                     <div class="upper-box">
                         <div class="title">
-                            <h2>I Would Like to Know About</h2>
-                        </div>
-                        <div class="select-box">
-                            <select class="selectmenu">
-                                <option selected="selected">Biogenix Test</option>
-                                <option>Biochemistry Tests</option>
-                                <option>Microbiology Test</option>
-                                <option>Histopatology</option>
-                                <option>Hormonal Assay</option>
-                            </select>
+                            <h2 class="text-black">Frequently Asked Questions ?</h2>
                         </div>
                     </div>
                     <ul class="accordion-box">
-                        <li class="accordion block active-block">
-                            <div class="acc-btn active">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>Why Do You Need A Lab Test?</h4>
-                            </div>
-                            <div class="acc-content current">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
+                        @foreach ($faqs as $faq)
+                            <li class="accordion block {{ $loop->first ? 'active-block' : '' }}">
+                                <div class="acc-btn {{ $loop->first ? 'active' : '' }}">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow"></i>
+                                    </div>
+                                    <h4>{{ $faq->question }}</h4>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>Who Will Perform Your Tests?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
+                                <div class="acc-content {{ $loop->first ? 'current' : '' }}">
+                                    <div class="text">
+                                        <p>{{ $faq->answer }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>What Can Be Tested?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>How Are Specimens Taken?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>How Do You Get A Copy Of Your Lab Results?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>What Do Your Test Results Mean?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>Can I Have Coffee If I Am Having A Fasting Test?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="accordion block">
-                            <div class="acc-btn">
-                                <div class="icon-outer"><i class="flaticon-down-arrow"></i></div>
-                                <h4>Do I Need An Appointment For Lab Tests?</h4>
-                            </div>
-                            <div class="acc-content">
-                                <div class="text">
-                                    <p>Toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise some advantage from it.</p>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        @endforeach
+
                     </ul>
                 </div>
             </div>

@@ -61,9 +61,9 @@
                                             <div class="link"><a href="{{ $paper->link }}">Read More</a></div>
                                             {{-- <div class="right-info">
                                                 <ul class="social-links clearfix">
-                                                    <li><a href="index.html"><i class="fa-brands fa-facebook"></i></a></li>
-                                                    <li><a href="index.html"><i class="fa-brands fa-square-twitter"></i></a></li>
-                                                    <li><a href="index.html"><i class="fa-solid fa-basketball"></i></a></li>
+                                                    <li><a href="{{ route('home') }}"><i class="fa-brands fa-facebook"></i></a></li>
+                                                    <li><a href="{{ route('home') }}"><i class="fa-brands fa-square-twitter"></i></a></li>
+                                                    <li><a href="{{ route('home') }}"><i class="fa-solid fa-basketball"></i></a></li>
                                                 </ul>
                                                 <div class="comments-box clearfix">
                                                     <a href="{{ $paper->link }}"><i class="fa-regular fa-comment-dots"></i>3</a>
