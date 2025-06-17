@@ -74,8 +74,8 @@
 
         gtag('config', 'G-GC9HKRKQT3');
     </script>
-    {{ $setting->google_analytics ?? '' }}
-    {{ $setting->google_adsense ?? '' }}
+    {!! $setting->google_analytics !!}
+    {!! $setting->google_adsense !!}
     {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4628201672342521"
         crossorigin="anonymous"></script> --}}
