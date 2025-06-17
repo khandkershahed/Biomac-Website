@@ -14,8 +14,11 @@
     <meta property="og:url" content="{{ optional($setting)->site_url ?: config('app.url') }}" />
     <meta property="og:title" content="{{ optional($setting)->site_title ?: config('app.name', 'BioMac Lab') }}" />
     <meta property="og:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
+    @php
+        $slider = \App\Models\PageBanner::active()->where('page_name', 'home_slider')->latest('id')->first(['bg_image']);
+    @endphp
     <meta property="og:image"
-        content="{{ optional($setting)->site_logo_black && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
+        content="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -23,7 +26,7 @@
     <meta property="twitter:title" content="{{ optional($setting)->site_title ?: config('app.name', 'BioMac Lab') }}" />
     <meta property="twitter:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
     <meta property="twitter:image"
-        content="{{ optional($setting)->site_logo_black && file_exists(public_path('storage/' . optional($setting)->site_logo_black)) ? asset('storage/' . optional($setting)->site_logo_black) : asset('frontend/images/brandPage-logo-no-img(217-55).jpg') }}" />
+        content="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}" />
 
     <link href="{{ asset('storage/' . optional($setting)->site_favicon) }}" rel="apple-touch-icon-precomposed">
     <link href="{{ asset('storage/' . optional($setting)->site_favicon) }}" rel="shortcut icon" type="image/png">
