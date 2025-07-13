@@ -44,7 +44,9 @@
             </div>
             <div class="image-layer">
                 {{-- <figure class="image-1"><img src="{{ asset('images/') }}" alt=""></figure> --}}
-                <figure class="image-2"><img src="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}" alt=""></figure>
+                <figure class="image-2"><img
+                        src="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}"
+                        alt=""></figure>
                 {{-- <figure class="image-2"><img src="{{ asset('images/image_why_choose.png') }}" alt=""></figure> --}}
                 <figure class="image-3"><img src="{{ asset('images/about_thumb_6.png') }}" alt=""></figure>
                 {{-- <figure class="image-4"><img src="{{ asset('') }}" alt=""></figure> --}}
@@ -57,10 +59,14 @@
                                 <h5>{{ $slider->badge }}</h5>
                             @endif
                             @if (!empty($slider->title))
-                                <h2 class="mb-0"><a class="slider_title" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->title }}</a></h2>
+                                <h2 class="mb-0"><a class="slider_title"
+                                        href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->title }}</a>
+                                </h2>
                             @endif
                             @if (!empty($slider->subtitle))
-                                <h5 class="mb-5"><a class="slider_subtitle" href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->subtitle }}</a></h5>
+                                <h5 class="mb-5"><a class="slider_subtitle"
+                                        href="{{ $slider->banner_link ?? 'javascript:void(0)' }}">{{ $slider->subtitle }}</a>
+                                </h5>
                             @endif
                             {{-- <p>The system and expound the actual teachings of the great explorer truth, the master-builder
                                 of human happiness.</p> --}}
@@ -186,8 +192,8 @@
                         <div class="inner-box">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="{{ asset('images/ashim_chakma.jpg') }}" alt=""
-                                        style="height: 296px;">
+                                    <img src="{{ asset('images/ashim_chakma.png') }}"
+                                        style="width: 300px; height:300px;" alt="">
                                 </figure>
                                 <div class="share-option">
                                     <div class="share-icon"><i class="flaticon-sharing"></i></div>
@@ -253,54 +259,17 @@
                         <div class="inner-box">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="{{ asset('images/omor_hamza.jpg') }}" alt="">
+                                    <img src="{{ asset('images/omor_hamza.jpg') }}"
+                                        style="width: 300px; height:300px;" alt="">
                                 </figure>
                                 <div class="share-option">
                                     <div class="share-icon"><i class="flaticon-sharing"></i></div>
                                     <ul class="social-links clearfix">
-
-                                        <li><a href="mailto:imtiaz.24160107@bau.edu.bd" target="_blank"><i
-                                                    class="fas fa-envelope"></i></a></li>
-
-                                        {{-- @if ($team->facebook)
-                                            <li><a href="{{ $team->facebook }}" target="_blank"><i
-                                                        class="fa-brands fa-facebook"></i></a></li>
-                                        @endif
-
-                                        @if ($team->linked_in)
-                                            <li><a href="{{ $team->linked_in }}" target="_blank"><i
-                                                        class="fa-brands fa-linkedin"></i></a></li>
-                                        @endif
-
-                                        @if ($team->github)
-                                            <li><a href="{{ $team->github }}" target="_blank"><i
-                                                        class="fa-brands fa-github"></i></a></li>
-                                        @endif
-
-                                        @if ($team->website)
-                                            <li><a href="{{ $team->website }}" target="_blank"><i
-                                                        class="fa-solid fa-globe"></i></a></li>
-                                        @endif
-
-                                        @if ($team->youtube)
-                                            <li><a href="{{ $team->youtube }}" target="_blank"><i
-                                                        class="fa-brands fa-youtube"></i></a></li>
-                                        @endif
-
-                                        @if ($team->discord)
-                                            <li><a href="{{ $team->discord }}" target="_blank"><i
-                                                        class="fa-brands fa-discord"></i></a></li>
-                                        @endif
-
-                                        @if ($team->tiktok)
-                                            <li><a href="{{ $team->tiktok }}" target="_blank"><i
-                                                        class="fa-brands fa-tiktok"></i></a></li>
-                                        @endif
-
-                                        @if ($team->instagram)
-                                            <li><a href="{{ $team->instagram }}" target="_blank"><i
-                                                        class="fa-brands fa-instagram"></i></a></li>
-                                        @endif --}}
+                                        <li>
+                                            <a href="javascript:void(0)" target="_blank"><i
+                                                    class="fas fa-envelope"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -314,6 +283,67 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                    <div class="team-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="{{ asset('images/nusrat_amin.png') }}"
+                                        style="width: 300px; height:300px;" alt="">
+                                </figure>
+                                <div class="share-option">
+                                    <div class="share-icon"><i class="flaticon-sharing"></i></div>
+                                    <ul class="social-links clearfix">
+                                        <li>
+                                            <a href="javascript:void(0)" target="_blank"><i
+                                                    class="fas fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="javascript:void(0)">Nusrat Amin</a></h3>
+                                <span class="designation">
+                                    MSc in Biotechnology in Bangladesh Agricultural University.
+                                </span>
+                                {{-- <span class="designation">Intern</span> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                    <div class="team-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="{{ asset('images/enam_ahmed.png') }}"
+                                        style="width: 300px; height:300px;" alt="">
+                                </figure>
+                                <div class="share-option">
+                                    <div class="share-icon"><i class="flaticon-sharing"></i></div>
+                                    <ul class="social-links clearfix">
+                                        <li>
+                                            <a href="javascript:void(0)" target="_blank"><i
+                                                    class="fas fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="lower-content">
+                                <h3><a href="javascript:void(0)">Enam Ahmed</a></h3>
+                                <span class="designation">
+                                    Department of Health Science, Dong-A University, South Korea
+                                </span>
+                                {{-- <span class="designation">Intern</span> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- All Members button (hidden initially) -->
             {{-- <div class="more-btn" id="all-members-btn" style="display: none;">
