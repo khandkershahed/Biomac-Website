@@ -265,11 +265,11 @@
                                 <div class="share-option">
                                     <div class="share-icon"><i class="flaticon-sharing"></i></div>
                                     <ul class="social-links clearfix">
-                                        <li>
+                                        {{-- <li>
                                             <a href="javascript:void(0)" target="_blank"><i
                                                     class="fas fa-envelope"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
 
@@ -294,11 +294,11 @@
                                 <div class="share-option">
                                     <div class="share-icon"><i class="flaticon-sharing"></i></div>
                                     <ul class="social-links clearfix">
-                                        <li>
+                                        {{-- <li>
                                             <a href="javascript:void(0)" target="_blank"><i
                                                     class="fas fa-envelope"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
 
@@ -324,11 +324,11 @@
                                 <div class="share-option">
                                     <div class="share-icon"><i class="flaticon-sharing"></i></div>
                                     <ul class="social-links clearfix">
-                                        <li>
+                                        {{-- <li>
                                             <a href="javascript:void(0)" target="_blank"><i
                                                     class="fas fa-envelope"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
 
