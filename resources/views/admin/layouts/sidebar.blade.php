@@ -105,7 +105,6 @@
                                 // 'admin.categories.edit',
                             ],
                             'subMenu' => [
-
                                 [
                                     'title' => 'Training',
                                     'routes' => [
@@ -129,7 +128,6 @@
                                 // 'admin.categories.edit',
                             ],
                             'subMenu' => [
-
                                 [
                                     'title' => 'Paper',
                                     'routes' => [
@@ -175,6 +173,12 @@
                                 'admin.team-member.create',
                                 'admin.team-member.edit',
                                 'admin.user.index',
+                                'admin.intern.index',
+                                'admin.intern.create',
+                                'admin.intern.edit',
+                                'admin.researcher.index',
+                                'admin.researcher.create',
+                                'admin.researcher.edit',
                             ],
                             'subMenu' => [
                                 [
@@ -197,11 +201,7 @@
                                 ],
                                 [
                                     'title' => 'Interns',
-                                    'routes' => [
-                                        'admin.intern.index',
-                                        'admin.intern.create',
-                                        'admin.intern.edit',
-                                    ],
+                                    'routes' => ['admin.intern.index', 'admin.intern.create', 'admin.intern.edit'],
                                     'route' => 'admin.intern.index',
                                 ],
                                 [
@@ -209,7 +209,6 @@
                                     'routes' => ['admin.user.index'],
                                     'route' => 'admin.user.index',
                                 ],
-
                             ],
                         ],
                         // [

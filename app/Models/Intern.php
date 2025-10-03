@@ -15,5 +15,6 @@ class Intern extends Model
      *
      * @var array
      */
+    protected $slugSourceColumn = 'name';
     protected $guarded = [];
 }

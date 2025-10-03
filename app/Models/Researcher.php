@@ -14,5 +14,6 @@ class Researcher extends Model
      *
      * @var array
      */
+    protected $slugSourceColumn = 'name';
     protected $guarded = [];
 }

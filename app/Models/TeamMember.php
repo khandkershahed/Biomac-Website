@@ -15,6 +15,7 @@ class TeamMember extends Model
      * @var array
      */
     protected $guarded = [];
+    protected $slugSourceColumn = 'name';
     public function scopeActive($query)
     {
         return $query->where('status', 'active');
