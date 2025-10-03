@@ -220,8 +220,8 @@ class InternController extends Controller
 
             // Commit the database transaction
             DB::commit();
-
-            return redirect()->route('admin.intern.index')->with('success', 'Intern updated successfully');
+            Session::flash('success', 'Intern updated successfully');
+            return redirect()->back();
         } catch (\Exception $e) {
             // Rollback the database transaction in case of an error
             DB::rollback();
