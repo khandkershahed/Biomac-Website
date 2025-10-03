@@ -181,80 +181,82 @@
     </section>
     <!-- about-style-two end -->
     <!-- intern-section -->
-    <section class="team-section sec-pad">
-        <div class="auto-container">
-            <div class="sec-title">
-                <span class="sub-title">Innovative minds shaping the future.</span>
-                <h2>Meet Our Interns</h2>
-            </div>
-            <div class="row clearfix">
-                @foreach ($interns as $intern)
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="{{ !empty($intern->image) && file_exists(public_path('storage/' . $intern->image))
-                                            ? asset('storage/' . $intern->image)
-                                            : asset($intern->gender === 'male' ? 'images/male.png' : 'images/female.png') }}"
-                                            style="width: 300px; height: 300px;" loading="lazy"
-                                            alt="{{ $intern->name }}">
+    @if ($interns && $interns->count() > 0)
+        <section class="team-section sec-pad">
+            <div class="auto-container">
+                <div class="sec-title">
+                    <span class="sub-title">Innovative minds shaping the future.</span>
+                    <h2>Meet Our Interns</h2>
+                </div>
+                <div class="row clearfix">
+                    @foreach ($interns as $intern)
+                        <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                            <div class="team-block-one">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image">
+                                            <img src="{{ !empty($intern->image) && file_exists(public_path('storage/' . $intern->image))
+                                                ? asset('storage/' . $intern->image)
+                                                : asset($intern->gender === 'male' ? 'images/male.png' : 'images/female.png') }}"
+                                                style="width: 300px; height: 300px;" loading="lazy"
+                                                alt="{{ $intern->name }}">
 
-                                    </figure>
-                                    <div class="share-option">
-                                        <div class="share-icon"><i class="flaticon-sharing"></i></div>
-                                        <ul class="social-links clearfix">
+                                        </figure>
+                                        <div class="share-option">
+                                            <div class="share-icon"><i class="flaticon-sharing"></i></div>
+                                            <ul class="social-links clearfix">
 
-                                            @if ($intern->email)
-                                                <li><a href="mailto:{{ $intern->email }}" target="_blank"><i
-                                                            class="fas fa-envelope"></i></a></li>
-                                            @endif
+                                                @if ($intern->email)
+                                                    <li><a href="mailto:{{ $intern->email }}" target="_blank"><i
+                                                                class="fas fa-envelope"></i></a></li>
+                                                @endif
 
-                                            @if ($intern->facebook)
-                                                <li><a href="{{ $intern->facebook }}" target="_blank"><i
-                                                            class="fa-brands fa-facebook"></i></a></li>
-                                            @endif
+                                                @if ($intern->facebook)
+                                                    <li><a href="{{ $intern->facebook }}" target="_blank"><i
+                                                                class="fa-brands fa-facebook"></i></a></li>
+                                                @endif
 
-                                            @if ($intern->linked_in)
-                                                <li><a href="{{ $intern->linked_in }}" target="_blank"><i
-                                                            class="fa-brands fa-linkedin"></i></a></li>
-                                            @endif
+                                                @if ($intern->linked_in)
+                                                    <li><a href="{{ $intern->linked_in }}" target="_blank"><i
+                                                                class="fa-brands fa-linkedin"></i></a></li>
+                                                @endif
 
-                                            @if ($intern->github)
-                                                <li><a href="{{ $intern->github }}" target="_blank"><i
-                                                            class="fa-brands fa-github"></i></a></li>
-                                            @endif
+                                                @if ($intern->github)
+                                                    <li><a href="{{ $intern->github }}" target="_blank"><i
+                                                                class="fa-brands fa-github"></i></a></li>
+                                                @endif
 
-                                            @if ($intern->website)
-                                                <li><a href="{{ $intern->website }}" target="_blank"><i
-                                                            class="fa-solid fa-globe"></i></a></li>
-                                            @endif
+                                                @if ($intern->website)
+                                                    <li><a href="{{ $intern->website }}" target="_blank"><i
+                                                                class="fa-solid fa-globe"></i></a></li>
+                                                @endif
 
-                                            @if ($intern->researchgate)
-                                                <li><a href="{{ $intern->researchgate }}" target="_blank"><i
-                                                            class="fa-brands fa-researchgate"></i></a></li>
-                                            @endif
-                                        </ul>
+                                                @if ($intern->researchgate)
+                                                    <li><a href="{{ $intern->researchgate }}" target="_blank"><i
+                                                                class="fa-brands fa-researchgate"></i></a></li>
+                                                @endif
+                                            </ul>
+                                        </div>
+
                                     </div>
-
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="javascript:void(0)">{{ $intern->name }}</a></h3>
-                                    <span class="designation">{{ $intern->affiliation }}</span>
-                                    {{-- <span class="designation">Intern</span> --}}
+                                    <div class="lower-content">
+                                        <h3><a href="javascript:void(0)">{{ $intern->name }}</a></h3>
+                                        <span class="designation">{{ $intern->affiliation }}</span>
+                                        {{-- <span class="designation">Intern</span> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
+                </div>
+                <!-- All Members button (hidden initially) -->
+                {{-- <div class="more-btn" id="all-members-btn" style="display: none;">
+                <a href="{{ route('team') }}" class="theme-btn">All Members</a>
+            </div> --}}
             </div>
-            <!-- All Members button (hidden initially) -->
-            {{-- <div class="more-btn" id="all-members-btn" style="display: none;">
-            <a href="{{ route('team') }}" class="theme-btn">All Members</a>
-        </div> --}}
-        </div>
-    </section>
+        </section>
+    @endif
     <!-- intern-section end -->
     <!-- about-section -->
     <section class="about-section sec-pad">
