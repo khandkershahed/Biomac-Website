@@ -306,11 +306,17 @@
     <div class="header-top-two">
         <div class="top-inner">
             <div class="top-left">
-                <div class="link"><span>Training</span><a href="https://www.facebook.com/share/p/19NaMxJ8A9/">Upcoming<i
+                <div class="link"><span>Training</span><a href="javascript:void(0)">Upcoming<i
                             class="flaticon-right-arrow"></i></a></div>
                 <ul class="info-list clearfix">
-                    <li><i class="fa-solid fa-graduation-cap text-white"></i><a class="ms-3" href="https://www.facebook.com/share/p/19NaMxJ8A9/">Single-Cell Genomics Data Analysis (scRNA-seq)</a>
+                    <li>
+                        <i class="fa-solid fa-graduation-cap text-white"></i>
+                        <a class="ms-3" href="javascript:void(0)">Python For BioInformatics</a>
                     </li>
+                    {{-- <li>
+                        <i class="fa-solid fa-graduation-cap text-white"></i>
+                        <a class="ms-3" href="https://www.facebook.com/share/p/19NaMxJ8A9/">Single-Cell Genomics Data Analysis (scRNA-seq)</a>
+                    </li> --}}
                     {{-- <li><i class="flaticon-map"></i>Corporate: 24 Global Str, SF 94112</li> --}}
                 </ul>
             </div>
