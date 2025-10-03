@@ -7,13 +7,9 @@ use App\Http\Controllers\Admin\LogController;
 use App\Http\Controllers\Admin\IconController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\DealBannerController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\StaffController;
-use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\InternController;
-use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\BlogTagController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProductController;
@@ -132,10 +128,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
         [
             'user'                  => UserController::class, //done
             'staff'                 => StaffController::class, //done
-            'user-management'       => UserManagementController::class, //done
-            'admin-managemnet'      => UserManagementController::class, //done
             'newsletters'           => NewsletterController::class,
-            'clients'               => ClientController::class, //done
             'contacts'              => ContactController::class,
             'banner'                => PageBannerController::class,
             'training'              => TrainingController::class,
@@ -175,10 +168,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     // Route::get('/banner', [BannerController::class, 'index'])->name('banner.index');
     // Route::put('/banner', [BannerController::class, 'updateOrcreateBanner'])->name('banner.updateOrCreate');
 
-    Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us.index');
-    Route::put('/about-us', [AboutUsController::class, 'updateOrcreateAboutUs'])->name('about-us.updateOrCreate');
 
     // Bulk Delete
-    // web.php
-    Route::post('/categories/bulk-delete', [CategoryController::class, 'bulkDelete'])->name('categories.bulk-delete');
+
 });

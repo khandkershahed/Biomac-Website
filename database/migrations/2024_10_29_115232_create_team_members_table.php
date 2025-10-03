@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('team_members', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->string('email')->nullable();
             $table->integer('order')->nullable();
             $table->string('phone')->nullable();
@@ -36,6 +37,7 @@ return new class extends Migration
             $table->text('interests')->nullable(); // Interests/Hobbies field
             $table->string('language')->nullable(); // Language proficiencies field
             $table->string('status')->nullable(); // Status field
+            $table->string('gender')->nullable(); // Gender field
             $table->timestamps();
         });
     }

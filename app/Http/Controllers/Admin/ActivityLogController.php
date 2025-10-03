@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class ActivityLogController extends Controller
 {
-    /**
+    /** 
      * The constructor function sets middleware permissions for specific actions in a PHP class.
      */
     public function __construct()

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ActivityLog extends Model
 {
-    use HasFactory;
+    use HasFactory; 
 
     /**
      * The attributes that aren't mass assignable.
