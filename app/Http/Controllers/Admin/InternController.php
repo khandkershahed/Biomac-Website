@@ -207,7 +207,6 @@ class InternController extends Controller
                 'email'           => $request->email,
                 'phone'           => $request->phone,
                 'affiliation'     => $request->affiliation,
-                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $intern->image,
                 'facebook'        => $request->facebook,
                 'linked_in'       => $request->linked_in,
                 'researchgate'    => $request->researchgate,
@@ -216,6 +215,7 @@ class InternController extends Controller
                 'website'         => $request->website,
                 'status'          => $request->status,
                 'order'           => $request->order,
+                'image'           => (isset($uploadedFiles['image']) && isset($uploadedFiles['image']['file_path']) && $uploadedFiles['image']['status'] === 1)? $uploadedFiles['image']['file_path'] : $intern->image,
             ]);
 
             // Commit the database transaction
