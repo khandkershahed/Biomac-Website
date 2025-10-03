@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\TeamMember;
+use App\Models\Intern;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class TeamMemberController extends Controller
+class InternController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */ 
+     */
     public function index()
     {
         $data = [
-            'teams' => TeamMember::latest('id')->get(),
+            'interns' => Intern::latest('id')->get(),
         ];
-        return view('admin.pages.team.index', $data);
+        return view('admin.pages.intern.index', $data);
     }
 
     /**
@@ -28,7 +28,7 @@ class TeamMemberController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.team.create');
+        return view('admin.pages.intern.create');
     }
 
     /**
@@ -42,28 +42,19 @@ class TeamMemberController extends Controller
             // Validation
             $validator = Validator::make($request->all(), [
                 'name'              => 'required|string|max:255',
-                'email'             => 'required|email|max:255|unique:team_members,email',
-                'order'             => 'nullable|integer|min:0|unique:team_members,order',
+                'email'             => 'required|email|max:255|unique:interns,email',
+                'order'             => 'nullable|integer|min:0|unique:interns,order',
                 'phone'             => 'nullable|string|max:20',
                 'designation'       => 'nullable|string|max:200',
                 'image'             => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
                 'linked_in'         => 'nullable|url|max:255',
                 'instagram'         => 'nullable|url|max:255',
                 'facebook'          => 'nullable|url|max:255',
-                'youtube'           => 'nullable|url|max:255',
+                'researchgate'      => 'nullable|url|max:255',
                 'tiktok'            => 'nullable|url|max:255',
                 'github'            => 'nullable|url|max:255',
                 'website'           => 'nullable|url|max:255',
-                'discord'           => 'nullable|string|max:200',
-                'portfolio'         => 'nullable|url|max:255',
-                'biography'         => 'nullable|string',
-                'location'          => 'nullable|string|max:100',
-                'start_date'        => 'nullable|date',
                 'status'            => 'required|in:active,on_leave,inactive',
-                'language'          => 'nullable|string|max:255',
-                'skills'            => 'nullable|string',
-                'awards'            => 'nullable|string',
-                'interests'         => 'nullable|string',
             ], [
                 'name.required'     => 'The full name field is required.',
                 'email.required'    => 'The email field is required.',
@@ -89,7 +80,7 @@ class TeamMemberController extends Controller
             $uploadedFiles = [];
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
-                    $filePath = 'team/' . $key;
+                    $filePath = 'intern/' . $key;
                     $uploadedFiles[$key] = customUpload($file, $filePath);
                     if ($uploadedFiles[$key]['status'] === 0) {
                         return redirect()->back()->with('error', $uploadedFiles[$key]['error_message']);
@@ -99,41 +90,31 @@ class TeamMemberController extends Controller
                 }
             }
 
-            // Create the TeamMember model instance
-            $teamMember = TeamMember::create([
+            // Create the intern model instance
+            $intern = Intern::create([
                 'name'            => $request->name,
                 'email'           => $request->email,
                 'phone'           => $request->phone,
-                'designation'     => $request->designation,
-                'image'           => $uploadedFiles['image']['status'] == 1 ? $uploadedFiles['image']['file_path'] : null,
-                'linked_in'       => $request->linked_in,
-                'instagram'       => $request->instagram,
+                'affiliation'     => $request->affiliation,
                 'facebook'        => $request->facebook,
-                'youtube'         => $request->youtube,
-                'tiktok'          => $request->tiktok,
+                'linked_in'       => $request->linked_in,
+                'gender'          => $request->gender,
+                'researchgate'    => $request->researchgate,
                 'github'          => $request->github,
                 'website'         => $request->website,
-                'discord'         => $request->discord,
-                'portfolio'       => $request->portfolio,
-                'biography'       => $request->biography,
-                'location'        => $request->location,
-                'start_date'      => $request->start_date,
                 'status'          => $request->status,
-                'language'        => $request->language,
                 'order'           => $request->order,
-                'skills'          => $request->skills,
-                'awards'          => $request->awards,
-                'interests'       => $request->interests,
+                'image'           => $uploadedFiles['image']['status'] == 1 ? $uploadedFiles['image']['file_path'] : null,
             ]);
 
             // Commit the database transaction
             DB::commit();
 
-            return redirect()->route('admin.team-member.index')->with('success', 'Team member created successfully');
+            return redirect()->route('admin.intern.index')->with('success', 'Intern created successfully');
         } catch (\Exception $e) {
             // Rollback the database transaction in case of an error
             DB::rollback();
-            Session::flash('error', 'An error occurred while creating the team member: ' . $e->getMessage());
+            Session::flash('error', 'An error occurred while creating the Intern: ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
@@ -152,9 +133,9 @@ class TeamMemberController extends Controller
     public function edit(string $id)
     {
         $data = [
-            'teamMember' => TeamMember::findOrFail($id),
+            'teamMember' => Intern::findOrFail($id),
         ];
-        return view('admin.pages.team.edit', $data);
+        return view('admin.pages.intern.edit', $data);
     }
 
     /**
@@ -165,32 +146,23 @@ class TeamMemberController extends Controller
         DB::beginTransaction();
 
         try {
-            $team = TeamMember::findOrFail($id);
+            $intern = Intern::findOrFail($id);
             // Validation
             $validator = Validator::make($request->all(), [
                 'name'              => 'required|string|max:255',
-                'email'             => 'required|email|max:255|unique:team_members,email,' . $team->id,
-                'order'             => 'nullable|integer|min:0|unique:team_members,order,' . $team->id . ',id', // Updated uniqueness rule
+                'email'             => 'required|email|max:255|unique:interns,email,' . $intern->id,
+                'order'             => 'nullable|integer|min:0|unique:interns,order,' . $intern->id . ',id', // Updated uniqueness rule
                 'phone'             => 'nullable|string|max:20',
                 'designation'       => 'nullable|string|max:200',
                 'image'             => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
                 'linked_in'         => 'nullable|url|max:255',
                 'instagram'         => 'nullable|url|max:255',
                 'facebook'          => 'nullable|url|max:255',
-                'youtube'           => 'nullable|url|max:255',
+                'researchgate'      => 'nullable|url|max:255',
                 'tiktok'            => 'nullable|url|max:255',
                 'github'            => 'nullable|url|max:255',
                 'website'           => 'nullable|url|max:255',
-                'discord'           => 'nullable|string|max:200',
-                'portfolio'         => 'nullable|url|max:255',
-                'biography'         => 'nullable|string',
-                'location'          => 'nullable|string|max:100',
-                'start_date'        => 'nullable|date',
                 'status'            => 'required|in:active,on_leave,inactive',
-                'language'          => 'nullable|string|max:255',
-                'skills'            => 'nullable|string',
-                'awards'            => 'nullable|string',
-                'interests'         => 'nullable|string',
             ], [
                 'name.required'     => 'The full name field is required.',
                 'email.required'    => 'The email field is required.',
@@ -215,8 +187,8 @@ class TeamMemberController extends Controller
             $uploadedFiles = [];
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
-                    $filePath = 'team/' . $key;
-                    $oldFile = $team->$key ?? null;
+                    $filePath = 'intern/' . $key;
+                    $oldFile = $intern->$key ?? null;
                     if ($oldFile) {
                         Storage::delete("public/" . $oldFile);
                     }
@@ -229,62 +201,51 @@ class TeamMemberController extends Controller
                 }
             }
 
-            // Update the TeamMember model instance
-            $team->update([
+            // Update the internMember model instance
+            $intern->update([
                 'name'            => $request->name,
                 'email'           => $request->email,
                 'phone'           => $request->phone,
-                'designation'     => $request->designation,
-                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $team->image,
-                'linked_in'       => $request->linked_in,
-                'instagram'       => $request->instagram,
+                'affiliation'     => $request->affiliation,
+                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $intern->image,
                 'facebook'        => $request->facebook,
-                'youtube'         => $request->youtube,
-                'tiktok'          => $request->tiktok,
+                'linked_in'       => $request->linked_in,
+                'researchgate'    => $request->researchgate,
+                'gender'          => $request->gender,
                 'github'          => $request->github,
                 'website'         => $request->website,
-                'discord'         => $request->discord,
-                'portfolio'       => $request->portfolio,
-                'biography'       => $request->biography,
-                'location'        => $request->location,
-                'start_date'      => $request->start_date,
                 'status'          => $request->status,
-                'language'        => $request->language,
                 'order'           => $request->order,
-                'skills'          => $request->skills,
-                'awards'          => $request->awards,
-                'interests'       => $request->interests,
             ]);
 
             // Commit the database transaction
             DB::commit();
 
-            return redirect()->route('admin.team-member.index')->with('success', 'Team member updated successfully');
+            return redirect()->route('admin.intern.index')->with('success', 'Intern updated successfully');
         } catch (\Exception $e) {
             // Rollback the database transaction in case of an error
             DB::rollback();
-            Session::flash('error', 'An error occurred while updating the team member: ' . $e->getMessage());
+            Session::flash('error', 'An error occurred while updating the Intern: ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
 
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TeamMember $team)
+    public function destroy(Intern $intern)
     {
         $files = [
-            'image' => $team->image,
+            'image' => $intern->image,
         ];
         foreach ($files as $key => $file) {
             if (!empty($file)) {
-                $oldFile = $team->$key ?? null;
+                $oldFile = $intern->$key ?? null;
                 if ($oldFile) {
                     Storage::delete("public/" . $oldFile);
                 }
             }
         }
-        $team->delete();
+        $intern->delete();
     }
 }

@@ -18,6 +18,7 @@ use App\Models\PrivacyPolicy;
 use App\Models\ShippingMethod;
 use App\Models\TermsAndCondition;
 use App\Http\Controllers\Controller;
+use App\Models\Intern;
 use App\Models\ResearchPaper;
 use App\Models\Service;
 use App\Models\TeamMember;
@@ -34,11 +35,12 @@ class HomeController extends Controller
 
         $data = [
 
-            'sliders'                   => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->get(),
-            'slider'                    => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->first(),
-            'home_slider_bottom_first'  => PageBanner::active()->where('page_name', 'home_slider_bottom_first')->latest('id')->first(),
-            'blog_posts'                => BlogPost::active()->inRandomOrder()->get(),
-            'blog'                      => BlogPost::inRandomOrder()->active()->first(),
+            'sliders'                  => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->get(),
+            'slider'                   => PageBanner::active()->where('page_name', 'home_slider')->latest('id')->first(),
+            'home_slider_bottom_first' => PageBanner::active()->where('page_name', 'home_slider_bottom_first')->latest('id')->first(),
+            'blog_posts'               => BlogPost::active()->inRandomOrder()->get(),
+            'blog'                     => BlogPost::inRandomOrder()->active()->first(),
+            'interns'                  => Intern::orderBy('order', 'ASC')->where('status', 'active')->get(),
         ];
         // dd($data['deal_products']);
         return view('frontend.pages.home', $data);
@@ -49,13 +51,13 @@ class HomeController extends Controller
         $data = [
             'banner'  => PageBanner::active()->where('page_name', 'contact')->latest('id')->first(),
         ];
-        return view('frontend.pages.contact',$data);
+        return view('frontend.pages.contact', $data);
     }
     public function aboutUs()
     {
         $data = [
             'about'    => BlogPost::latest('id')->where('status', 'publish')->get(),
-            'teams'    => TeamMember::orderBy('order','ASC')->where('status', 'active')->get(),
+            'teams'    => TeamMember::orderBy('order', 'ASC')->where('status', 'active')->get(),
             'banner'   => PageBanner::active()->where('page_name', 'about')->latest('id')->first(),
         ];
         return view('frontend.pages.aboutUs', $data);
@@ -64,7 +66,7 @@ class HomeController extends Controller
     {
         $data = [
             'banner'   => PageBanner::active()->where('page_name', 'team')->latest('id')->first(),
-            'teams'    => TeamMember::orderBy('order','ASC')->where('status', 'active')->get(),
+            'teams'    => TeamMember::orderBy('order', 'ASC')->where('status', 'active')->get(),
         ];
         return view('frontend.pages.team', $data);
     }
@@ -74,7 +76,7 @@ class HomeController extends Controller
             'papers'     => ResearchPaper::latest('date')->where('status', 'active')->get(),
             'banner'     => PageBanner::active()->where('page_name', 'paper')->latest('id')->first(),
         ];
-        return view('frontend.pages.researchPaper',$data);
+        return view('frontend.pages.researchPaper', $data);
     }
     public function returnPolicy()
     {
