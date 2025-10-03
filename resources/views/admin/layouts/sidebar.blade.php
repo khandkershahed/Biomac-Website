@@ -196,6 +196,15 @@
                                     'route' => 'admin.researcher.index',
                                 ],
                                 [
+                                    'title' => 'Interns',
+                                    'routes' => [
+                                        'admin.intern.index',
+                                        'admin.intern.create',
+                                        'admin.intern.edit',
+                                    ],
+                                    'route' => 'admin.intern.index',
+                                ],
+                                [
                                     'title' => 'User List',
                                     'routes' => ['admin.user.index'],
                                     'route' => 'admin.user.index',

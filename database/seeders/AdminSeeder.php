@@ -17,13 +17,13 @@ class AdminSeeder extends Seeder
         // Create the first admin user
         Admin::factory()->create([
             'name' => 'admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
+            'email' => 'admin@biomaclab.com',
+            'password' => Hash::make('passwordBiomaclab'),
         ]);
         Admin::factory()->create([
             'name' => 'Shahed',
             'email' => 'khandkershahed23@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('passwordBiomaclab'),
         ]);
     }
 }
