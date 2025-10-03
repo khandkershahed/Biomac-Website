@@ -131,20 +131,26 @@
     <script src="{{ asset('frontend/assets/js/jquery.js') }}"></script>
     <script>
         function handlePreloader() {
-            if ($('.loader-wrap').length) {
-                $('.loader-wrap').delay(100).fadeOut(300);
+            if ($('.loader-wrap:visible').length) {
+                $('.loader-wrap').fadeOut(300);
             }
         }
 
         $(document).ready(function() {
-            handlePreloader();
-        });
+            handlePreloader(); // Hide preloader once DOM is ready
 
-        if ($(".preloader-close").length) {
-            $(".preloader-close").on("click", function() {
-                $('.loader-wrap').delay(100).fadeOut(300);
-            })
-        }
+            // Allow user to manually close preloader
+            if ($(".preloader-close").length) {
+                $(".preloader-close").on("click", function() {
+                    handlePreloader();
+                });
+            }
+
+            // Fallback: force hide after 5s max
+            setTimeout(function() {
+                handlePreloader();
+            }, 5000);
+        });
     </script>
     <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>

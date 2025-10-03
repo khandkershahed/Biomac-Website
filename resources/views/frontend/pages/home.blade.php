@@ -43,13 +43,14 @@
                     style="background-image: url({{ asset('frontend/assets/images/shape/shape-12.png') }});"></div>
             </div>
             <div class="image-layer">
-                {{-- <figure class="image-1"><img src="{{ asset('images/') }}" alt=""></figure> --}}
+                {{-- <figure class="image-1"><img src="{{ asset('images/') }}" loading="lazy" alt=""></figure> --}}
                 <figure class="image-2"><img
                         src="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}"
+                        loading="lazy" alt=""></figure>
+                {{-- <figure class="image-2"><img src="{{ asset('images/image_why_choose.png') }}" loading="lazy" alt=""></figure> --}}
+                <figure class="image-3"><img src="{{ asset('images/about_thumb_6.png') }}" loading="lazy"
                         alt=""></figure>
-                {{-- <figure class="image-2"><img src="{{ asset('images/image_why_choose.png') }}" alt=""></figure> --}}
-                <figure class="image-3"><img src="{{ asset('images/about_thumb_6.png') }}" alt=""></figure>
-                {{-- <figure class="image-4"><img src="{{ asset('') }}" alt=""></figure> --}}
+                {{-- <figure class="image-4"><img src="{{ asset('') }}" loading="lazy" alt=""></figure> --}}
             </div>
             <div class="auto-container">
                 <div class="row clearfix">
@@ -91,7 +92,7 @@
                 style="background-image: url({{ asset('frontend/assets/images/shape/shape-18.png') }});"></div>
             <div class="certified-inner">
                 <div class="icon-box">
-                    <img src="{{ asset('images/white_fav.png') }}" alt="" style="width: 39px;">
+                    <img src="{{ asset('images/white_fav.png') }}" loading="lazy" alt="" style="width: 39px;">
                     {{-- <i class="flaticon-dna"></i> --}}
                 </div>
                 <h6>BioMac Lab</h6>
@@ -116,17 +117,17 @@
                         </div>
                         <div class="thumb-box">
                             <figure class="thumb thumb-1"><img src="{{ asset('images/about_thumb_one.png') }}"
-                                    alt=""></figure>
+                                    loading="lazy" alt=""></figure>
                             <figure class="thumb thumb-2"><img src="{{ asset('images/about_thumb_two.png') }}"
-                                    alt=""></figure>
+                                    loading="lazy" alt=""></figure>
                             <figure class="thumb thumb-3"><img src="{{ asset('images/about_thumb_three.png') }}"
-                                    alt=""></figure>
+                                    loading="lazy" alt=""></figure>
                         </div>
                         <figure class="image">
-                            <img src="{{ asset('images/about_home.png') }}" alt="BioMac Lab">
+                            <img src="{{ asset('images/about_home.png') }}" loading="lazy" alt="BioMac Lab">
                         </figure>
                         {{-- <div class="text" style="background: transparent;">
-                                <img src="{{asset('images/injamam.jpeg')}}" alt="BioMac Lab" style="border-radius: 50%;">
+                                <img src="{{asset('images/injamam.jpeg')}}" loading="lazy" alt="BioMac Lab" style="border-radius: 50%;">
                             <h4 class="text-black" style="width: 300px;">SK. Injamamul Islam</h4>
                             <h6 class="text-black">Founder</h6>
                         </div> --}}
@@ -164,7 +165,7 @@
 
                             <div class="single-item">
                                 <div class="icon-box">
-                                    <img src="{{ asset('images/injamam.jpeg') }}" alt="BioMac Lab"
+                                    <img src="{{ asset('images/injamam.jpeg') }}" loading="lazy" alt="BioMac Lab"
                                         style="width:80px; border-radius: 50%;">
                                 </div>
                                 <div style="padding: 1rem 0px;">
@@ -196,7 +197,8 @@
                                         <img src="{{ !empty($intern->image) && file_exists(public_path('storage/' . $intern->image))
                                             ? asset('storage/' . $intern->image)
                                             : asset($intern->gender === 'male' ? 'images/male.png' : 'images/female.png') }}"
-                                            style="width: 300px; height: 300px;" alt="{{ $intern->name }}">
+                                            style="width: 300px; height: 300px;" loading="lazy"
+                                            alt="{{ $intern->name }}">
 
                                     </figure>
                                     <div class="share-option">
@@ -267,7 +269,8 @@
                         </div>
                         <div class="image-inner hexagon_shape">
                             <figure class="image">
-                                <img src="{{ asset('images/image_why_choose.png') }}" alt="" />
+                                <img src="{{ asset('images/image_why_choose.png') }}" loading="lazy"
+                                    alt="" />
                             </figure>
                         </div>
                         <div class="text">
