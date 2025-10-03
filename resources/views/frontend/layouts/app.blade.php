@@ -15,7 +15,10 @@
     <meta property="og:title" content="{{ optional($setting)->site_title ?: config('app.name', 'BioMac Lab') }}" />
     <meta property="og:description" content="{{ optional($setting)->meta_description ?: config('app.name') }}" />
     @php
-        $slider = \App\Models\PageBanner::active()->where('page_name', 'home_slider')->latest('id')->first(['bg_image']);
+        $slider = \App\Models\PageBanner::active()
+            ->where('page_name', 'home_slider')
+            ->latest('id')
+            ->first(['bg_image']);
     @endphp
     <meta property="og:image"
         content="{{ !empty($slider->bg_image) ? asset('storage/' . $slider->bg_image) : asset('images/image_why_choose.png') }}" />
@@ -126,6 +129,23 @@
     </div>
 
     <script src="{{ asset('frontend/assets/js/jquery.js') }}"></script>
+    <script>
+        function handlePreloader() {
+            if ($('.loader-wrap').length) {
+                $('.loader-wrap').delay(100).fadeOut(300);
+            }
+        }
+
+        $(document).ready(function() {
+            handlePreloader();
+        });
+
+        if ($(".preloader-close").length) {
+            $(".preloader-close").on("click", function() {
+                $('.loader-wrap').delay(100).fadeOut(300);
+            })
+        }
+    </script>
     <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/owl.js') }}"></script>

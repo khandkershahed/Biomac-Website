@@ -16,21 +16,7 @@
     // }
 
 
-    function handlePreloader() {
-        if ($('.loader-wrap').length) {
-            $('.loader-wrap').delay(100).fadeOut(300);
-        }
-    }
-
-    $(document).ready(function () {
-        handlePreloader();
-    });
-
-    if ($(".preloader-close").length) {
-        $(".preloader-close").on("click", function () {
-            $('.loader-wrap').delay(100).fadeOut(300);
-        })
-    }
+    
 
     // Fallback timeout (optional)
     setTimeout(function () {
