@@ -181,14 +181,16 @@ class InternController extends Controller
                 return redirect()->back()->withInput();
             }
             $files = [
-                'image'    => $request->file('image'),
+                'image' => $request->file('image'),
+                'bg_image' => $request->file('bg_image'),
             ];
-            // Handle file upload
             $uploadedFiles = [];
+
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
                     $filePath = 'intern/' . $key;
-                    $oldFile = $intern->$key ?? null;
+                    $oldFile = $banner->$key ?? null;
+
                     if ($oldFile) {
                         Storage::delete("public/" . $oldFile);
                     }
@@ -215,7 +217,7 @@ class InternController extends Controller
                 'website'         => $request->website,
                 'status'          => $request->status,
                 'order'           => $request->order,
-                'image'           => (isset($uploadedFiles['image']) && isset($uploadedFiles['image']['file_path']) && $uploadedFiles['image']['status'] === 1)? $uploadedFiles['image']['file_path'] : $intern->image,
+                'image'           => $uploadedFiles['image']['status'] == 1 ? $uploadedFiles['image']['file_path'] : $intern->image,
             ]);
 
             // Commit the database transaction
