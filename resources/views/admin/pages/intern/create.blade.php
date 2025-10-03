@@ -27,10 +27,10 @@
                     </div>
 
                     <div class="col-lg-8 mb-7">
-                        <x-metronic.label for="affliation"
-                            class="fw-bold fs-6 mb-2">{{ __('affliation') }}</x-metronic.label>
-                        <x-metronic.input id="affliation" type="text" class="form-control-solid mb-3 mb-lg-0"
-                            name="affliation" :value="old('affliation')" placeholder="Enter affliation"></x-metronic.input>
+                        <x-metronic.label for="affiliation"
+                            class="fw-bold fs-6 mb-2">{{ __('Affiliation') }}</x-metronic.label>
+                        <x-metronic.input id="affiliation" type="text" class="form-control-solid mb-3 mb-lg-0"
+                            name="affiliation" :value="old('affiliation')" placeholder="Enter affiliation"></x-metronic.input>
                     </div>
 
                     <div class="col-lg-4 mb-7">
