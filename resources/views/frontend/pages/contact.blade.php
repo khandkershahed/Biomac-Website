@@ -82,8 +82,11 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 single-column">
                             <div class="single-item">
                                 <div class="icon-box"><i class="flaticon-phone-call-1"></i></div>
-                                <h3><a
-                                        href="tel:{{ optional($setting)->primary_phone }}">{{ optional($setting)->primary_phone }}</a>
+                                <h3>Canada : <a
+                                        href="https://wa.me/{{ optional($setting)->primary_phone }}">{{ optional($setting)->primary_phone }}</a>
+                                </h3>
+                                <h3>Bangladesh :<a
+                                        href="https://wa.me/{{ optional($setting)->alternative_phone }}">{{ optional($setting)->alternative_phone }}</a>
                                 </h3>
                                 <p>Mon to Sat: 9.00am to 5.00pm <br />Sun: 9.00am to 12.00pm</p>
                                 {{-- <h6>
@@ -97,7 +100,10 @@
                             <div class="single-item">
                                 <div class="icon-box"><i class="flaticon-message"></i></div>
                                 <h3><a
-                                        href="Mall:{{ optional($setting)->info_email }}">{{ optional($setting)->info_email }}</a>
+                                        href="mailto:{{ optional($setting)->info_email }}">{{ optional($setting)->info_email }}</a>
+                                </h3>
+                                <h3><a
+                                        href="mailto:{{ optional($setting)->support_email }}">{{ optional($setting)->support_email }}</a>
                                 </h3>
                                 <p>To better connect with our team send your mail.</p>
                                 <h6><a href="#contact-form">Contact Form<i
@@ -133,11 +139,14 @@
                         <h3>{{ optional($setting)->address_line_two }}</h3>
                         <ul class="info clearfix">
                             <li>{{ optional($setting)->address_line_one }}</li>
-                            <li><a
+                            <li>Canada : <a
                                     href="tel:{{ optional($setting)->primary_phone }}">{{ optional($setting)->primary_phone }}</a>
                             </li>
+                            <li>Bangladesh : <a
+                                    href="tel:{{ optional($setting)->alternative_phone }}">{{ optional($setting)->alternative_phone }}</a>
+                            </li>
                         </ul>
-                        <div class="link"><a href="{{ route('contact') }}">Send Mail</a></div>
+                        <div class="link"><a href="mailto:{{ optional($setting)->support_email }}">Send Mail</a></div>
                     </div>
                 </div>
             </div>
@@ -149,11 +158,11 @@
                                 <span class="sub-title">Locations</span>
                                 <h2>Find nearest branch</h2>
                             </div>
-                            <div class="select-box">
+                            {{-- <div class="select-box">
                                 <select class="selectmenu">
                                     <option selected="selected">Bangladesh</option>
                                 </select>
-                            </div>
+                            </div> --}}
                             {{-- <ul class="others-branches clearfix">
                                 <li>We’ve Find 4 Branches Near You,</li>
                                 <li><a href="javascript:void(0)">Dhaka<i class="flaticon-right-arrow"></i></a></li>

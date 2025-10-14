@@ -19,6 +19,7 @@ use App\Models\ShippingMethod;
 use App\Models\TermsAndCondition;
 use App\Http\Controllers\Controller;
 use App\Models\Intern;
+use App\Models\Researcher;
 use App\Models\ResearchPaper;
 use App\Models\Service;
 use App\Models\TeamMember;
@@ -56,9 +57,10 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $data = [
-            'about'    => BlogPost::latest('id')->where('status', 'publish')->get(),
-            'teams'    => TeamMember::orderBy('order', 'ASC')->where('status', 'active')->get(),
-            'banner'   => PageBanner::active()->where('page_name', 'about')->latest('id')->first(),
+            'about'       => BlogPost::latest('id')->where('status', 'publish')->get(),
+            'researchers' => Researcher::orderBy('order', 'ASC')->where('status', 'active')->get(),
+            'teams'       => TeamMember::orderBy('order', 'ASC')->where('status', 'active')->get(),
+            'banner'      => PageBanner::active()->where('page_name', 'about')->latest('id')->first(),
         ];
         return view('frontend.pages.aboutUs', $data);
     }

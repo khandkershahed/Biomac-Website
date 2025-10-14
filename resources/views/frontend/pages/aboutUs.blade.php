@@ -243,9 +243,9 @@
                                                             class="fa-brands fa-discord"></i></a></li>
                                             @endif
 
-                                            @if ($team->tiktok)
-                                                <li><a href="{{ $team->tiktok }}" target="_blank"><i
-                                                            class="fa-brands fa-tiktok"></i></a></li>
+                                            @if ($team->phone)
+                                                <li><a href="https://wa.me/{{ $team->phone }}" target="_blank"><i
+                                                            class="fa-brands fa-whatsapp"></i></a></li>
                                             @endif
 
                                             @if ($team->instagram)
@@ -266,6 +266,74 @@
                 @endforeach
             </div>
             <div class="row clearfix">
+                @foreach ($researchers as $researcher)
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block mb-5">
+                        <div class="team-block-one">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <img src="{{ asset('storage/' . $researcher->image) }}" alt="">
+                                    </figure>
+                                    <div class="share-option">
+                                        <div class="share-icon"><i class="flaticon-sharing"></i></div>
+                                        <ul class="social-links clearfix">
+                                            @if ($researcher->email)
+                                                <li><a href="mailto:{{ $researcher->email }}" target="_blank"><i
+                                                            class="fas fa-envelope"></i></a></li>
+                                            @endif
+                                            @if ($researcher->facebook)
+                                                <li><a href="{{ $researcher->facebook }}" target="_blank"><i
+                                                            class="fa-brands fa-facebook"></i></a></li>
+                                            @endif
+
+                                            @if ($researcher->linked_in)
+                                                <li><a href="{{ $researcher->linked_in }}" target="_blank"><i
+                                                            class="fa-brands fa-linkedin"></i></a></li>
+                                            @endif
+
+                                            @if ($researcher->github)
+                                                <li><a href="{{ $researcher->github }}" target="_blank"><i
+                                                            class="fa-brands fa-github"></i></a></li>
+                                            @endif
+                                            @if ($researcher->discord)
+                                                <li>
+                                                    <a href="{{ $researcher->discord }}" target="_blank">
+                                                        <i class="fa-brands fa-researchgate"></i>
+                                                    </a>
+                                                </li>
+                                            @endif
+
+                                            @if ($researcher->website)
+                                                <li><a href="{{ $researcher->website }}" target="_blank"><i
+                                                            class="fa-solid fa-globe"></i></a></li>
+                                            @endif
+
+                                            @if ($researcher->youtube)
+                                                <li><a href="{{ $researcher->youtube }}" target="_blank"><i
+                                                            class="fa-brands fa-youtube"></i></a></li>
+                                            @endif
+
+                                            @if ($team->phone)
+                                                <li><a href="https://wa.me/{{ $team->phone }}" target="_blank"><i
+                                                            class="fa-brands fa-whatsapp"></i></a></li>
+                                            @endif
+
+                                            @if ($researcher->instagram)
+                                                <li><a href="{{ $researcher->instagram }}" target="_blank"><i
+                                                            class="fa-brands fa-instagram"></i></a></li>
+                                            @endif
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="lower-content">
+                                    <h3><a href="javascript:void(0)">{{ $researcher->name }}</a></h3>
+                                    <span class="designation">{{ $researcher->designation }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
                 <div class="col-lg-3 col-md-6 col-sm-12 team-block">
                     <div class="team-block-one">
                         <div class="inner-box">
