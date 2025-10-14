@@ -14,7 +14,7 @@ class TeamMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */ 
+     */
     public function index()
     {
         $data = [
@@ -213,10 +213,12 @@ class TeamMemberController extends Controller
             ];
             // Handle file upload
             $uploadedFiles = [];
+
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
                     $filePath = 'team/' . $key;
                     $oldFile = $team->$key ?? null;
+
                     if ($oldFile) {
                         Storage::delete("public/" . $oldFile);
                     }
@@ -235,7 +237,7 @@ class TeamMemberController extends Controller
                 'email'           => $request->email,
                 'phone'           => $request->phone,
                 'designation'     => $request->designation,
-                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $team->image,
+                'image'           => $uploadedFiles['image']['status'] == 1 ? $uploadedFiles['image']['file_path'] : $team->image,
                 'linked_in'       => $request->linked_in,
                 'instagram'       => $request->instagram,
                 'facebook'        => $request->facebook,

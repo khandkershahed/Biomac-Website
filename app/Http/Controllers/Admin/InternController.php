@@ -182,14 +182,13 @@ class InternController extends Controller
             }
             $files = [
                 'image' => $request->file('image'),
-                'bg_image' => $request->file('bg_image'),
             ];
             $uploadedFiles = [];
 
             foreach ($files as $key => $file) {
                 if (!empty($file)) {
                     $filePath = 'intern/' . $key;
-                    $oldFile = $banner->$key ?? null;
+                    $oldFile = $intern->$key ?? null;
 
                     if ($oldFile) {
                         Storage::delete("public/" . $oldFile);

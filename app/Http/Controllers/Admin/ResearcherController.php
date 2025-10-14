@@ -235,7 +235,7 @@ class ResearcherController extends Controller
                 'email'           => $request->email,
                 'phone'           => $request->phone,
                 'designation'     => $request->designation,
-                'image'           => isset($uploadedFiles['image']) ? $uploadedFiles['image']['file_path'] : $researcher->image,
+                'image'           => $uploadedFiles['image']['status'] == 1 ? $uploadedFiles['image']['file_path'] : $researcher->image,
                 'linked_in'       => $request->linked_in,
                 'instagram'       => $request->instagram,
                 'facebook'        => $request->facebook,
