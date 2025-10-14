@@ -230,6 +230,10 @@
 
                                             @if ($team->website)
                                                 <li><a href="{{ $team->website }}" target="_blank"><i
+                                                            class="fa-solid fa-google-scholar"></i></a></li>
+                                            @endif
+                                            @if ($team->portfolio)
+                                                <li><a href="{{ $team->portfolio }}" target="_blank"><i
                                                             class="fa-solid fa-globe"></i></a></li>
                                             @endif
 
@@ -305,6 +309,10 @@
 
                                             @if ($researcher->website)
                                                 <li><a href="{{ $researcher->website }}" target="_blank"><i
+                                                            class="fa-solid fa-google-scholar"></i></a></li>
+                                            @endif
+                                            @if ($researcher->portfolio)
+                                                <li><a href="{{ $researcher->portfolio }}" target="_blank"><i
                                                             class="fa-solid fa-globe"></i></a></li>
                                             @endif
 
@@ -585,7 +593,7 @@
                 });
             });
         </script>
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 let currentIndex = 4; // Initially show 4 items
                 const totalTeams = {{ count($teams) }}; // Total number of team members
@@ -610,7 +618,7 @@
                 // Initially hide all team members after the first 4
                 $(".team-block").slice(4).hide();
             });
-        </script>
+        </script> --}}
     @endpush
 
 
