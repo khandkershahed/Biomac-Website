@@ -342,60 +342,8 @@
                         </div>
                     </div>
                 @endforeach
-                {{-- <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image">
-                                    <img src="{{ asset('images/mou.jpeg') }}" alt="">
-                                </figure>
-                                <div class="share-option">
-                                    <div class="share-icon"><i class="flaticon-sharing"></i></div>
-                                    <ul class="social-links clearfix">
-
-                                        <li><a href="mailto:moslema.mou@monash.edu" target="_blank"><i
-                                                    class="fas fa-envelope"></i></a></li>
-                                        <li><a href="https://scholar.google.com/citations?user=WeRdYDAAAAAJ&hl=en"
-                                                target="_blank"><i class="fas fa-globe"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="javascript:void(0)">Moslema Jahan Mou</a></h3>
-                                <span class="designation">Senior Researcher</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image">
-                                    <img src="{{ asset('images/imtiaz.jpeg') }}" alt="">
-                                </figure>
-                                <div class="share-option">
-                                    <div class="share-icon"><i class="flaticon-sharing"></i></div>
-                                    <ul class="social-links clearfix">
-
-                                        <li><a href="mailto:imtiaz.24160107@bau.edu.bd" target="_blank"><i
-                                                    class="fas fa-envelope"></i></a></li>
-
-
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="javascript:void(0)">Md Imtiaz Ahamed</a></h3>
-                                <span class="designation">Junior Researcher</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
-            @if (count($researchers) > 4)
+            {{-- @if (count($researchers) > 4)
                 <div class="more-btn" id="show-more-btn">
                     <a href="javascript:void(0)" class="theme-btn">Show More</a>
                 </div>
@@ -404,7 +352,7 @@
             <!-- All Members button (hidden initially) -->
             <div class="more-btn" id="all-members-btn" style="display: none;">
                 <a href="{{ route('team') }}" class="theme-btn">All Members</a>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- team-section end -->
@@ -593,7 +541,7 @@
                 });
             });
         </script>
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 let currentIndex = 4; // Initially show 4 items
                 const totalTeams = {{ count($researchers) }}; // Total number of team members
@@ -618,7 +566,7 @@
                 // Initially hide all team members after the first 4
                 $(".team-block").slice(4).hide();
             });
-        </script>
+        </script> --}}
     @endpush
 
 
