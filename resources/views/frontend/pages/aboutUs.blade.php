@@ -313,8 +313,8 @@
                                                             class="fa-brands fa-youtube"></i></a></li>
                                             @endif
 
-                                            @if ($team->phone)
-                                                <li><a href="https://wa.me/{{ $team->phone }}" target="_blank"><i
+                                            @if ($researcher->phone)
+                                                <li><a href="https://wa.me/{{ $researcher->phone }}" target="_blank"><i
                                                             class="fa-brands fa-whatsapp"></i></a></li>
                                             @endif
 
