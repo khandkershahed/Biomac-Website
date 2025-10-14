@@ -72,11 +72,11 @@
                                 <div class="icon-box"><i class="flaticon-pin"></i></div>
                                 <h3>Location</h3>
                                 <p>{{ optional($setting)->address_line_one }}</p>
-                                <h6>
+                                {{-- <h6>
                                     <a href="{{ route('contact') }}">
                                         Check Location<i class="flaticon-right-arrow"></i>
                                     </a>
-                                </h6>
+                                </h6> --}}
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 single-column">
