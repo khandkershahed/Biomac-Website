@@ -40,7 +40,9 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $paper->name }}</td>
-                                    <td class="text-center">{{ $paper->date->format('d F, Y') }}</td>
+                                    <td class="text-center">
+                                        {{ Carbon\Carbon::parse($paper->date)->format('d F, Y') }}
+                                    </td>
                                     <td class="text-center">
                                         <span
                                             class="badge {{ $paper->status == 'active' ? 'bg-success' : 'bg-danger' }}">
