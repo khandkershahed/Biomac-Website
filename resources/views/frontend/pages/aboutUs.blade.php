@@ -395,7 +395,7 @@
                     </div>
                 </div> --}}
             </div>
-            @if (count($teams) > 4)
+            @if (count($researchers) > 4)
                 <div class="more-btn" id="show-more-btn">
                     <a href="javascript:void(0)" class="theme-btn">Show More</a>
                 </div>
@@ -593,10 +593,10 @@
                 });
             });
         </script>
-        {{-- <script>
+        <script>
             $(document).ready(function() {
                 let currentIndex = 4; // Initially show 4 items
-                const totalTeams = {{ count($teams) }}; // Total number of team members
+                const totalTeams = {{ count($researchers) }}; // Total number of team members
                 const teamsPerLoad = 4; // Load 4 more teams each time
 
                 // Show more teams when "Show More" button is clicked
@@ -618,7 +618,7 @@
                 // Initially hide all team members after the first 4
                 $(".team-block").slice(4).hide();
             });
-        </script> --}}
+        </script>
     @endpush
 
 
