@@ -190,7 +190,7 @@
                 </div>
                 <div class="row clearfix">
                     @foreach ($interns as $intern)
-                        <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="col-lg-3 col-md-6 col-sm-12 team-block mb-5">
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
