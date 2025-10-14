@@ -29,8 +29,9 @@
                         <thead class="bg-light-danger">
                             <tr class="fw-semibold fs-6 text-gray-800 text-center">
                                 <th width="5%">Sl</th>
-                                <th width="60%">Title</th>
-                                <th width="15%">Status</th>
+                                <th width="55%">Title</th>
+                                <th width="10%">Date</th>
+                                <th width="10%">Status</th>
                                 <th width="10%">Actions</th>
                             </tr>
                         </thead>
@@ -39,7 +40,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $paper->name }}</td>
-                                    <td>
+                                    <td class="text-center">{{ $paper->date->format('d F, Y') }}</td>
+                                    <td class="text-center">
                                         <span
                                             class="badge {{ $paper->status == 'active' ? 'bg-success' : 'bg-danger' }}">
                                             {{ ucfirst($paper->status) }}
