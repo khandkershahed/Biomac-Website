@@ -138,7 +138,7 @@ class HomeController extends Controller
     {
         $data = [
             'banner'         => PageBanner::active()->where('page_name', 'blog')->latest('id')->first(),
-            'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->get(),
+            'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->paginate(8),
             'blog_categorys' => BlogCategory::latest('id')->where('status', 'active')->get(),
             'blog_tags'      => BlogTag::latest('id')->where('status', 'active')->get(),
         ];

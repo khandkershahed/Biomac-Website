@@ -17,7 +17,23 @@
                         </div>
                     </div>
                     <div class="card-body text-center pt-0">
-                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
+                            data-kt-image-input="true">
+                            <div class="image-input-wrapper w-150px h-150px"></div>
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                <i class="fa-solid fa-pencil fs-7">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                                <input type="file" name="logo" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="logo_remove" />
+                            </label>
+                        </div>
+                        <div class="text-muted fs-7">
+                            Set Thumbnail Image
+                        </div>
+                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
                             data-kt-image-input="true">
                             <div class="image-input-wrapper w-150px h-150px"></div>
                             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
@@ -31,8 +47,7 @@
                             </label>
                         </div>
                         <div class="text-muted fs-7">
-                            Set the image. Only *.png, *.jpg and *.jpeg image
-                            files are accepted
+                            Set Content image
                         </div>
                         {{-- Product Mutli Image --}}
                         <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
@@ -49,24 +64,9 @@
                             </label>
                         </div>
                         <div class="text-muted fs-7">
-                            Set the blog banner image
+                            Set banner image
                         </div>
-                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
-                            data-kt-image-input="true">
-                            <div class="image-input-wrapper w-150px h-150px"></div>
-                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                <i class="fa-solid fa-pencil fs-7">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                                <input type="file" name="logo" accept=".png, .jpg, .jpeg" />
-                                <input type="hidden" name="logo_remove" />
-                            </label>
-                        </div>
-                        <div class="text-muted fs-7">
-                            Set the blog logo
-                        </div>
+
                     </div>
                 </div>
                 {{-- Media Card End --}}

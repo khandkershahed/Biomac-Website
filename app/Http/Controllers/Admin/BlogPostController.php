@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Validator;
 class BlogPostController extends Controller
 {
     /**
-     * Display a listing of the resource. 
+     * Display a listing of the resource.
      */
     public function index()
     {
@@ -102,9 +102,9 @@ class BlogPostController extends Controller
             }
 
             // Create a new BlogPost record
-            $blogPost = BlogPost::create([
+            $blogPost = BlogPost::create( [
                 'category_id'       => $request->category_id,
-                'tag_id'            => json_encode($request->tag_id),
+                'tag_id'            => $request->tag_id ?? [],
                 'featured'          => $request->featured,
                 'type'              => $request->type,
                 'badge'             => $request->badge,
@@ -130,7 +130,6 @@ class BlogPostController extends Controller
         } catch (\Exception $e) {
             // Rollback the transaction if there's an error
             DB::rollback();
-
             // Return with error message
             return redirect()->back()->withInput()->with('error', 'An error occurred while creating the blog post: ' . $e->getMessage());
         }

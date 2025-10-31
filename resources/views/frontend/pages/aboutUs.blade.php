@@ -230,7 +230,7 @@
 
                                             @if ($team->website)
                                                 <li><a href="{{ $team->website }}" target="_blank"><i
-                                                            class="fa-solid fa-google-scholar"></i></a></li>
+                                                            class="fa-brands fa-google-scholar"></i></a></li>
                                             @endif
                                             @if ($team->portfolio)
                                                 <li><a href="{{ $team->portfolio }}" target="_blank"><i
@@ -309,7 +309,7 @@
 
                                             @if ($researcher->website)
                                                 <li><a href="{{ $researcher->website }}" target="_blank"><i
-                                                            class="fa-solid fa-google-scholar"></i></a></li>
+                                                            class="fa-brands fa-google-scholar"></i></a></li>
                                             @endif
                                             @if ($researcher->portfolio)
                                                 <li><a href="{{ $researcher->portfolio }}" target="_blank"><i

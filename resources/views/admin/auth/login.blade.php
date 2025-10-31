@@ -20,7 +20,7 @@
                                         Sign In
                                     </h1>
                                     <div class="text-gray-500 fw-semibold fs-6" data-kt-translate="general-desc">
-                                        Get access &amp; to your dashboard
+                                        Get access to your dashboard
                                     </div>
                                 </div>
                                 <div class="fv-row mb-8 fv-plugins-icon-container">
@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="d-none d-lg-flex flex-lg-row-fluid w-100 bgi-size-cover bgi-position-y-center bgi-position-x-start bgi-no-repeat"
-                style="background-image: url({{ asset('backend/assets/images/adminImage.png') }})">
+                style="background-image: url({{ asset('images/image_4.jpeg') }})">
             </div>
         </div>
     </div>

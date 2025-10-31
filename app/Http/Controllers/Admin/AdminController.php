@@ -16,10 +16,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-
-
         $data = [
-            
+            'blogCount' => DB::table('blog_posts')->where('status','publish')->count(),
+            'researchPaperCount' => DB::table('research_papers')->where('status','active')->count(),
+            'researcherCount' => DB::table('researchers')->where('status','active')->count(),
+            'internCount' => DB::table('interns')->where('status','active')->count(),
         ];
 
         return view('admin.dashboard', $data);

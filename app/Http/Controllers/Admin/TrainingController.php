@@ -13,7 +13,7 @@ class TrainingController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.training.index', ['trainings' => Training::get()]);
+        return view('admin.pages.training.index', ['trainings' => Training::latest()->get()]);
     }
 
     /**
@@ -21,7 +21,7 @@ class TrainingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.training.create');
     }
 
     /**

@@ -11,12 +11,9 @@ class BlogPost extends Model
     use HasFactory, HasSlug;
 
     protected $slugSourceColumn = 'title';
-
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array
-     */
+    protected $casts = [
+        'tag_id' => 'array',
+    ];
     protected $guarded = [];
 
     public function getBlogCategoriesAttribute()
