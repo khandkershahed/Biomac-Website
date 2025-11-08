@@ -35,11 +35,15 @@
                                     </div>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="category"><a
-                                            href="{{ route('blog.details', $blog_post->slug) }}">Laboratory</a></div>
+                                    @if ($blog_post->badge)
+                                        <div class="category"><a
+                                                href="{{ route('blog.details', $blog_post->slug) }}">{{ $blog_post->badge }}</a></div>
+                                    @endif
                                     <ul class="post-info clearfix">
-                                        <li>11 August, 2022</li>
-                                        <li><a href="{{ route('blog.details', $blog_post->slug) }}">By Admin</a></li>
+                                        <li>{{ \Carbon\Carbon::parse($blog_post->created_at)->format('d F, Y') }}</li>
+                                        @if ($blog_post->author)
+                                            <li><a href="{{ route('blog.details', $blog_post->slug) }}">By {{ $blog_post->author }}</a></li>
+                                        @endif
                                     </ul>
                                     <h3><a
                                             href="{{ route('blog.details', $blog_post->slug) }}">{{ $blog_post->title }}</a>
@@ -49,17 +53,17 @@
                                             <a href="{{ route('blog.details', $blog_post->slug) }}">Read More</a>
                                         </div>
                                         <div class="right-info">
-                                            <ul class="social-links clearfix">
+                                            {{-- <ul class="social-links clearfix">
                                                 <li><a href="index.html"><i class="fa-brands fa-facebook"></i></a></li>
                                                 <li><a href="index.html"><i class="fa-brands fa-square-twitter"></i></a>
                                                 </li>
                                                 <li><a href="index.html"><i class="fa-solid fa-basketball"></i></a></li>
-                                            </ul>
+                                            </ul> --}}
                                             <div class="comments-box clearfix">
                                                 <a href="{{ route('blog.details', $blog_post->slug) }}"><i
                                                         class="fa-regular fa-comment-dots"></i>2</a>
                                                 <a href="{{ route('blog.details', $blog_post->slug) }}"><i
-                                                        class="fa-regular fa-eye"></i>10</a>
+                                                        class="fa-regular fa-eye"></i>{{ rand(1, 100) }}</a>
                                             </div>
                                         </div>
                                     </div>

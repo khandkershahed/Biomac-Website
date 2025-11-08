@@ -13,6 +13,7 @@ class BlogPost extends Model
     protected $slugSourceColumn = 'title';
     protected $casts = [
         'tag_id' => 'array',
+        'tags'   => 'array',
     ];
     protected $guarded = [];
 

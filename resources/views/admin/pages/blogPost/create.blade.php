@@ -196,28 +196,29 @@
                                 </div>
                             </div>
                             <div class="card-body pt-0">
-                                <div class="fv-row">
+                                <div class="fv-row mb-5">
                                     <x-metronic.label class="form-label">Category Id</x-metronic.label>
-                                    <x-metronic.select-option class="form-select mb-2" name="category_id[]"
+                                    <x-metronic.select-option class="form-select mb-2" name="category_id"
                                         data-control="select2" data-placeholder="Select an option"
                                         data-allow-clear="true" id="category_id">
                                         <option></option>
                                         @foreach ($blogCategories as $blogcategory)
-                                            <option value="{{ $blogcategory->id }}">{{ $blogcategory->name }}
+                                            <option value="{{ $blogcategory->id }}" @selected(old('category_id') == $blogcategory->id)>{{ $blogcategory->name }}
                                             </option>
                                         @endforeach
                                     </x-metronic.select-option>
                                 </div>
-                                <div class="fv-row">
+                                <div class="fv-row mb-5">
                                     <x-metronic.label class="form-label">Tag Id</x-metronic.label>
-                                    <x-metronic.select-option class="form-select mb-2" name="tag_id[]" id="tag_id"
+                                    <input class="form-control" name="tags" id="tags" value="" />
+                                    {{-- <x-metronic.select-option class="form-select mb-2" name="tag_id[]" id="tag_id"
                                         data-control="select2" data-placeholder="Select an option"
                                         data-allow-clear="true" multiple="multiple">
                                         <option></option>
                                         @foreach ($blogTags as $blogtag)
                                             <option value="{{ $blogtag->id }}">{{ $blogtag->name }}</option>
                                         @endforeach
-                                    </x-metronic.select-option>
+                                    </x-metronic.select-option> --}}
                                 </div>
                                 <div class="fv-row">
                                     <div class="mb-5">
@@ -252,13 +253,10 @@
     @push('scripts')
         {{-- Tagify --}}
         <script>
-            // The DOM elements you wish to replace with Tagify
-            var input1 = document.querySelector("#kt_tagify_1");
-            var input2 = document.querySelector("#kt_tagify_2");
-
-            // Initialize Tagify components on the above inputs
-            new Tagify(input1);
-            new Tagify(input2);
+            document.addEventListener('DOMContentLoaded', function() {
+                var input1 = document.querySelector("#tags");
+                new Tagify(input1);
+            });
         </script>
         {{-- Tagify ENd --}}
     @endpush

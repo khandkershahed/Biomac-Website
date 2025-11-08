@@ -18,6 +18,25 @@
                         </div>
                     </div>
                     <div class="card-body text-center pt-0">
+                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
+                            data-kt-image-input="true">
+                            <div class="image-input-wrapper w-150px h-150px"
+                                style="background-image: url({{ !empty($blogPost->logo) ? asset('storage/' . $blogPost->logo) : '' }});">
+                            </div>
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change logo">
+                                <i class="fa-solid fa-pencil fs-7">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                                <input type="file" name="logo" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="logo_remove" />
+                            </label>
+                        </div>
+                        <div class="text-muted fs-7">
+                            Set the blog Thumbnail.
+                        </div>
+                        
                         <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
                             data-kt-image-input="true">
                             <div class="image-input-wrapper w-150px h-150px"
@@ -34,7 +53,7 @@
                             </label>
                         </div>
                         <div class="text-muted fs-7">
-                            Set the image. Only *.png, *.jpg, and *.jpeg image files are accepted.
+                            Set the Content image. Only *.png, *.jpg, and *.jpeg image files are accepted.
                         </div>
                         {{-- Banner Image --}}
                         <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
@@ -56,24 +75,7 @@
                         <div class="text-muted fs-7">
                             Set the blog banner image.
                         </div>
-                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3 mt-4"
-                            data-kt-image-input="true">
-                            <div class="image-input-wrapper w-150px h-150px"
-                                style="background-image: url({{ !empty($blogPost->logo) ? asset('storage/' . $blogPost->logo) : '' }});">
-                            </div>
-                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change logo">
-                                <i class="fa-solid fa-pencil fs-7">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                                <input type="file" name="logo" accept=".png, .jpg, .jpeg" />
-                                <input type="hidden" name="logo_remove" />
-                            </label>
-                        </div>
-                        <div class="text-muted fs-7">
-                            Set the blog logo.
-                        </div>
+
                     </div>
                 </div>
                 {{-- Media Card End --}}
@@ -216,7 +218,7 @@
                                 </div>
                             </div>
                             <div class="card-body pt-0">
-                                <div class="fv-row">
+                                {{-- <div class="fv-row">
                                     <x-metronic.label class="form-label">Category Id</x-metronic.label>
                                     <x-metronic.select-option class="form-select mb-2" name="category_id[]"
                                         data-control="select2" data-placeholder="Select an option"
@@ -245,30 +247,26 @@
                                             </option>
                                         @endforeach
                                     </x-metronic.select-option>
-                                    {{-- <x-metronic.select-option class="form-select mb-2" name="category_id[]"
-                                        data-control="select2" data-placeholder="Select an option"
-                                        data-allow-clear="true" id="category_id" multiple>
-                                        <option></option>
-                                        @php
-                                            $categoryIds = isset($blogPost->category_id)
-                                                ? json_decode($blogPost->category_id, true)
-                                                : [];
-                                            $tagIds = isset($blogPost->tag_id)
-                                                ? json_decode($blogPost->tag_id, true)
-                                                : [];
-                                        @endphp
 
+                                </div> --}}
+                                <div class="fv-row">
+                                    <x-metronic.label class="form-label">Category Id</x-metronic.label>
+                                    <x-metronic.select-option class="form-select mb-2" name="category_id"
+                                        data-control="select2" data-placeholder="Select an option"
+                                        data-allow-clear="true" id="category_id">
+                                        <option></option>
                                         @foreach ($blogCategories as $blogcategory)
-                                            <option value="{{ $blogcategory->id }}"
-                                                {{ in_array($blogcategory->id, $categoryIds) ? 'selected' : '' }}>
+                                            <option value="{{ $blogcategory->id }}" @selected(old('category_id', $blogPost->category_id) == $blogcategory->id)>
                                                 {{ $blogcategory->name }}
                                             </option>
                                         @endforeach
-                                    </x-metronic.select-option> --}}
+                                    </x-metronic.select-option>
                                 </div>
                                 <div class="fv-row">
                                     <x-metronic.label class="form-label">Tag Id</x-metronic.label>
-                                    <x-metronic.select-option class="form-select mb-2" name="tag_id[]" id="tag_id"
+                                    <input class="form-control" name="tags" id="tags"
+                                        value="{{ old('tags', $blogPost->tags) }}" />
+                                    {{-- <x-metronic.select-option class="form-select mb-2" name="tag_id[]" id="tag_id"
                                         data-control="select2" data-placeholder="Select an option"
                                         data-allow-clear="true" multiple>
                                         <option></option>
@@ -278,7 +276,7 @@
                                                 {{ $blogtag->name }}
                                             </option>
                                         @endforeach
-                                    </x-metronic.select-option>
+                                    </x-metronic.select-option> --}}
                                 </div>
                                 <div class="fv-row">
                                     <div class="mb-5">
@@ -307,12 +305,8 @@
         {{-- Tagify --}}
         <script>
             // The DOM elements you wish to replace with Tagify
-            var input1 = document.querySelector("#kt_tagify_1");
-            var input2 = document.querySelector("#kt_tagify_2");
-
-            // Initialize Tagify components on the above inputs
+            var input1 = document.querySelector("#tags");
             new Tagify(input1);
-            new Tagify(input2);
         </script>
         {{-- Tagify END --}}
     @endpush

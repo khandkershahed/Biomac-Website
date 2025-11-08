@@ -14,6 +14,7 @@ Route::get('training', [HomeController::class, 'training'])->name('training');
 Route::get('training/details/{slug}', [HomeController::class, 'trainingDetails'])->name('trainingDetails');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('blog', [HomeController::class, 'allBlog'])->name('blog');
+Route::get('blog/{slug}', [HomeController::class, 'blogDetails'])->name('blog.details');
 Route::get('services', [HomeController::class, 'services'])->name('services');
 Route::get('team', [HomeController::class, 'team'])->name('team');
 Route::get('service/details/{slug}', [HomeController::class, 'serviceDetails'])->name('service.details');

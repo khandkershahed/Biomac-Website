@@ -42,13 +42,13 @@
                                 {{ $blogcategory->status == 'active' ? 'Active' : 'InActive' }}</span>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                <a href="#" class="me-3"
                                     data-bs-toggle="modal" data-bs-target="#EditModal-{{ $blogcategory->id }}">
-                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fa-solid fa-pen-square fs-3 text-info"></i>
                                 </a>
                                 <a href="{{ route('admin.blog-category.destroy', $blogcategory->id) }}"
-                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 delete">
-                                    <i class="fa-solid fa-trash-alt"></i>
+                                    class="delete">
+                                    <i class="fa-solid fa-trash-alt fs-4 text-danger"></i>
                                 </a>
                             </td>
                         </tr>

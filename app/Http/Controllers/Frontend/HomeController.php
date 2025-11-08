@@ -140,7 +140,7 @@ class HomeController extends Controller
             'banner'         => PageBanner::active()->where('page_name', 'blog')->latest('id')->first(),
             'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->paginate(8),
             'blog_categorys' => BlogCategory::latest('id')->where('status', 'active')->get(),
-            'blog_tags'      => BlogTag::latest('id')->where('status', 'active')->get(),
+            'blog_tags'      => BlogPost::where('status', 'publish')->get()->pluck('tags')->flatten()->unique(),
         ];
         return view('frontend.pages.blog.allBlog', $data);
     }
@@ -148,85 +148,18 @@ class HomeController extends Controller
     {
         $data = [
             'blog'           => BlogPost::where('slug', $slug)->first(),
-            'blog_posts'     => BlogPost::inRandomOrder()->latest('id')->where('status', 'publish')->get(),
-            'blog_categorys' => BlogCategory::latest('id')->where('status', 'active')->get(),
-            'blog_tags'      => BlogTag::latest('id')->where('status', 'active')->get(),
+            'blog_posts'     => BlogPost::inRandomOrder()->latest('id')->where('status', 'publish')->where('featured', '1')->where('slug', '!=', $slug)->limit(5)->get(),
+            'blog_categorys' => BlogCategory::with('blogPost')->latest('id')->where('status', 'active')->get(),
+            'blog_tags'      => BlogPost::where('status', 'publish')->get()->pluck('tags')->flatten()->unique(),
+            'next_post'      => BlogPost::where('status', 'publish')->where('id', '>', BlogPost::where('slug', $slug)->first()->id)->min('id'),
+            'prev_post'      => BlogPost::where('status', 'publish')->where('id', '<', BlogPost::where('slug', $slug)->first()->id)->max('id'),
         ];
         return view('frontend.pages.blog.blogDetails', $data);
     }
-    public function productDetails($slug)
-    {
-        $data = [
-            'product'          => Product::where('slug', $slug)->first(),
-            'related_products' => Product::select('id', 'slug', 'meta_title', 'thumbnail', 'name', 'box_discount_price', 'box_price')->with('multiImages')->where('status', 'published')->inRandomOrder()->limit(12)->get(),
-        ];
-        return view('frontend.pages.product.productDetails', $data);
-    }
-    public function categoryProducts($slug)
-    {
-        $category = Category::where('slug', $slug)->firstOrFail();
-        $data = [
-            'category'                => $category,
-            'categories'              => Category::orderBy('name', 'ASC')->active()->get(),
-        ];
-        return view('frontend.pages.categoryDetails', $data);
-    }
-
-    public function compareList()
-    {
-
-        $data = [
-            'categories'   => Category::orderBy('name', 'ASC')->active()->get(),
-        ];
-        return view('frontend.pages.cart.compareList', $data);
-    }
-
-    // public function cart()
-    // {
-    //     $data = [
-    //         'cartItems' => Cart::instance('cart')->content(),
-    //         'related_products' => Product::select('id', 'slug', 'meta_title', 'thumbnail', 'name', 'box_discount_price', 'box_price')->with('multiImages')->where('status', 'published')->inRandomOrder()->limit(12)->get(),
-    //     ];
-    //     return view('frontend.pages.cart.mycart', $data);
-    // }
-    // public function checkout()
-    // {
-    //     $setting = Setting::first();
-    //     $minimumOrderAmount = $setting->minimum_order_amount ?? 0;
-
-    //     $formattedSubtotal = Cart::instance('cart')->subtotal();
-    //     $cleanSubtotal = preg_replace('/[^\d.]/', '', $formattedSubtotal);
-    //     $subTotal = (float)$cleanSubtotal;
-
-    //     if ($subTotal > $minimumOrderAmount) {
-    //         $data = [
-    //             'shippingmethods' => ShippingMethod::active()->get(),
-    //             'cartItems'       => Cart::instance('cart')->content(),
-    //             'total'           => Cart::instance('cart')->total(),
-    //             'cartCount'       => Cart::instance('cart')->count(),
-    //             'user'            => Auth::user(),
-    //             'subTotal'        => $subTotal,
-    //         ];
-    //         return view('frontend.pages.cart.checkout', $data);
-    //     } else {
-    //         // Redirect back with error message
-    //         Session::flash('error', 'The added product price must be greater than 500£ to proceed to check out.');
-    //         // Session::flush();
-    //         return redirect()->back();
-    //     }
-    // }
 
 
-    // public function checkoutSuccess($id)
-    // {
 
-    //     $data = [
-    //         'order'           => Order::with('orderItems')->where('order_number', $id)->first(),
-    //         'user'            => Auth::user(),
-    //     ];
-    //     // dd(Cart::instance('cart'));
-    //     return view('frontend.pages.cart.checkoutSuccess', $data);
-    // }
+
 
     public function globalSearch(Request $request)
     {
@@ -244,4 +177,6 @@ class HomeController extends Controller
 
         return response()->json(view('frontend.layouts.search', $data)->render());
     } // end method
+
+
 }

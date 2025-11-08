@@ -61,9 +61,9 @@ class BlogPostController extends Controller
                 'author'            => 'nullable|string|max:255',
                 'address'           => 'nullable|string|max:255',
                 'tags'              => 'nullable',
-                'logo'              => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-                'image'             => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-                'banner_image'      => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:3072',
+                'logo'              => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:6000',
+                'image'             => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:6000',
+                'banner_image'      => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:6000',
                 'additional_url'    => 'nullable|string|max:255|url',
                 'footer'            => 'nullable|string',
                 'status'            => 'nullable|string|max:255',
@@ -100,11 +100,10 @@ class BlogPostController extends Controller
                     $uploadedFiles[$key] = ['status' => 0];
                 }
             }
-
             // Create a new BlogPost record
-            $blogPost = BlogPost::create( [
+            $blogPost = BlogPost::create([
                 'category_id'       => $request->category_id,
-                'tag_id'            => $request->tag_id ?? [],
+                'tag_id'            => is_array($request->input('tag_id')) ? json_encode($request->input('tag_id')) : null,
                 'featured'          => $request->featured,
                 'type'              => $request->type,
                 'badge'             => $request->badge,
@@ -115,9 +114,9 @@ class BlogPostController extends Controller
                 'author'            => $request->author,
                 'address'           => $request->address,
                 'tags'              => $request->tags,
-                'logo'              => $uploadedFiles['logo']['status'] === 1 ? $uploadedFiles['logo']['file_path'] : null,
-                'image'             => $uploadedFiles['image']['status'] === 1 ? $uploadedFiles['image']['file_path'] : null,
-                'banner_image'      => $uploadedFiles['banner_image']['status'] === 1 ? $uploadedFiles['banner_image']['file_path'] : null,
+                'logo'              => $uploadedFiles['logo']['status']         == 1 ? $uploadedFiles['logo']['file_path']         : null,
+                'image'             => $uploadedFiles['image']['status']        == 1 ? $uploadedFiles['image']['file_path']        : null,
+                'banner_image'      => $uploadedFiles['banner_image']['status'] == 1 ? $uploadedFiles['banner_image']['file_path'] : null,
                 'additional_url'    => $request->additional_url,
                 'footer'            => $request->footer,
                 'status'            => $request->status,
@@ -181,9 +180,9 @@ class BlogPostController extends Controller
                 'author' => 'nullable|string|max:255',
                 'address' => 'nullable|string|max:255',
                 'tags' => 'nullable',
-                'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-                'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:3072',
+                'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:6000',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:6000',
+                'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:6000',
                 'additional_url' => 'nullable|string|max:255|url',
                 'status' => 'nullable|string|max:255',
             ], [
@@ -227,7 +226,7 @@ class BlogPostController extends Controller
             // Update the BlogPost record
             $blogPost->update([
                 'category_id'       => $request->category_id,
-                'tag_id'            => json_encode($request->tag_id),
+                'tag_id'            => is_array($request->input('tag_id')) ? json_encode($request->input('tag_id')) : ($blogPost->tag_id ? json_encode($blogPost->tag_id) : null),
                 'featured'          => $request->featured,
                 'type'              => $request->type,
                 'badge'             => $request->badge,

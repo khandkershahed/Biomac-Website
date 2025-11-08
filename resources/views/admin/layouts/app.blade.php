@@ -49,6 +49,7 @@
     <link href="{{ asset('backend/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
 </head>
 
 <body id="kt_body"
@@ -66,12 +67,8 @@
 
                 @include('admin.layouts.header')
 
-
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-
                     {{-- @include('admin.layouts.toolbar') --}}
-
-
                     <div class="post d-flex flex-column-fluid" id="kt_post">
 
                         <div id="kt_content_container" class="container-fluid">
@@ -116,10 +113,11 @@
 
 
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('backend/assets/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('backend/assets/js/scripts.bundle.js') }}"></script>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script> --}}
     <script src="{{ asset('backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     {{-- <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script> --}}
@@ -135,14 +133,17 @@
     {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script> --}}
-    <script src="{{ asset('backend/assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
+    {{-- <script src="{{ asset('backend/assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script> --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> --}}
     <script src="{{ asset('backend/js/custom.js') }}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @include('toastr')
     @stack('scripts')
-    <script>
+    {{-- <script>
         document.querySelectorAll('.ckeditor').forEach(element => {
             if (!element.classList.contains('ck-editor__editable_inline')) {
                 ClassicEditor
@@ -155,6 +156,22 @@
                     });
             }
         });
+    </script> --}}
+    <script>
+      $('.ckeditor').summernote({
+        placeholder: 'write here...',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
     </script>
     <script>
         //  DropZone Image

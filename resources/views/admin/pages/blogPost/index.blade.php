@@ -1,18 +1,10 @@
 <x-admin-app-layout :title="'Blog Posts'">
     <div class="card">
-        <div class="card-header bg-primary d-flex justify-content-between align-items-center">
-            <h1 class="mb-0 text-white">Manage Your Blog Posts</h1>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h1 class="mb-0 text-info">Manage Your Blog Posts</h1>
             <a href="{{ route('admin.blog-post.create') }}" class="btn btn-light-primary rounded-2">
                 <span class="svg-icon svg-icon-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none">
-                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5"
-                            fill="currentColor" />
-                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1"
-                            transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1"
-                            fill="currentColor" />
-                    </svg>
+                    <i class="fas fa-plus-square"></i>
                 </span>
                 <span class="pt-2">Add Blogs</span>
             </a>
@@ -36,7 +28,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td class="text-center">
                                 <img class="w-50px h-50px"
-                                    src="{{ !empty(optional($post)->image) ? asset('storage/' . optional($post)->image) : asset('images/no_image.jpg') }}"
+                                    src="{{ !empty(optional($post)->logo) ? asset('storage/' . optional($post)->logo) : asset('images/no_image.jpg') }}"
                                     alt="{{ $post->page_name }}">
                             </td>
                             <td>{{ $post->title }}</td>
