@@ -148,13 +148,16 @@ class HomeController extends Controller
     }
     public function blogDetails($slug)
     {
+        $blogPost = BlogPost::where('slug', $slug)->first();
+        $user = TeamMember::where('name', 'LIKE', '%' . $blogPost->author . '%')->first();
         $data = [
-            'blog'           => BlogPost::where('slug', $slug)->first(),
+            'blog'           => $blogPost,
             'blog_posts'     => BlogPost::inRandomOrder()->latest('id')->where('status', 'publish')->where('featured', '1')->where('slug', '!=', $slug)->limit(5)->get(),
             'blog_categorys' => BlogCategory::with('blogPost')->latest('id')->where('status', 'active')->get(),
             'blog_tags'      => BlogPost::where('status', 'publish')->get()->pluck('tags')->flatten()->unique(),
-            'next_post'      => BlogPost::where('status', 'publish')->where('id', '>', BlogPost::where('slug', $slug)->first()->id)->min('id'),
-            'prev_post'      => BlogPost::where('status', 'publish')->where('id', '<', BlogPost::where('slug', $slug)->first()->id)->max('id'),
+            'next_post'      => BlogPost::where('status', 'publish')->where('id', '>', $blogPost->id)->min('id'),
+            'prev_post'      => BlogPost::where('status', 'publish')->where('id', '<', $blogPost->id)->max('id'),
+            'user'           => $user,
         ];
         return view('frontend.pages.blog.blogDetails', $data);
     }

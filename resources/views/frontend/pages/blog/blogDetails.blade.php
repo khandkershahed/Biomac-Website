@@ -150,10 +150,16 @@
                         <div class="author-box">
                             <h2>About Author</h2>
                             <div class="inner-box">
-                                <figure class="author-thumb"><img src="assets/images/news/author-1.jpg" alt="">
-                                </figure>
+                                @if (!empty(optional($user)->image))
+                                    <figure class="author-thumb">
+                                        <img src="{{ asset('storage/' . optional($user)->image) }}" alt="">
+                                    </figure>
+                                @endif
                                 <h6>Post By</h6>
                                 <h3>{{ $blog->author }}</h3>
+                                @if (!empty(optional($user)->biography))
+                                    <p>{{ optional($user)->biography }}</p>
+                                @endif
                                 {{-- <p></p>
                                 <ul class="social-links clearfix">
                                     <li><a href="javascript:void(0)"><i class="fa-brands fa-facebook"></i></a></li>
