@@ -1,5 +1,11 @@
 <x-frontend-app-layout :title="'All Blogs'">
     <style>
+        p {
+            font-family: 'DM Sans', sans-serif;
+            color: #000316;
+            font-weight: 500;
+        }
+
         .page-title {
             padding: 160px 0px 22px 0px;
         }
