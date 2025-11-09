@@ -73,7 +73,7 @@
                         action="{{ route('admin.blog-category.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="fv-row mb-5">
-                            <x-metronic.label class="required fw-semibold fs-6 mb-2">Name</x-metronic.label>
+                            <x-metronic.label class="required fw-semibold fs-6 mb-2" required>Name</x-metronic.label>
                             <x-metronic.input type="text" name="name" class="form-control mb-3 mb-lg-0"
                                 placeholder="Set Blog Category Name" :value="old('name')" />
                         </div>
@@ -92,7 +92,7 @@
                             <x-metronic.label for="status" class="col-form-label required fw-bold fs-6">
                                 {{ __('Select a Status ') }}</x-metronic.label>
                             <x-metronic.select-option id="status" name="status" data-hide-search="true"
-                                data-placeholder="Select an option">
+                                data-placeholder="Select an option" required>
                                 <option></option>
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
