@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Admin\NewsletterController;
 
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -19,3 +20,4 @@ Route::get('services', [HomeController::class, 'services'])->name('services');
 Route::get('team', [HomeController::class, 'team'])->name('team');
 Route::get('service/details/{slug}', [HomeController::class, 'serviceDetails'])->name('service.details');
 Route::post('contact/add', [ContactController::class, 'store'])->name('contact.add');
+Route::post('newsletter/add', [NewsletterController::class, 'store'])->name('newsletter.add');

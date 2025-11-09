@@ -33,10 +33,10 @@
                                 <input type="hidden" name="logo_remove" />
                             </label>
                         </div>
-                        <div class="text-muted fs-7">
+                        <div class="text-muted fs-7 mb-7">
                             Set the blog Thumbnail.
                         </div>
-                        
+
                         <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
                             data-kt-image-input="true">
                             <div class="image-input-wrapper w-150px h-150px"
@@ -52,7 +52,7 @@
                                 <input type="hidden" name="image_remove" />
                             </label>
                         </div>
-                        <div class="text-muted fs-7">
+                        <div class="text-muted fs-7 mb-7">
                             Set the Content image. Only *.png, *.jpg, and *.jpeg image files are accepted.
                         </div>
                         {{-- Banner Image --}}
@@ -72,7 +72,7 @@
                                 <input type="hidden" name="banner_image_remove" />
                             </label>
                         </div>
-                        <div class="text-muted fs-7">
+                        <div class="text-muted fs-7 mb-7">
                             Set the blog banner image.
                         </div>
 
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="fv-row">
-                            <div class="mb-5">
+                            <div class="mb-10">
                                 <x-metronic.label class="form-label">{{ __('Status') }}</x-metronic.label>
                                 <x-metronic.select-option class="form-select mb-2" name="status" id="status"
                                     data-control="select2" data-placeholder="Select an option" data-allow-clear="true">
@@ -118,7 +118,7 @@
                             </div>
                         </div>
                         <div class="fv-row">
-                            <div class="mb-5">
+                            <div class="mb-10">
                                 <x-metronic.label class="form-label">{{ __('Blog Type') }}</x-metronic.label>
                                 <x-metronic.select-option class="form-select mb-2" name="type" id="type"
                                     data-placeholder="Select an option" data-allow-clear="true">
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                         <div class="fv-row">
-                            <div class="mb-5">
+                            <div class="mb-10">
                                 <x-metronic.label class="form-label">{{ __('Badge') }}</x-metronic.label>
                                 <x-metronic.input type="text" name="badge" class="form-control mb-2"
                                     placeholder="Set the blog badge" :value="old('badge', $blogPost->badge)"></x-metronic.input>
@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                             <div class="card-body pt-0">
-                                <div class="mb-5 fv-row">
+                                <div class="mb-10 fv-row">
                                     <x-metronic.label class="form-label">{{ __('Blog Title') }}</x-metronic.label>
                                     <x-metronic.input type="text" name="title" class="form-control mb-2"
                                         placeholder="Set the blog title" :value="old('title', $blogPost->title)"></x-metronic.input>
@@ -171,19 +171,19 @@
                                         A blog title is recommended.
                                     </div>
                                 </div>
-                                <div class="mb-5 fv-row">
+                                {{-- <div class="mb-10 fv-row">
                                     <x-metronic.label class="form-label">{{ __('Blog Header') }}</x-metronic.label>
                                     <x-metronic.textarea id="header" name="header" placeholder="Add Blog Header"
                                         class="form-control mb-2" cols="30"
                                         rows="3">{{ old('header', $blogPost->header) }}</x-metronic.textarea>
                                 </div>
-                                <div class="mb-5 fv-row">
+                                <div class="mb-10 fv-row">
                                     <x-metronic.label class="form-label">{{ __('Address') }}</x-metronic.label>
                                     <x-metronic.textarea id="address" name="address" placeholder="Add Blog Address"
                                         class="form-control mb-2" cols="30"
                                         rows="3">{{ old('address', $blogPost->address) }}</x-metronic.textarea>
-                                </div>
-                                <div class="mb-5 fv-row">
+                                </div> --}}
+                                <div class="mb-10 fv-row">
                                     <x-metronic.label
                                         class="form-label">{{ __('Blog Short Description') }}</x-metronic.label>
                                     <textarea class="ckeditor" name="short_description">
@@ -193,7 +193,7 @@
                                         Add blog short description.
                                     </div>
                                 </div>
-                                <div class="mb-5 fv-row">
+                                <div class="mb-10 fv-row">
                                     <x-metronic.label class="form-label">Blog Long Description</x-metronic.label>
                                     <textarea class="ckeditor" name="long_description">
                                         {!! old('long_description', $blogPost->long_description) !!}
@@ -202,12 +202,12 @@
                                         Add blog long description.
                                     </div>
                                 </div>
-                                <div class="mb-5 fv-row">
+                                {{-- <div class="mb-10 fv-row">
                                     <x-metronic.label class="form-label">Blog Footer</x-metronic.label>
                                     <textarea class="ckeditor" name="footer">
                                         {!! old('footer', $blogPost->footer) !!}
                                     </textarea>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         {{-- Category --}}
@@ -279,7 +279,7 @@
                                     </x-metronic.select-option> --}}
                                 </div>
                                 <div class="fv-row">
-                                    <div class="mb-5">
+                                    <div class="mb-10">
                                         <x-metronic.label class="form-label">Blog Author</x-metronic.label>
                                         <x-metronic.input type="text" name="author" class="form-control mb-2"
                                             placeholder="Set the blog author" :value="old('author', $blogPost->author)"></x-metronic.input>

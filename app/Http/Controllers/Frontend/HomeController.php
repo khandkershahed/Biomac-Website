@@ -136,11 +136,13 @@ class HomeController extends Controller
     }
     public function allBlog()
     {
+        // $user
         $data = [
             'banner'         => PageBanner::active()->where('page_name', 'blog')->latest('id')->first(),
             'blog_posts'     => BlogPost::latest('id')->where('status', 'publish')->paginate(8),
             'blog_categorys' => BlogCategory::latest('id')->where('status', 'active')->get(),
             'blog_tags'      => BlogPost::where('status', 'publish')->get()->pluck('tags')->flatten()->unique(),
+            // 'user'           =>
         ];
         return view('frontend.pages.blog.allBlog', $data);
     }

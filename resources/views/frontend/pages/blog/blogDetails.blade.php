@@ -52,18 +52,18 @@
                             </li>
                         @endif
                     </ul>
-                    <div class="right-info">
+                    {{-- <div class="right-info">
                         <ul class="social-links clearfix">
-                            <li><a href="index.html"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="index.html"><i class="fa-brands fa-square-twitter"></i></a></li>
-                            <li><a href="index.html"><i class="fa-solid fa-basketball"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa-brands fa-square-twitter"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa-solid fa-basketball"></i></a></li>
                         </ul>
                         <div class="comments-box clearfix">
                             <a href="{{ route('blog.details', $blog->slug) }}"><i
                                     class="fa-regular fa-comment-dots"></i>3</a>
                             <a href="{{ route('blog.details', $blog->slug) }}"><i class="fa-regular fa-eye"></i>26</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -295,11 +295,12 @@
                                 <h3>Subscribe Us</h3>
                                 <p>Subscribe us to get latest news & articles in your inbox.</p>
                                 <div class="form-inner">
-                                    <form action="https://st.ourhtmldemo.com/new/Biogenix/contact.html" method="post">
+                                    <form action="{{ route('newsletter.add') }}" method="post">
+                                        @csrf
                                         <div class="form-group">
                                             <i class="fa-sharp fa-solid fa-envelope-open"></i>
                                             <input type="email" name="email" placeholder="Email Address..."
-                                                required="">
+                                                required>
                                             <button type="submit">Subscribe Us</button>
                                         </div>
                                     </form>
